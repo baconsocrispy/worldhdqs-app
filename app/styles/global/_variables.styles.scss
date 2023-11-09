@@ -1,13 +1,6 @@
-// global
-@import '@/app/styles/global/variables';
-@import '@/app/styles/global/mixins';
-@import '@/app/styles/global/fonts';
-@import '@/app/styles/global/animations';
-@import '@/app/styles/global/base';
-@import '@/app/styles/global/utilities';
+// colors
+$color-black: black;
 
-// components
-
-// forms
-
-// pages
+// typography
+$font-family-primary: open-sans;
+$font-size-default: 1.3rem;
