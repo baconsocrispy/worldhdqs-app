@@ -6,8 +6,8 @@ import { ReactNode } from 'react';
 import '@/app/styles/main.styles.scss';
 
 export const metadata: Metadata = {
-  title: 'Carter Bacon',
-  description: 'Digital creative services',
+  title: 'WorldHQ',
+  description: 'Creative Workshop',
 };
 
 export default function RootLayout(
@@ -20,4 +20,4 @@ export default function RootLayout(
       </body>
     </html>
   )
-}
+};
