@@ -1,5 +1,5 @@
 // library
-import { ReactNode } from "react"
+import { ReactNode } from "react";
 
 const Grid = ({ children }: { children: ReactNode }) => {
   return (
