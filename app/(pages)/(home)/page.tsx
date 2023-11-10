@@ -1,7 +1,14 @@
-export default function Home() {
+// components
+import Grid from "@/app/components/grid/grid.component";
+
+const Home = () => {
   return (
-    <main className="home-page">
-      
-    </main>
+    <Grid>
+      <main className="home-page">
+    
+      </main>
+    </Grid>
   )
 };
+
+export default Home;
