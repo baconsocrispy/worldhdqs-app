@@ -1,4 +1,9 @@
 .hero {
-  background-color: teal;
-  height: 100%;
+  position: relative;
+  height: $height-section;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid purple;
 }
