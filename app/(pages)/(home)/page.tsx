@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <Grid>
       <main className="home-page">
-    
+        HOME
       </main>
     </Grid>
   )

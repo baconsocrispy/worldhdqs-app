@@ -1,6 +1,8 @@
 const Nav = () => {
   return (
-    <header className="nav">Nav</header>
+    <header className="nav">
+      
+    </header>
   )
 };
 
