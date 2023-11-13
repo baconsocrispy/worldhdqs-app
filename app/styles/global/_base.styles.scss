@@ -14,6 +14,7 @@ body {
   box-sizing: border-box;
   font-size: $font-size-default;
   font-family: $font-family-primary;
+  font-variation-settings: $font-weight-primary;
   color: $color-black;
 }
 

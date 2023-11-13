@@ -6,4 +6,9 @@
   align-items: center;
 
   border: 1px solid purple;
+
+  &__header {
+    font-variation-settings: $font-weight-header;
+    font-size: $font-size-header;
+  }
 }
