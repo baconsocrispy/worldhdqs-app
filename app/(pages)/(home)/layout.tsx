@@ -2,6 +2,10 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
+// components
+import Grid from '@/app/components/grid/grid.component';
+import Nav from '@/app/components/nav/nav.component';
+
 // styles
 import '@/app/styles/main.styles.scss';
 
@@ -16,7 +20,10 @@ export default function RootLayout(
   return (
     <html lang="en">
       <body>
-        { children }
+        <Grid>
+          <Nav />
+          { children }
+        </Grid>
       </body>
     </html>
   )
