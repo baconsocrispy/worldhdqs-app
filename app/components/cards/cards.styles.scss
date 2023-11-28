@@ -1,0 +1,14 @@
+.cards {
+  display: grid;
+  gap: $padding-default;
+  padding: $padding-default;
+  list-style: none;
+
+  &--grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--alternating {
+    grid-template-columns: 1fr;
+  }
+}

@@ -5,15 +5,16 @@ import { FC } from "react";
 import Card from "../card/card.component";
 
 // types
-import { Service } from "@/app/types";
+import { Case, Service } from "@/app/types";
 
 type CardsProps = {
-  items: Service[];
+  items: Case[] | Service[];
+  layout?: string;
 };
 
-const Cards: FC<CardsProps> = ({ items }) => {
+const Cards: FC<CardsProps> = ({ items, layout = 'grid' }) => {
   return (
-    <ul className="services__list">
+    <ul className={ `cards cards--${ layout }`}>
       {
         items.map((item) => 
           <Card key={ item.id } item={ item } />
