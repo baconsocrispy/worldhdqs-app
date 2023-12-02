@@ -1,6 +1,6 @@
 const NavMenu = () => {
   return (
-    <div>NavMenu</div>
+    <div className="nav-menu">NavMenu</div>
   )
 };
 

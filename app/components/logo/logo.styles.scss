@@ -1,4 +1,7 @@
 .logo {
+  mix-blend-mode: difference;
+  color: white;
+
   &__image {
     cursor: pointer;
   }

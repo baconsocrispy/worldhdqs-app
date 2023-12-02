@@ -1,9 +1,10 @@
 // components
 import Cards from "@/app/components/cards/cards.component";
+import ContentFlow from "@/app/components/content-flow/content-flow.component";
 import Hero from "@/app/components/hero/hero.component";
 
 // types
-import { Case, Service } from "@/app/types";
+import { Case, SerializedImage, Service, Skill } from "@/app/types";
 
 const Home = () => {
   const services: Service[] = [
@@ -42,16 +43,52 @@ const Home = () => {
     }
   ];
 
+  const skills: Skill[] = [
+    {
+      id: 1,
+      name: 'Ruby'
+    },
+    {
+      id: 2,
+      name: 'JavaScript'
+    },
+    {
+      id: 3,
+      name: 'TypeScript'
+    },
+    {
+      id: 4,
+      name: 'Illustrator'
+    },
+    {
+      id: 5,
+      name: 'Photoshop'
+    }
+  ];
+
+  const images: SerializedImage[] = [
+    { id: 1, src: '/1x/bg1.png' }, { id: 2, src: '/1x/bg2.png' }, { id: 3, src: '/1x/bg3.png' }, { id: 4, src: '/1x/bg4.png' }, { id: 5, src: '/1x/bg5.png' }, { id: 6, src: '/1x/bg6.png' }
+  ];
+
   return (
     <main className="home-page">
-      <Hero />
+      <Hero images={ images }/>
       <section className="services">
         <h2>Our Services</h2>
         <Cards items={ services }/>
       </section>
+      <section className="skills">
+        <ContentFlow content={ skills }/>
+        <ContentFlow content={ skills } direction="right" />
+        <ContentFlow content={ skills } />
+      </section>
       <section className="case-studies">
         <h2>Case Studies</h2>
         <Cards items={ cases } layout='alternating' />
+        <a href="#">View Portfolio</a>
+      </section>
+      <section className="">
+
       </section>
     </main>
   )
