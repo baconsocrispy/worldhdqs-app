@@ -1,5 +1,29 @@
 .card {
+  position: relative;
+  display: grid;
+  gap: $padding-default;
+  height: $height-card;
+  padding: $padding-default;
+
+  &--vertical {
+    grid-template-rows: 50% repeat(2, max-content);
+  }
+
+  &--horizontal {
+    grid-template-rows: 1fr;
+    grid-template-columns: 50% 50%;
+  }
+
+  &__image-container {
+    position: relative;
+  }
+
   &__text {
-    width: 50%;
+
+  }
+
+  &__image {
+    // width: 100%;
+    // height: auto;
   }
 }

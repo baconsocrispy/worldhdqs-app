@@ -84,7 +84,7 @@ const Home = () => {
       </section>
       <section className="case-studies">
         <h2>Case Studies</h2>
-        <Cards items={ cases } layout='alternating' />
+        <Cards items={ cases } layout='alternating' cardType='horizontal' />
         <a href="#">View Portfolio</a>
       </section>
       <section className="">
