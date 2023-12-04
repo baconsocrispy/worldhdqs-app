@@ -2,11 +2,11 @@
   position: relative;
   display: grid;
   gap: $padding-default;
-  height: $height-card;
   padding: $padding-default;
 
   &--vertical {
     grid-template-rows: 50% repeat(2, max-content);
+    height: $height-card;
   }
 
   &--horizontal {
@@ -18,12 +18,7 @@
     position: relative;
   }
 
-  &__text {
-
-  }
-
-  &__image {
-    // width: 100%;
-    // height: auto;
+  &__link {
+    text-decoration: underline;
   }
 }

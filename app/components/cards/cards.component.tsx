@@ -20,11 +20,11 @@ const Cards: FC<CardsProps> = ({
     <ul className={ `cards cards--${ layout }`}>
       {
         items.map((item) => 
-          <Card 
-            key={ item.id } 
-            item={ item }
-            layout={ cardType }
-          />
+            <Card
+              key={ item.id }
+              item={ item }
+              layout={ cardType }
+            />
         )
       }
     </ul>
