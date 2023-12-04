@@ -6,7 +6,7 @@ import Card from "../card/card.component";
 
 // types
 import { Case, Service } from "@/app/types";
-import { EntryAnimationStyles } from "../entry-animation/entry-animation.component";
+import { EntryAnimationStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
 
 type CardsProps = {
   cardEntryAnimation?: EntryAnimationStyles;

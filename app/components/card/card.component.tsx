@@ -2,7 +2,7 @@
 import { ElementType, FC } from "react";
 
 // components
-import EntryAnimation, { EntryAnimationStyles } from "../entry-animation/entry-animation.component";
+import AnimatedEntryWrapper, { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +11,7 @@ import { Case, Service } from "@/app/types";
 
 type CardProps = {
   elementType?: ElementType;
-  entryAnimation?: EntryAnimationStyles;
+  entryAnimation?: AnimatedEntryWrapperStyles;
   intersectionOptions?: IntersectionObserverInit;
   item: Case | Service;
   layout?: string | undefined;
@@ -25,7 +25,7 @@ const Card: FC<CardProps> = ({
   layout = 'vertical' 
 }) => {
   return (
-    <EntryAnimation 
+    <AnimatedEntryWrapper 
       key={ item.id }
       className={ `card card--${ layout }` }
       intersectionOptions={ intersectionOptions }
@@ -50,7 +50,7 @@ const Card: FC<CardProps> = ({
       >
         Learn More
       </Link>
-    </EntryAnimation>
+    </AnimatedEntryWrapper>
   )
 };
 

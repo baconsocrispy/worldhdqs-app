@@ -9,22 +9,22 @@ import {
 } from "react";
 
 // types
-export type EntryAnimationStyles = {
+export type AnimatedEntryWrapperStyles = {
   opacity?: string; // opacity transition in seconds and timing function (i.e. '0.5s ease-in-out')
   transform?: string;  // transform transition in seconds
   translateX?: string; // x-axis offset at start
   translateY?: string; // y-axis offset at start
 };
 
-type EntryAnimationProps = {
+type AnimatedEntryWrapperProps = {
   children: ReactNode;
   className?: string;
   intersectionOptions?: IntersectionObserverInit;
-  styleOptions?: EntryAnimationStyles;
+  styleOptions?: AnimatedEntryWrapperStyles;
   wrapperElement: ElementType;
 };
 
-const EntryAnimation: FC<EntryAnimationProps>  = ({ 
+const AnimatedEntryWrapper: FC<AnimatedEntryWrapperProps>  = ({ 
   children, 
   className, 
   intersectionOptions, 
@@ -71,4 +71,4 @@ const EntryAnimation: FC<EntryAnimationProps>  = ({
   )
 };
 
-export default EntryAnimation;
+export default AnimatedEntryWrapper;
