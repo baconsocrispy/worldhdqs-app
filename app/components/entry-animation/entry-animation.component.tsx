@@ -1,28 +1,39 @@
 'use client'
 // library
-import { FC, ReactNode, useEffect, useRef } from "react";
+import { 
+  ElementType, 
+  FC, 
+  ReactNode, 
+  useEffect, 
+  useRef 
+} from "react";
 
 // types
-type StyleOptions = {
-  opacity?: string;
-  transform?: string;
-  translateX?: string;
-  translateY?: string;
+export type EntryAnimationStyles = {
+  opacity?: string; // opacity transition in seconds and timing function (i.e. '0.5s ease-in-out')
+  transform?: string;  // transform transition in seconds
+  translateX?: string; // x-axis offset at start
+  translateY?: string; // y-axis offset at start
 };
 
 type EntryAnimationProps = {
   children: ReactNode;
   className?: string;
-  observerOptions?: IntersectionObserverInit;
-  styleOptions?: StyleOptions;
+  intersectionOptions?: IntersectionObserverInit;
+  styleOptions?: EntryAnimationStyles;
+  wrapperElement: ElementType;
 };
 
 const EntryAnimation: FC<EntryAnimationProps>  = ({ 
-  children, className, observerOptions, styleOptions
+  children, 
+  className, 
+  intersectionOptions, 
+  styleOptions, 
+  wrapperElement: Wrapper
 }) => {
-  const targetElement = useRef<HTMLDivElement>(null);
+  const targetElement = useRef<HTMLElement | null>(null);
 
-  // create intersection observer on mount
+  // instantiate intersection observer on mount
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -32,7 +43,7 @@ const EntryAnimation: FC<EntryAnimationProps>  = ({
           targetElement.current.style.transform = 'translateY(0)';
         } 
       });
-    }, observerOptions);
+    }, intersectionOptions);
 
     if (targetElement.current) {
       observer.observe(targetElement.current);
@@ -40,8 +51,9 @@ const EntryAnimation: FC<EntryAnimationProps>  = ({
   }, []);
 
   return (
-    <div 
+    <Wrapper 
       className={ className }
+      ref={ targetElement }
       style={{ 
         opacity: `${ styleOptions?.opacity ? 0 : 1 }`, 
         transform: `
@@ -53,10 +65,9 @@ const EntryAnimation: FC<EntryAnimationProps>  = ({
           transform ${ styleOptions?.transform ?? '0s' }
         `
       }} 
-        ref={ targetElement }
-      >
+    >
       { children }
-    </div>
+    </Wrapper>
   )
 };
 
