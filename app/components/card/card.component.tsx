@@ -3,11 +3,12 @@ import { ElementType, FC } from "react";
 
 // components
 import AnimatedEntryWrapper, { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
-import Image from "next/image";
+import AnimatedImageCarousel from "../animated-image-carousel/animated-image-carousel.component";
 import Link from "next/link";
 
 // types
 import { Case, Service } from "@/app/types";
+import { skills } from "@/app/data";
 
 type CardProps = {
   elementType?: ElementType;
@@ -33,11 +34,11 @@ const Card: FC<CardProps> = ({
       wrapperElement={ elementType }
     >
       <div className="card__image-container"> 
-        <Image 
-          className="card__image"
-          src='/1x/bg1.png'
-          fill
-          alt='bg1'
+        <AnimatedImageCarousel 
+          headingAnimation="whizLeftToRight"
+          logoAnimation='whizRightToLeft'
+          skills={ skills } 
+          time={ 4 }
         />
       </div>
       <div className="card__text">

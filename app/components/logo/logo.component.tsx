@@ -1,6 +1,14 @@
-const Logo = () => {
+// library
+import { CSSProperties, FC } from "react";
+
+type LogoProps = {
+  className?: string;
+  style?: CSSProperties;
+};
+
+const Logo: FC<LogoProps> = ({ className, style }) => {
   return (
-    <div className="logo">
+    <div className={ `logo ${ className }`} style={ style }>
       Logo
     </div>
   )
