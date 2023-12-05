@@ -3,10 +3,11 @@
   display: grid;
   gap: $padding-default;
   padding: $padding-default;
+  border: 1px solid red;
 
   &--vertical {
     grid-template-rows: 50% repeat(2, max-content);
-    height: $height-card;
+    min-height: $height-card;
   }
 
   &--horizontal {
@@ -14,8 +15,13 @@
     grid-template-columns: 50% 50%;
   }
 
-  &__image-container {
+  &__media {
     position: relative;
+  }
+
+  &__text {
+    display: grid;
+    gap: $padding-default;
   }
 
   &__link {

@@ -1,10 +1,9 @@
 // components
 import Cards from "@/app/components/cards/cards.component";
-import ContentFlow from "@/app/components/content-flow/content-flow.component";
 import Hero from "@/app/components/hero/hero.component";
 
 // data
-import { cases, images, services, skills } from "@/app/data";
+import { cardMedia, cases, images, services } from "@/app/data";
 
 const Home = () => {
   return (
@@ -18,13 +17,9 @@ const Home = () => {
             transform: '0.5s ease-in-out',
             translateY: '5rem'
           }}
+          cardMedia={ cardMedia }
           items={ services }
         />
-      </section>
-      <section className="skills">
-        <ContentFlow content={ skills }/>
-        <ContentFlow content={ skills } direction="right" />
-        <ContentFlow content={ skills } />
       </section>
       <section className="case-studies">
         <h2>Case Studies</h2>

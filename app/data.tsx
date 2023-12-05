@@ -1,4 +1,9 @@
+import { ReactNode } from "react";
+import AnimatedImageCarousel from "./components/animated-image-carousel/animated-image-carousel.component";
 import { Case, SerializedImage, Service, Skill } from "./types";
+
+
+
 
 export const cases: Case[] = [
   { 
@@ -81,4 +86,14 @@ export const skills: Skill[] = [
     },
     name: 'React'
   }
+];
+
+export const cardMedia: ReactNode[] = [
+  <AnimatedImageCarousel
+    key={ 0 }
+    headingAnimation="whizLeftToRight"
+    logoAnimation='whizRightToLeft'
+    skills={ skills } 
+    time={ 2 }
+  />
 ];
