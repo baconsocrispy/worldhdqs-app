@@ -1,4 +1,4 @@
-.logo-carousel {
+.animated-carousel {
   position: relative;
   display: grid;
   grid-template-rows: 25% 75%;
@@ -14,6 +14,7 @@
   }
 
   &__image-container {
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;

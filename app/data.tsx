@@ -97,11 +97,6 @@ export const rotatingContent: ReactNode[] = [
   <p key={ 2 }>Test 3</p>,
   <p key={ 3 }>Test 4</p>,
   <p key={ 4 }>Test 5</p>,
-  // <p key={ 5 }>Test 1</p>,
-  // <p key={ 6 }>Test 2</p>,
-  // <p key={ 7 }>Test 3</p>,
-  // <p key={ 8 }>Test 4</p>,
-  // <p key={ 9 }>Test 5</p>
 ];
 
 export const cardMedia: ReactNode[] = [
@@ -115,6 +110,7 @@ export const cardMedia: ReactNode[] = [
   <RotatingCarousel 
     key={ 1 }
     items={ rotatingContent }
+    panelOffset={ 15 }
     time={ 5 }
   />
 ];

@@ -34,22 +34,22 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
   };
 
   return (
-    <div className="logo-carousel">
+    <div className="animated-carousel">
       <h4 
-        className="logo-carousel__heading"
+        className="animated-carousel__heading"
         style={{ animation: `${ headingAnimation } ${ time * 1000 }ms ease-in-out infinite`}}
         onAnimationIteration={ handelAnimationIteration }
       >
         { skills[currentSkillIndex].name }
       </h4>
       <div 
-        className="logo-carousel__image-container"
+        className="animated-carousel__image-container"
         onAnimationIteration={ handelAnimationIteration }
         style={{ animation: `${ logoAnimation } ${ time * 1000 }ms ease-in-out infinite` }}
       >
         <Image
           alt='img'
-          className="logo-carousel__image"
+          className="animated-carousel__image"
           src={ skills[currentSkillIndex].logo.src }
           width={ 100 }
           height={ 100 }  
