@@ -1,9 +1,7 @@
 import { ReactNode } from "react";
 import AnimatedImageCarousel from "./components/animated-image-carousel/animated-image-carousel.component";
 import { Case, SerializedImage, Service, Skill } from "./types";
-
-
-
+import RotatingCarousel from "./components/carousel-rotating/carousel-rotating.component";
 
 export const cases: Case[] = [
   { 
@@ -88,6 +86,19 @@ export const skills: Skill[] = [
   }
 ];
 
+export const rotatingContent: ReactNode[] = [
+  <p key={ 0 }>Test 1</p>,
+  <p key={ 1 }>Test 2</p>,
+  <p key={ 2 }>Test 3</p>,
+  <p key={ 3 }>Test 4</p>,
+  <p key={ 4 }>Test 5</p>,
+  // <p key={ 5 }>Test 1</p>,
+  // <p key={ 6 }>Test 2</p>,
+  // <p key={ 7 }>Test 3</p>,
+  // <p key={ 8 }>Test 4</p>,
+  // <p key={ 9 }>Test 5</p>
+];
+
 export const cardMedia: ReactNode[] = [
   <AnimatedImageCarousel
     key={ 0 }
@@ -95,5 +106,10 @@ export const cardMedia: ReactNode[] = [
     logoAnimation='whizRightToLeft'
     skills={ skills } 
     time={ 2 }
+  />,
+  <RotatingCarousel 
+    key={ 1 }
+    items={ rotatingContent }
+    time={ 5 }
   />
 ];

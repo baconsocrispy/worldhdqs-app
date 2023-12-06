@@ -19,7 +19,7 @@ const AnimatedImageCarousel: FC<AnimatedImageCarouselProps> = ({
   headingAnimation,
   logoAnimation, 
   skills, 
-  time = 2 
+  time = 2
 }) => {
   // state
   const [ currentSkillIndex, setCurrentSkillIndex ] = useState(0);
@@ -50,7 +50,7 @@ const AnimatedImageCarousel: FC<AnimatedImageCarouselProps> = ({
         <Image
           alt='img'
           className="logo-carousel__image"
-          src={ skills[currentSkillIndex].logo.src}
+          src={ skills[currentSkillIndex].logo.src }
           width={ 100 }
           height={ 100 }  
         />

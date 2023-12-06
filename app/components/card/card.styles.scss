@@ -4,6 +4,7 @@
   gap: $padding-default;
   padding: $padding-default;
   border: 1px solid red;
+  overflow: hidden;
 
   &--vertical {
     grid-template-rows: 50% repeat(2, max-content);
