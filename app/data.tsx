@@ -1,7 +1,12 @@
+// library
 import { ReactNode } from "react";
-import AnimatedImageCarousel from "./components/animated-image-carousel/animated-image-carousel.component";
-import { Case, SerializedImage, Service, Skill } from "./types";
+
+// components
+import AnimatedCarousel from "./components/carousel-animated/carousel-animated.component";
 import RotatingCarousel from "./components/carousel-rotating/carousel-rotating.component";
+
+// types
+import { Case, SerializedImage, Service, Skill } from "./types";
 
 export const cases: Case[] = [
   { 
@@ -100,7 +105,7 @@ export const rotatingContent: ReactNode[] = [
 ];
 
 export const cardMedia: ReactNode[] = [
-  <AnimatedImageCarousel
+  <AnimatedCarousel
     key={ 0 }
     headingAnimation="whizLeftToRight"
     logoAnimation='whizRightToLeft'

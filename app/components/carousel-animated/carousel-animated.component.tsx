@@ -8,14 +8,14 @@ import Image from "next/image";
 // types
 import { Skill } from "@/app/types";
 
-type AnimatedImageCarouselProps = {
+type AnimatedCarouselProps = {
   headingAnimation?: string;
   logoAnimation?: string;
   skills: Skill[];
   time?: number; // animation duration in seconds
 };
 
-const AnimatedImageCarousel: FC<AnimatedImageCarouselProps> = ({ 
+const AnimatedCarousel: FC<AnimatedCarouselProps> = ({ 
   headingAnimation,
   logoAnimation, 
   skills, 
@@ -59,4 +59,4 @@ const AnimatedImageCarousel: FC<AnimatedImageCarouselProps> = ({
   )
 };
 
-export default AnimatedImageCarousel;
+export default AnimatedCarousel;
