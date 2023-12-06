@@ -48,7 +48,7 @@ const AnimatedEntryWrapper: FC<AnimatedEntryWrapperProps>  = ({
     if (targetElement.current) {
       observer.observe(targetElement.current);
     }
-  }, []);
+  }, [ intersectionOptions ]);
 
   return (
     <Wrapper 
