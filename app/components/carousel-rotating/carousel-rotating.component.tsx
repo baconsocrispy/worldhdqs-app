@@ -47,7 +47,6 @@ const RotatingCarousel: FC<RotatingCarouselProps> = ({
             panelOffset ? 
               setApothem(currentApothem + panelOffset) :
               setApothem(currentApothem)
-            console.log(panelWidth);
             resizeTimer = null;
           }, debounce)
         });

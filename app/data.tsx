@@ -8,6 +8,7 @@ import RotatingCarousel from "./components/carousel-rotating/carousel-rotating.c
 // types
 import { Case, SerializedImage, Service, Skill } from "./types";
 import FlipCarousel from "./components/carousel-flip/carousel-flip.component";
+import WebsitePreview from "./components/website-preview/website-preview.component";
 
 export const cases: Case[] = [
   { 
@@ -134,3 +135,9 @@ export const cardMedia: ReactNode[] = [
     key={ 2 }
   />
 ];
+
+export const caseStudyMedia = [
+  <WebsitePreview key={ 0 } src={ 'https://www.brothers-sonsamerica.com'  } />,
+  <WebsitePreview key={ 1 } src={ 'https://www.amazon.com'  } />,
+  <WebsitePreview key={ 2 } src={ 'https://player.vimeo.com/video/827770760' } />
+]

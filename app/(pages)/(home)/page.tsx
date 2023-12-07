@@ -3,7 +3,7 @@ import Cards from "@/app/components/cards/cards.component";
 import Hero from "@/app/components/hero/hero.component";
 
 // data
-import { cardMedia, cases, images, services } from "@/app/data";
+import { cardMedia, caseStudyMedia, cases, images, services } from "@/app/data";
 
 const Home = () => {
   return (
@@ -29,10 +29,11 @@ const Home = () => {
             transform: '0.5s ease-in',
             translateX: '-5rem'
           }}
-          cardType='horizontal'
           cardIntersectionOptions={{
             threshold: 0.75
           }}
+          cardMedia={ caseStudyMedia }
+          cardType='horizontal'
           items={ cases } 
           layout='alternating'  
         />
