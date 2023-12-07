@@ -1,17 +1,28 @@
 'use client'
 // library
-import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from "react";
+import { FC, ReactNode, useEffect, useRef, useState } from "react";
 
 // types
 type RotatingCarouselProps = {
+  animationOptions?: {
+    name: string;
+    duration: number;
+    timingFunction: string;
+    iterationCount: string;
+  };
   debounce?: number; // number representing milliseconds
   items: ReactNode[];
   panelOffset?: number;
-  time?: number;
 };
 
 const RotatingCarousel: FC<RotatingCarouselProps> = ({ 
-  debounce = 0, items, panelOffset, time = 2 
+  animationOptions = { 
+    timingFunction: 'linear', 
+    iterationCount: 'infinite' 
+  }, 
+  debounce = 0, 
+  items, 
+  panelOffset
 }) => {
   // state
   const carousel = useRef<HTMLDivElement>(null);
@@ -54,15 +65,27 @@ const RotatingCarousel: FC<RotatingCarouselProps> = ({
   }, [ debounce, items.length, panelOffset ]);
 
   return (
-    <div className="rotating-carousel" ref={ carousel }>
+    <div 
+      className="rotating-carousel" 
+      ref={ carousel }
+    >
       <div 
-        className="rotating-carousel__container"
+        className="rotating-carousel__content-container"
+        style={{ 
+          animationName: animationOptions?.name, 
+          animationDuration: `${ animationOptions?.duration }s`, 
+          animationTimingFunction: animationOptions?.timingFunction,
+          animationIterationCount: animationOptions?.iterationCount
+        }}
       >
         { items.map((item, index) => 
           <div
             className='rotating-carousel__content'
             style={{ 
-              transform: `rotateY(${( 360 / items.length) * index }deg) translateZ(${ apothem }px)`
+              transform: `
+                rotateY(${( 360 / items.length) * index }deg) 
+                translateZ(${ apothem }px)
+              `
             }} 
             key={ index }
           >
@@ -71,7 +94,6 @@ const RotatingCarousel: FC<RotatingCarouselProps> = ({
         )}
       </div>
     </div>
-   
   )   
 };
 

@@ -7,6 +7,7 @@ import RotatingCarousel from "./components/carousel-rotating/carousel-rotating.c
 
 // types
 import { Case, SerializedImage, Service, Skill } from "./types";
+import FlipCarousel from "./components/carousel-flip/carousel-flip.component";
 
 export const cases: Case[] = [
   { 
@@ -108,9 +109,28 @@ export const cardMedia: ReactNode[] = [
     time={ 2 }
   />,
   <RotatingCarousel 
+    animationOptions={{
+      name: 'rotate',
+      duration: 10,
+      timingFunction: 'linear',
+      iterationCount: 'infinite'
+    }}
     key={ 1 }
     items={ rotatingContent }
     panelOffset={ 15 }
-    time={ 5 }
+  />,
+  <FlipCarousel 
+    items={[ 
+      <p key={ 0 }>test 1</p>,
+      <p key={ 1 }>test 2</p>,
+      <p key={ 2 }>test 3</p>,
+      <p key={ 3 }>test 4</p>,
+      <p key={ 4 }>test 5</p>, 
+      <p key={ 5 }>test 6</p>,
+      <p key={ 6 }>test 7</p>,
+      <p key={ 7 }>test 8</p>,
+      <p key={ 8 }>test 9</p>,
+    ]}
+    key={ 2 }
   />
 ];

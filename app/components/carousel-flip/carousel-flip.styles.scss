@@ -1,0 +1,34 @@
+.flip-carousel {
+  width: 100%;
+  height: 100%;
+
+  &__content-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    // transition: transform 2s ease-in-out;
+
+    &--flipped {
+      transform: rotateX(180deg);
+    }
+  }
+
+  &__front-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    backface-visibility: hidden;
+  }
+
+  &__back-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+  }
+
+}
