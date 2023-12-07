@@ -14,16 +14,19 @@ export const cases: Case[] = [
   { 
     id: 1,
     name: 'BB&S Lighting',
+    image: { id: 1, src: '/1x/bg1.png' },
     description: 'Tailor-made, full stack  website for US industrial lighting distributor'
   },
   {
     id: 2, 
+    image: { id: 1, src: '/1x/bg2.png' },
     name: 'King Scooters',
     description: 'Web Development, Branding, and Content Creation for electric scooter startup'
   },
   {
     id: 3,
     name: 'Improv Comedy Club',
+    image: { id: 1, src: '/1x/bg3.png' },
     description: 'Production management and budgeting for commercial video shoot'
   }
 ];
@@ -137,7 +140,7 @@ export const cardMedia: ReactNode[] = [
 ];
 
 export const caseStudyMedia = [
-  <WebsitePreview key={ 0 } src={ 'https://www.brothers-sonsamerica.com'  } />,
-  <WebsitePreview key={ 1 } src={ 'https://www.amazon.com'  } />,
-  <WebsitePreview key={ 2 } src={ 'https://player.vimeo.com/video/827770760' } />
-]
+  // <WebsitePreview key={ 0 } src={ 'https://www.brothers-sonsamerica.com'  } />,
+  // <WebsitePreview key={ 1 } src={ 'https://www.amazon.com'  } />,
+  // <WebsitePreview key={ 2 } src={ 'https://player.vimeo.com/video/827770760' } />
+];

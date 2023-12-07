@@ -3,7 +3,6 @@
   display: grid;
   gap: $padding-default;
   padding: $padding-default;
-  border: 1px solid red;
   overflow: hidden;
 
   &--vertical {
@@ -19,6 +18,11 @@
   &__media {
     position: relative;
     height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
   }
 
   &__text {

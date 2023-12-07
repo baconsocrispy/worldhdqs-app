@@ -3,6 +3,7 @@ import { ElementType, FC, ReactNode } from "react";
 
 // components
 import AnimatedEntryWrapper, { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
+import Image from "next/image";
 import Link from "next/link";
 
 // types
@@ -34,7 +35,15 @@ const Card: FC<CardProps> = ({
       wrapperElement={ elementType }
     >
       <div className="card__media"> 
-        {  media }
+        {  media ??
+            <Image
+              className="card__image"
+              src={ item.image ? item.image.src : '#' }
+              width={ 2000 }
+              height={ 500 }
+              alt={ item.name }
+            />
+        }
       </div>
       <div className="card__text">
         <h3 className="card__heading">{ item.name }</h3>
