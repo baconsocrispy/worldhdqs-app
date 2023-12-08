@@ -30,9 +30,9 @@ const Home = () => {
       </section>
       <section className="case-studies">
         <Heading size={ 2 }>
-          Portfolio Highlights
+          Selected Works
         </Heading>
-        <TextArea text='Whether helping brands breathe life into existing websites or building out an entire brand presence from scratch, World Headquarters has the tools to meet your needs.'/>
+        <TextArea text='Whether helping businesses and individuals breathe life into existing websites or building out an entire brand presence from scratch, World Headquarters has the tools to meet your needs.'/>
         <Cards 
           cardEntryAnimation={{
             opacity: '0.5s ease-in',
