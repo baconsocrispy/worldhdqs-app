@@ -39,16 +39,16 @@ const Card: FC<CardProps> = ({
             <Image
               className="card__image"
               src={ item.image ? item.image.src : '#' }
-              width={ 2000 }
-              height={ 500 }
+              fill
               alt={ item.name }
             />
         }
       </div>
-      <div className="card__text">
-        <h3 className="card__heading">{ item.name }</h3>
-        <p className="card__sub-heading">{ item.description }</p>
-      </div>
+      
+      <h3 className="card__heading">{ item.name }</h3>
+      <h3 className="card__sub-heading">{ item.description }</h3>
+      <p className="card__copy">{ item.description }</p>
+
       <Link 
         href="#"
         className="card__link"

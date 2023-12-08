@@ -25,13 +25,22 @@ const Cards: FC<CardsProps> = ({
   items, 
   layout = 'grid',
 }) => {
+  // reverse translateX for even numbered list items when in alternating mode
+  const alternatingEntryAnimation = {
+    ...cardEntryAnimation,
+    translateX: cardEntryAnimation?.translateX && -cardEntryAnimation?.translateX
+  };
+
   return (
     <ul className={ `cards cards--${ layout }`}>
       {
         items.map((item, index) => 
           <Card
             key={ item.id }
-            entryAnimation={ cardEntryAnimation }
+            entryAnimation={ (layout === 'alternating' && index % 2 !== 0) ? 
+              alternatingEntryAnimation :
+              cardEntryAnimation
+            }
             intersectionOptions={ cardIntersectionOptions }
             item={ item }
             layout={ cardType }

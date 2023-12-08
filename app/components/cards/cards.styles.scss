@@ -10,5 +10,13 @@
 
   &--alternating {
     grid-template-columns: 1fr;
+
+    > .card--horizontal:nth-child(even) {
+      grid-template-columns: 25% 75%;
+      
+      > .card__media {
+        grid-column: 2 / -1;
+      }
+    }
   }
 }

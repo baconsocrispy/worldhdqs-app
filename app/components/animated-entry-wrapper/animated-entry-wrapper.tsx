@@ -12,8 +12,8 @@ import {
 export type AnimatedEntryWrapperStyles = {
   opacity?: string; // opacity transition in seconds and timing function (i.e. '0.5s ease-in-out')
   transform?: string;  // transform transition in seconds
-  translateX?: string; // x-axis offset at start
-  translateY?: string; // y-axis offset at start
+  translateX?: number; // x-axis offset in rem at start
+  translateY?: number; // y-axis offset in rem at start
 };
 
 type AnimatedEntryWrapperProps = {
@@ -57,8 +57,8 @@ const AnimatedEntryWrapper: FC<AnimatedEntryWrapperProps>  = ({
       style={{ 
         opacity: `${ styleOptions?.opacity ? 0 : 1 }`, 
         transform: `
-          translateX(${ styleOptions?.translateX ?? '0' })
-          translateY(${ styleOptions?.translateY ?? '0' })
+          translateX(${ styleOptions?.translateX ?? '0' }rem)
+          translateY(${ styleOptions?.translateY ?? '0' }rem)
         `, 
         transition: `
           opacity ${ styleOptions?.opacity ?? '0s' },

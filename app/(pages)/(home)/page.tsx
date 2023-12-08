@@ -15,7 +15,7 @@ const Home = () => {
           cardEntryAnimation={{
             opacity: '1s ease-in-out',
             transform: '0.5s ease-in-out',
-            translateY: '5rem'
+            translateY: 5
           }}
           cardMedia={ cardMedia }
           items={ services }
@@ -27,10 +27,10 @@ const Home = () => {
           cardEntryAnimation={{
             opacity: '0.5s ease-in',
             transform: '0.5s ease-in',
-            translateX: '-5rem'
+            translateX: -10
           }}
           cardIntersectionOptions={{
-            threshold: 0.75
+            threshold: 0.5
           }}
           cardMedia={ caseStudyMedia }
           cardType='horizontal'
