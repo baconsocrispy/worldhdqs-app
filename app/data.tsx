@@ -25,7 +25,7 @@ export const cases: Case[] = [
   },
   {
     id: 3,
-    name: 'Improv Comedy Club',
+    name: 'GE',
     image: { id: 1, src: '/1x/bg3.png' },
     description: 'Production management and budgeting for commercial video shoot'
   }

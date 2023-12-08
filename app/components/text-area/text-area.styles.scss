@@ -1,0 +1,11 @@
+.text-area {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  
+  &__text {
+    width: 50%;
+  }
+}

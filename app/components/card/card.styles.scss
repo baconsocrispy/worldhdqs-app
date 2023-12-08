@@ -46,6 +46,10 @@
     gap: $padding-default;
   }
 
+  &__heading {
+    font-variation-settings: $font-weight-header;
+  }
+
   &__link {
     text-decoration: underline;
   }

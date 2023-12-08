@@ -8,6 +8,7 @@ import Link from "next/link";
 
 // types
 import { Case, Service } from "@/app/types";
+import Heading from "../heading/heading.component";
 
 type CardProps = {
   elementType?: ElementType;
@@ -45,8 +46,12 @@ const Card: FC<CardProps> = ({
         }
       </div>
       
-      <h3 className="card__heading">{ item.name }</h3>
-      <h3 className="card__sub-heading">{ item.description }</h3>
+      <Heading size={ 3 } className="card__heading">
+        { item.name }
+      </Heading>
+      <Heading size={ 4 } className="card__sub-heading">
+        { item.description }
+      </Heading>
       <p className="card__copy">{ item.description }</p>
 
       <Link 
