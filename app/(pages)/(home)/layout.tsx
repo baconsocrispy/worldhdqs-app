@@ -8,6 +8,7 @@ import Nav from '@/app/components/nav/nav.component';
 
 // styles
 import '@/app/styles/main.styles.scss';
+import Footer from '@/app/components/footer/footer.component';
 
 export const metadata: Metadata = {
   title: 'WorldHQ',

@@ -1,5 +1,6 @@
 // components
 import Cards from "@/app/components/cards/cards.component";
+import Footer from "@/app/components/footer/footer.component";
 import Heading from "@/app/components/heading/heading.component";
 import Hero from "@/app/components/hero/hero.component";
 import Link from "@/app/components/link/link.component";
@@ -53,7 +54,7 @@ const Home = () => {
           items={ cases } 
           layout='alternating'  
         />
-        <Link href='#'>
+        <Link type='cta'>
           View Portfolio
         </Link>
       </section>
@@ -64,6 +65,7 @@ const Home = () => {
         <TextArea text='Please leave a message' />
         <ContactForm />
       </section>
+      <Footer />
     </main>
   )
 };

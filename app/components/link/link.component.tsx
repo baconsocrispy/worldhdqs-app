@@ -7,7 +7,7 @@ import NextLink from "next/link";
 // types
 type LinkProps = {
   className?: string;
-  href: string;
+  href?: string;
   children: ReactNode;
   type?: 'cta' | 'default' | 'nav';
 };
@@ -21,7 +21,7 @@ const Link: FC<LinkProps> = ({
   return (
     <NextLink 
       className={ `link link--${ type } ${ className ?? '' }` } 
-      href={ href }
+      href={ href ?? '#' }
     >
       { children }
     </NextLink>

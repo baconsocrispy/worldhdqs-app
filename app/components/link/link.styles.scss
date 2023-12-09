@@ -1,4 +1,11 @@
 // applies styles to next.js link component
 .link {
   text-decoration: underline;
+
+  &--cta {
+    background-color: black;
+    color: white;
+    padding: $padding-default;
+    text-decoration: none;
+  }
 }
