@@ -10,6 +10,7 @@ import { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-e
 
 type CardsProps = {
   cardEntryAnimation?: AnimatedEntryWrapperStyles;
+  cardLinkText?: string;
   cardMedia?: ReactNode[];
   cardIntersectionOptions?: IntersectionObserverInit;
   cardType?: "horizontal" | "vertical";
@@ -20,6 +21,7 @@ type CardsProps = {
 const Cards: FC<CardsProps> = ({ 
   cardEntryAnimation,
   cardIntersectionOptions,
+  cardLinkText,
   cardMedia,
   cardType = 'vertical',
   items, 
@@ -44,6 +46,7 @@ const Cards: FC<CardsProps> = ({
             intersectionOptions={ cardIntersectionOptions }
             item={ item }
             layout={ cardType }
+            linkText={ cardLinkText }
             media={ cardMedia && cardMedia[index] }
           />
         )

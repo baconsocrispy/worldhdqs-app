@@ -20,7 +20,7 @@ const Link: FC<LinkProps> = ({
 }) => {
   return (
     <NextLink 
-      className={ `link link--${ type } ${ className }`} 
+      className={ `link link--${ type } ${ className ?? '' }` } 
       href={ href }
     >
       { children }

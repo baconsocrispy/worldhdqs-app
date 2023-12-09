@@ -13,8 +13,10 @@ import Heading from "../heading/heading.component";
 type CardProps = {
   elementType?: ElementType;
   entryAnimation?: AnimatedEntryWrapperStyles;
+  href?: string;
   intersectionOptions?: IntersectionObserverInit;
   item: Case | Service;
+  linkText?: string;
   layout?: "horizontal" | "vertical";
   media?: ReactNode;
 };
@@ -22,9 +24,11 @@ type CardProps = {
 const Card: FC<CardProps> = ({ 
   elementType = 'li',
   entryAnimation,
+  href,
   intersectionOptions,
   item, 
   layout = 'vertical' ,
+  linkText,
   media
 }) => {
   return (
@@ -49,16 +53,22 @@ const Card: FC<CardProps> = ({
       <Heading size={ 3 } className="card__heading">
         { item.name }
       </Heading>
+
       <Heading size={ 4 } className="card__sub-heading">
         { item.description }
       </Heading>
+
       <p className="card__copy">{ item.description }</p>
 
-      <Link 
-        href="#"
-      >
-        Learn More
-      </Link>
+      { (linkText || href)  &&
+          <div>
+            <Link 
+              href={ href ?? '#' }
+            >
+              { linkText }
+            </Link>
+          </div>
+      }
     </AnimatedEntryWrapper>
   )
 };

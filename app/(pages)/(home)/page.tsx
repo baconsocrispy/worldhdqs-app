@@ -29,6 +29,7 @@ const Home = () => {
             transform: '0.5s ease-in-out',
             translateY: 5
           }}
+          cardLinkText="Learn More"
           cardMedia={ cardMedia }
           items={ services }
         />
