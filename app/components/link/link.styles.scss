@@ -3,9 +3,17 @@
   text-decoration: underline;
 
   &--cta {
+    justify-self: center;
     background-color: black;
+    border: 1px solid black;
     color: white;
     padding: $padding-default;
     text-decoration: none;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
   }
 }

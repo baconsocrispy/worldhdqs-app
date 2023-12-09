@@ -4,6 +4,7 @@ import Footer from "@/app/components/footer/footer.component";
 import Heading from "@/app/components/heading/heading.component";
 import Hero from "@/app/components/hero/hero.component";
 import Link from "@/app/components/link/link.component";
+import Section from "@/app/components/section/section.component";
 import TextArea from "@/app/components/text-area/text-area.component";
 
 // forms
@@ -17,7 +18,7 @@ const Home = () => {
   return (
     <main className="home-page">
       <Hero images={ images }/>
-      <section className="services">
+      <Section id="services">
         <Heading size={ 2 }>
           Services
         </Heading>
@@ -34,8 +35,8 @@ const Home = () => {
           cardMedia={ cardMedia }
           items={ services }
         />
-      </section>
-      <section className="case-studies">
+      </Section>
+      <Section id="selected-works">
         <Heading size={ 2 }>
           Selected Works
         </Heading>
@@ -57,14 +58,14 @@ const Home = () => {
         <Link type='cta'>
           View Portfolio
         </Link>
-      </section>
-      <section className="contact">
+      </Section>
+      <Section id="contact">
         <Heading size={ 2 }>
           Contact
         </Heading>
         <TextArea text='Please leave a message' />
         <ContactForm />
-      </section>
+      </Section>
       <Footer />
     </main>
   )
