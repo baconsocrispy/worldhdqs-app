@@ -4,7 +4,7 @@ import { ElementType, FC, ReactNode } from "react";
 // components
 import AnimatedEntryWrapper, { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "../link/link.component";
 
 // types
 import { Case, Service } from "@/app/types";
@@ -15,7 +15,7 @@ type CardProps = {
   entryAnimation?: AnimatedEntryWrapperStyles;
   intersectionOptions?: IntersectionObserverInit;
   item: Case | Service;
-  layout?: string | undefined;
+  layout?: "horizontal" | "vertical";
   media?: ReactNode;
 };
 
@@ -56,7 +56,6 @@ const Card: FC<CardProps> = ({
 
       <Link 
         href="#"
-        className="card__link"
       >
         Learn More
       </Link>

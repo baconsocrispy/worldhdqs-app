@@ -12,9 +12,9 @@ type CardsProps = {
   cardEntryAnimation?: AnimatedEntryWrapperStyles;
   cardMedia?: ReactNode[];
   cardIntersectionOptions?: IntersectionObserverInit;
-  cardType?: string;
+  cardType?: "horizontal" | "vertical";
   items: Case[] | Service[];
-  layout?: string;
+  layout?: "alternating" | "grid";
 };
 
 const Cards: FC<CardsProps> = ({ 

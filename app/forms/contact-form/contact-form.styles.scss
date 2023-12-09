@@ -1,0 +1,7 @@
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: $padding-default;
+  width: 100%;
+  place-content: center;
+}

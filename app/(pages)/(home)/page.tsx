@@ -2,10 +2,15 @@
 import Cards from "@/app/components/cards/cards.component";
 import Heading from "@/app/components/heading/heading.component";
 import Hero from "@/app/components/hero/hero.component";
+import Link from "@/app/components/link/link.component";
 import TextArea from "@/app/components/text-area/text-area.component";
+
+// forms
+import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
 import { cardMedia, caseStudyMedia, cases, images, services } from "@/app/data";
+
 
 const Home = () => {
   return (
@@ -47,12 +52,16 @@ const Home = () => {
           items={ cases } 
           layout='alternating'  
         />
-        <a href="#">View Portfolio</a>
+        <Link href='#'>
+          View Portfolio
+        </Link>
       </section>
       <section className="contact">
         <Heading size={ 2 }>
           Contact
         </Heading>
+        <TextArea text='Please leave a message' />
+        <ContactForm />
       </section>
     </main>
   )

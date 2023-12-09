@@ -7,20 +7,26 @@
 @import '@/app/styles/global/utilities.styles';
 
 // components
+@import '@/app/components/button/button.styles';
 @import '@/app/components/card/card.styles';
 @import '@/app/components/cards/cards.styles';
 @import '@/app/components/carousel-animated/carousel-animated.styles';
 @import '@/app/components/carousel-flip/carousel-flip.styles';
 @import '@/app/components/carousel-rotating/carousel-rotating.styles';
 @import '@/app/components/content-flow/content-flow.styles';
+@import '@/app/components/form-input/form-input.styles';
 @import '@/app/components/grid/grid.styles';
 @import '@/app/components/heading/heading.styles';
 @import '@/app/components/hero/hero.styles';
+@import '@/app/components/link/link.styles';
 @import '@/app/components/logo/logo.styles';
 @import '@/app/components/nav/nav.styles';
 @import '@/app/components/nav-menu/nav-menu.styles';
 @import '@/app/components/text-area/text-area.styles';
 @import '@/app/components/website-preview/website-preview.styles';
+
+// forms
+@import '@/app/forms/contact-form/contact-form.styles';
 
 // pages
 @import '@/app/(pages)/(home)/home-page.styles';
