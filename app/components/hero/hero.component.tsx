@@ -16,11 +16,16 @@ type HeroProps = {
 };
 
 const Hero: FC<HeroProps> = ({ heading, images, leadIn, subHeading }) => {
-  const [ currentSection, setCurrentSection ] = useState<number>(0);
-  const [ currentImage, setCurrentImage ] = useState<string>(images[0].src)
+  // state
+  const [ selectedImage, setSelectedImage ] = useState<string>(images[0].src);
+  const [ hoverImage, setHoverImage ] = useState<string | null>(null);
 
   const handleMouseEnter = (index: number) => {
-    setCurrentImage(images[index].src);
+    setHoverImage(images[index].src);
+  };
+
+  const handleMouseLeave = () => {
+    setHoverImage(null);
   };
 
   return (
@@ -28,7 +33,7 @@ const Hero: FC<HeroProps> = ({ heading, images, leadIn, subHeading }) => {
       <div className="hero__content">
         <Image 
           className="hero__image"
-          src={ currentImage }
+          src={ hoverImage ?? selectedImage }
           fill
           alt="bg1"
         />
@@ -42,13 +47,15 @@ const Hero: FC<HeroProps> = ({ heading, images, leadIn, subHeading }) => {
           </Heading>
         </div>
       </div>
-      <div className="hover-divisions">
+      <div className="hover-overlay">
           {
             images.map((image, index) => 
               <div 
                 key={ image.id } 
-                className="hover-divisions__item" 
+                className="hover-divisions__section" 
                 onMouseEnter={ () => handleMouseEnter(index) }
+                onMouseLeave={ handleMouseLeave }
+                onClick={ () => setSelectedImage(images[index].src) }
               />
             )
           }
