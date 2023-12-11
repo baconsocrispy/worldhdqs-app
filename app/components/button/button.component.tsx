@@ -15,7 +15,7 @@ const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <button 
-      className={ `button button__${ type } ${ className }`}
+      className={ `button button__${ type } ${ className ?? '' }`}
       type={ type }
     >
       { text }

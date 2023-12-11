@@ -19,14 +19,14 @@ const FormTextArea: FC<FormTextAreaProps> = ({
     <>
       { label && 
         <label 
-          className={ `form-text-area__label ${ labelClass }` }
+          className={ `form-text-area__label ${ labelClass ?? '' }` }
           htmlFor={ id }>
           { label }
         </label>
       }
 
       <textarea
-        className={ `form-text-area__text-area ${ textAreaClass }` }
+        className={ `form-text-area__text-area ${ textAreaClass ?? '' }` }
         id={ id }
       />
     </>

@@ -17,7 +17,14 @@ import { cardMedia, caseStudyMedia, cases, images, services } from "@/app/data";
 const Home = () => {
   return (
     <main className="home-page">
-      <Hero images={ images }/>
+      <Section id='welcome'>
+        <Hero 
+          heading='World Headquarters' 
+          images={ images }
+          leadIn='You Have Reached'
+          subHeading="Creative Workshop"
+        />
+      </Section>
       <Section id="services">
         <Heading size={ 2 }>
           Services

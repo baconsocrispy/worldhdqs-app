@@ -21,7 +21,7 @@ const FormInput: FC<FormInputProps> = ({
     <>
       { label && 
         <label 
-          className={ `form-input__label ${ labelClass }`}
+          className={ `form-input__label ${ labelClass ?? '' }`}
           htmlFor={ id }
         >
           { label }
@@ -29,7 +29,7 @@ const FormInput: FC<FormInputProps> = ({
       }
 
       <input 
-        className={ `form-input__input ${ inputClass }`}
+        className={ `form-input__input ${ inputClass ?? '' }`}
         id={ id } 
         type={ type } 
       />

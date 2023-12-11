@@ -3,15 +3,19 @@
 import { FC, useState } from "react";
 
 // components
+import Heading from "../heading/heading.component";
 import Image from "next/image";
 
 // types
 import { SerializedImage } from "@/app/types";
 type HeroProps = {
+  heading?: string;
   images: SerializedImage[];
+  leadIn?: string;
+  subHeading?: string;
 };
 
-const Hero: FC<HeroProps> = ({ images }) => {
+const Hero: FC<HeroProps> = ({ heading, images, leadIn, subHeading }) => {
   const [ currentSection, setCurrentSection ] = useState<number>(0);
   const [ currentImage, setCurrentImage ] = useState<string>(images[0].src)
 
@@ -20,7 +24,7 @@ const Hero: FC<HeroProps> = ({ images }) => {
   };
 
   return (
-    <section className="hero">
+    <div className="hero">
       <div className="hero__content">
         <Image 
           className="hero__image"
@@ -29,13 +33,13 @@ const Hero: FC<HeroProps> = ({ images }) => {
           alt="bg1"
         />
         <div className="hero__text"> 
-          <p className="hero__lead-in">You Have Reached</p>
-          <h1 className="hero__heading">
-            World Headquarters
-          </h1>
-          <p className="hero__sub-heading">
-            Creative Workshop
-          </p>
+          <p className="hero__lead-in">{ leadIn }</p>
+          <Heading className="hero__heading" size={ 1 }>
+            { heading }
+          </Heading>
+          <Heading className="hero__sub-heading" size={ 4 }>
+            { subHeading }
+          </Heading>
         </div>
       </div>
       <div className="hover-divisions">
@@ -48,8 +52,8 @@ const Hero: FC<HeroProps> = ({ images }) => {
               />
             )
           }
-        </div>
-    </section>
+      </div>
+    </div>
   )
 };
 

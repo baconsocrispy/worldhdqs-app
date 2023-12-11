@@ -12,7 +12,7 @@ const Heading: FC<HeadingProps> = ({ children, className, size = 1 }) => {
   const HeadingTag = `h${ size }` as keyof JSX.IntrinsicElements;
 
   return (
-    <HeadingTag className={ `heading heading--${ size } ${ className }` }>
+    <HeadingTag className={ `heading heading--${ size } ${ className ?? '' }` }>
       { children }
     </HeadingTag>
   )

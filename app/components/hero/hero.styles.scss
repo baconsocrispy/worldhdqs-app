@@ -9,6 +9,9 @@
 
   &__text {
     @include absolute-center;
+    top: 60%;
+    display: grid;
+    gap: $padding-default;
     mix-blend-mode: difference;
     color: white;
   }
