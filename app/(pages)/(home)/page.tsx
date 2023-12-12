@@ -11,7 +11,7 @@ import TextArea from "@/app/components/text-area/text-area.component";
 import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
-import { cardMedia, caseStudyMedia, cases, images, services } from "@/app/data";
+import { cardMedia, caseStudyMedia, cases, heroContent, images, services } from "@/app/data";
 
 
 const Home = () => {
@@ -19,6 +19,7 @@ const Home = () => {
     <main className="home-page">
       <Section id='welcome'>
         <Hero 
+          content={ heroContent }
           heading='World Headquarters' 
           images={ images }
           leadIn='You Have Reached'

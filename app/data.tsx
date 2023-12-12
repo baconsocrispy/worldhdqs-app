@@ -6,9 +6,11 @@ import AnimatedCarousel from "./components/carousel-animated/carousel-animated.c
 import RotatingCarousel from "./components/carousel-rotating/carousel-rotating.component";
 
 // types
-import { Case, SerializedImage, Service, Skill } from "./types";
+import { Case, HeroContent, SerializedImage, Service, Skill } from "./types";
 import FlipCarousel from "./components/carousel-flip/carousel-flip.component";
 import WebsitePreview from "./components/website-preview/website-preview.component";
+import City from "./content/city/city.content";
+import WinterScene from "./content/winter-scene/winter-scene.content";
 
 export const cases: Case[] = [
   { 
@@ -33,6 +35,11 @@ export const cases: Case[] = [
 
 export const images: SerializedImage[] = [
   { id: 1, src: '/1x/bg1.png' }, { id: 2, src: '/1x/bg2.png' }, { id: 3, src: '/1x/bg3.png' }, { id: 4, src: '/1x/bg4.png' }, { id: 5, src: '/1x/bg5.png' }, { id: 6, src: '/1x/bg6.png' }
+];
+
+export const heroContent: ReactNode[] = [
+  <City image={ images[0] } key={ 0 } />, 
+  <WinterScene image={ images[1] } key={ 1 } />
 ];
 
 export const services: Service[] = [

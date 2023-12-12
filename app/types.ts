@@ -1,9 +1,16 @@
+import { ReactNode } from "react";
+
 export type Case = {
   description: string;
   id: number;
   image?: SerializedImage;
   name: string;
 };
+
+export type HeroContent = {
+  id: number;
+  image: SerializedImage;
+} & Element;
 
 export type Logo = {
   id: number;

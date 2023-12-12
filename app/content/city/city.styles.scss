@@ -1,0 +1,7 @@
+.city {
+  &__image {
+    z-index: -1;
+    object-fit: cover;
+    background-color: pink;
+  }
+}
