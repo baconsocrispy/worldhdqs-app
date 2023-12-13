@@ -9,6 +9,7 @@ import Nav from '@/app/components/nav/nav.component';
 // styles
 import '@/app/styles/main.styles.scss';
 import Footer from '@/app/components/footer/footer.component';
+import { ThemeProvider } from '@/app/contexts/theme.context';
 
 export const metadata: Metadata = {
   title: 'WorldHQ',
@@ -22,8 +23,10 @@ export default function RootLayout(
     <html lang="en">
       <body>
         <Grid>
-          <Nav />
-          { children }
+          <ThemeProvider>
+            <Nav />
+            { children }
+          </ThemeProvider>
         </Grid>
       </body>
     </html>

@@ -1,3 +1,4 @@
+// types
 import { ReactNode } from "react";
 
 export type Case = {
@@ -8,9 +9,9 @@ export type Case = {
 };
 
 export type HeroContent = {
-  id: number;
-  image: SerializedImage;
-} & Element;
+  component: ReactNode;
+  theme?: Theme;
+}
 
 export type Logo = {
   id: number;
@@ -34,4 +35,8 @@ export type Skill = {
   id: number; 
   logo: SerializedImage;
   name: string;
+};
+
+export type Theme = {
+  className?: string;
 };

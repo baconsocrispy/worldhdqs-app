@@ -37,9 +37,9 @@ export const images: SerializedImage[] = [
   { id: 1, src: '/1x/bg1.png' }, { id: 2, src: '/1x/bg2.png' }, { id: 3, src: '/1x/bg3.png' }, { id: 4, src: '/1x/bg4.png' }, { id: 5, src: '/1x/bg5.png' }, { id: 6, src: '/1x/bg6.png' }
 ];
 
-export const heroContent: ReactNode[] = [
-  <City image={ images[0] } key={ 0 } />, 
-  <WinterScene image={ images[1] } key={ 1 } />
+export const heroContent: HeroContent[] = [
+  { component: <City image={ images[0] } key={ 0 } />  }, 
+  { component: <WinterScene image={ images[1] } key={ 1 } />, theme: { className: 'winter-theme' }}
 ];
 
 export const services: Service[] = [

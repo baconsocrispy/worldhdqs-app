@@ -5,10 +5,11 @@ import { FC } from "react";
 import Image from "next/image";
 
 // types
-import { SerializedImage } from "@/app/types";
+import { SerializedImage, Theme } from "@/app/types";
 
 type CityProps = {
   image: SerializedImage;
+  theme?: Theme;
 };
 
 const City: FC<CityProps> = ({ image }) => {

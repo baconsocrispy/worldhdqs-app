@@ -1,50 +1,57 @@
 'use client'
 // library
-import { FC,  ReactNode,  useState } from "react";
+import { FC,  ReactNode,  useContext, useState } from "react";
 
 // components
 import Heading from "../heading/heading.component";
-import Image from "next/image";
+import { ThemeContext } from "@/app/contexts/theme.context";
+import { HeroContent, Theme } from "@/app/types";
 
 // types
-import { HeroContent, SerializedImage } from "@/app/types";
-
 type HeroProps = {
-  content: ReactNode[];
+  content: HeroContent[];
   heading?: string;
-  images: SerializedImage[];
   leadIn?: string;
   subHeading?: string;
 };
 
-const Hero: FC<HeroProps> = ({ content, heading, images, leadIn, subHeading }) => {
+const Hero: FC<HeroProps> = ({ 
+  content, 
+  heading, 
+  leadIn, 
+  subHeading 
+}) => {
   // state
-  const [ selectedContent, setSelectedContent ] = useState<ReactNode>(content[0]);
+  const { resetTheme, setTheme, theme } = useContext(ThemeContext);
+  const [ selectedContent, setSelectedContent ] = useState<ReactNode>(content[0].component);
+  const [ selectedTheme , setSelectedTheme ] = useState<Theme | undefined>(theme);
   const [ hoverContent, setHoverContent ] = useState<ReactNode | null>(null);
-
-  // layout
-  let columns;
-
-  if (content.length === 1 || content.length === 2) {
-    let columns = 1;
-  } else  {
-    let columns = 3;
-  }
+  
 
   const handleMouseEnter = (index: number) => {
-    setHoverContent(content[index]);
+    setHoverContent(content[index].component);
+    setTheme(content[index].theme);
   };
 
   const handleMouseLeave = () => {
     setHoverContent(null);
+    setTheme(selectedTheme);
+  };
+
+  const handleSectionClick = (index: number, theme: Theme | undefined) => {
+    setSelectedContent(content[index].component);
+    setTheme(theme);
+    setSelectedTheme(theme);
   };
 
   return (
-    <div className="hero">
+    <div className={ `hero ${ theme?.className }`}>
       <div className="hero__content-container">
         { hoverContent ?? selectedContent }
         <div className="hero__text"> 
-          <p className="hero__lead-in">{ leadIn }</p>
+          <p className="hero__lead-in">
+            { leadIn }
+          </p>
           <Heading className="hero__heading" size={ 1 }>
             { heading }
           </Heading>
@@ -55,16 +62,16 @@ const Hero: FC<HeroProps> = ({ content, heading, images, leadIn, subHeading }) =
       </div>
       <div 
         className="hover-overlay" 
-        style={{ gridTemplateColumns: `repeat(${ columns }, 1fr)` }}
+        style={{ gridTemplateColumns: `repeat(${ 3 }, 1fr)` }}
       >
           {
-            content.map((_, index) => 
+            content.map((contentItem, index) => 
               <div 
                 key={ index } 
                 className="hover-divisions__section" 
                 onMouseEnter={ () => handleMouseEnter(index) }
                 onMouseLeave={ handleMouseLeave }
-                onClick={ () => setSelectedContent(content[index]) }
+                onClick={ () => handleSectionClick(index, contentItem.theme) }
               />
             )
           }
