@@ -1,11 +1,13 @@
+'use client'
 // library
-import { FC } from "react";
+import { FC, useContext } from "react";
 
 // components
 import Image from "next/image";
 
 // types
 import { SerializedImage } from "@/app/types";
+import { ThemeContext } from "@/app/contexts/theme.context";
 
 type WinterSceneProps = {
   image: SerializedImage;
@@ -13,10 +15,12 @@ type WinterSceneProps = {
 };
 
 const WinterScene: FC<WinterSceneProps> = ({ image, skyColor = 'black' }) => {
+  // state
+  const { theme } = useContext(ThemeContext);
+
   return (
     <div 
-      className='winter-scene'
-
+      className={ `winter-scene ${ theme?.className ?? '' }`}
     >
       <Image 
           alt="a cozy New England wintertime landscape"

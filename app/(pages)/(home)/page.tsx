@@ -4,6 +4,7 @@ import Footer from "@/app/components/footer/footer.component";
 import Heading from "@/app/components/heading/heading.component";
 import Hero from "@/app/components/hero/hero.component";
 import Link from "@/app/components/link/link.component";
+import Page from "@/app/components/page/page.component";
 import Section from "@/app/components/section/section.component";
 import TextArea from "@/app/components/text-area/text-area.component";
 
@@ -11,17 +12,15 @@ import TextArea from "@/app/components/text-area/text-area.component";
 import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
-import { cardMedia, caseStudyMedia, cases, heroContent, images, services } from "@/app/data";
-
+import { cardMedia, caseStudyMedia, cases, heroContent, services } from "@/app/data";
 
 const Home = () => {
   return (
-    <main className="home-page">
+    <Page name="home">
       <Section id='welcome'>
         <Hero 
           content={ heroContent }
           heading='World Headquarters' 
-          images={ images }
           leadIn='You Have Reached'
           subHeading="Creative Workshop"
         />
@@ -75,7 +74,7 @@ const Home = () => {
         <ContactForm />
       </Section>
       <Footer />
-    </main>
+    </Page>
   )
 };
 

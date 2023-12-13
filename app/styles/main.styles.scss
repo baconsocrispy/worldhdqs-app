@@ -24,6 +24,7 @@
 @import '@/app/components/logo/logo.styles';
 @import '@/app/components/nav/nav.styles';
 @import '@/app/components/nav-menu/nav-menu.styles';
+@import '@/app/components/page/page.styles';
 @import '@/app/components/section/section.styles';
 @import '@/app/components/text-area/text-area.styles';
 @import '@/app/components/website-preview/website-preview.styles';
@@ -34,6 +35,3 @@
 
 // forms
 @import '@/app/forms/contact-form/contact-form.styles';
-
-// pages
-@import '@/app/(pages)/(home)/home-page.styles';

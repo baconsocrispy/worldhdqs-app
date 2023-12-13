@@ -22,7 +22,7 @@ const Hero: FC<HeroProps> = ({
   subHeading 
 }) => {
   // state
-  const { resetTheme, setTheme, theme } = useContext(ThemeContext);
+  const { setTheme, theme } = useContext(ThemeContext);
   const [ selectedContent, setSelectedContent ] = useState<ReactNode>(content[0].component);
   const [ selectedTheme , setSelectedTheme ] = useState<Theme | undefined>(theme);
   const [ hoverContent, setHoverContent ] = useState<ReactNode | null>(null);
@@ -45,7 +45,7 @@ const Hero: FC<HeroProps> = ({
   };
 
   return (
-    <div className={ `hero ${ theme?.className }`}>
+    <div className={ `hero ${ theme?.className ?? '' }`}>
       <div className="hero__content-container">
         { hoverContent ?? selectedContent }
         <div className="hero__text"> 

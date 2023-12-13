@@ -1,9 +1,12 @@
 .winter-theme {
-  color: teal;
-  font-family: "cormorant-garamond", serif;
+  font-family: "profile-pro",sans-serif;
   font-weight: 500;
 
-  h1 {
+  .hero__text {
+    color: teal;
+  }
+
+  h1, h2 {
     font-family: "great-vibes";
     text-transform: capitalize;
   }
