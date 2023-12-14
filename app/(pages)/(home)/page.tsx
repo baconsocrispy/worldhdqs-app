@@ -13,6 +13,7 @@ import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
 import { cardMedia, caseStudyMedia, cases, heroContent, services } from "@/app/data";
+import Image from "next/image";
 
 const Home = () => {
   return (
@@ -49,6 +50,12 @@ const Home = () => {
         <Heading size={ 2 }>
           Process
         </Heading>
+        <Image 
+          alt='mittens'
+          src='./graphics/SVG/Asset 2.svg'
+          width={ 100 }
+          height={ 100 }
+        />
       </Section>
 
       <Section 
