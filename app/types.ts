@@ -38,5 +38,7 @@ export type Skill = {
 };
 
 export type Theme = {
+  backgroundColor?: string;
   className?: string;
+  color?: string;
 };

@@ -1,8 +1,9 @@
 .nav {
   position: absolute;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: $padding-default;
+  mix-blend-mode: difference;
 }

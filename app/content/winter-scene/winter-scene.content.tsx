@@ -1,20 +1,25 @@
 'use client'
 // library
-import { FC, useContext } from "react";
+import { FC, useContext, useEffect } from "react";
 
 // components
 import Image from "next/image";
 
 // types
-import { SerializedImage } from "@/app/types";
+import { SerializedImage, Theme } from "@/app/types";
 import { ThemeContext } from "@/app/contexts/theme.context";
 
 type WinterSceneProps = {
+  backgroundColor?: string;
+  color?: string;
   image: SerializedImage;
   skyColor?: string;
 };
 
-const WinterScene: FC<WinterSceneProps> = ({ image, skyColor = 'black' }) => {
+const WinterScene: FC<WinterSceneProps> = ({ 
+  image, 
+  skyColor = 'black' 
+}) => {
   // state
   const { theme } = useContext(ThemeContext);
 

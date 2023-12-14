@@ -1,13 +1,60 @@
+// colors
+$winter--black: black;
+$winter--white: white;
+$winter--green: teal;
+$winter--pink: rgb(255, 127, 127);
+
+// typography
+$winter--font-primary:  "profile-pro", sans-serif;
+$winter--font-heading: "great-vibes";
+$winter--font-size-copy: 1.6rem;
+$winter--font-size-lg: 5rem;
+
+// details
+$winter--box-shadow:  -.5rem .5rem 20px rgba(0, 0, 0, .5);
+$winter--border-radius: 1rem;
+
 .winter-theme {
-  font-family: "profile-pro",sans-serif;
+  font-family: $winter--font-primary;
   font-weight: 500;
 
   .hero__text {
-    color: teal;
+    color: $winter--green;
+    transform: translate(-50%, -40%)
+  }
+
+  .card--vertical {
+    background-color: $winter--black;
+    color: $winter--white;
+    border-radius: $winter--border-radius;
+    box-shadow: $winter--box-shadow;
+    min-height: $height-card;
+  }
+
+  section.intersected {
+    background-color: $winter--green;
+    color: $winter--white;
+  }
+
+  iframe {
+    border-radius: $winter--border-radius;
+    box-shadow: $winter--box-shadow;
+  }
+
+  p {
+    font-size: $winter--font-size-copy;
+  }
+
+  h1 {
+    font-size: $winter--font-size-lg;
+  }
+
+  h4 {
+    font-style: italic;
   }
 
   h1, h2 {
-    font-family: "great-vibes";
+    font-family: $winter--font-heading;
     text-transform: capitalize;
   }
 }

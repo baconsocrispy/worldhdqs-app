@@ -1,7 +1,5 @@
-'use client'
-import { ThemeContext } from "@/app/contexts/theme.context";
 // library
-import { FC, useContext } from "react";
+import { FC } from "react";
 
 // types
 type TextAreaProps = {
@@ -9,11 +7,8 @@ type TextAreaProps = {
 };
 
 const TextArea: FC<TextAreaProps> = ({ text }) => {
-  // state
-  const { theme } = useContext(ThemeContext);
-
   return (
-    <div className={ `text-area ${ theme?.className ?? '' }`}>
+    <div className={ `text-area` }>
       <p className="text-area__text">
         { text }
       </p>

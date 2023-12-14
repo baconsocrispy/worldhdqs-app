@@ -25,9 +25,10 @@ const Home = () => {
           subHeading="Creative Workshop"
         />
       </Section>
-      <Section id="services">
+
+      <Section id="departments">
         <Heading size={ 2 }>
-          Services
+          Departments
         </Heading>
         <TextArea text={
           'With expertise and a proven track record in many of today\'s cutting edge technologies, as well as years of experience in the content creation business, World Headquarters will bring your ideas to life.'
@@ -43,7 +44,20 @@ const Home = () => {
           items={ services }
         />
       </Section>
-      <Section id="selected-works">
+
+      <Section id="process">
+        <Heading size={ 2 }>
+          Process
+        </Heading>
+      </Section>
+
+      <Section 
+        id="selected-works" 
+        intersectionOptions={{ threshold: 0.15 }}
+        entryAnimation={{
+          colorTiming: '0.5s ease-in' 
+        }}
+      >
         <Heading size={ 2 }>
           Selected Works
         </Heading>
@@ -66,6 +80,7 @@ const Home = () => {
           View Portfolio
         </Link>
       </Section>
+      
       <Section id="contact">
         <Heading size={ 2 }>
           Contact

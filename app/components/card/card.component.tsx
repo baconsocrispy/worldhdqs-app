@@ -1,6 +1,5 @@
-'use client'
 // library
-import { ElementType, FC, ReactNode, useContext } from "react";
+import { ElementType, FC, ReactNode } from "react";
 
 // components
 import AnimatedEntryWrapper, { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
@@ -8,13 +7,8 @@ import Heading from "../heading/heading.component";
 import Image from "next/image";
 import Link from "../link/link.component";
 
-// context
-import { ThemeContext } from "@/app/contexts/theme.context";
-
 // types
 import { Case, Service } from "@/app/types";
-
-
 
 type CardProps = {
   elementType?: ElementType;
@@ -37,13 +31,10 @@ const Card: FC<CardProps> = ({
   linkText,
   media
 }) => {
-  // state
-  const { theme } = useContext(ThemeContext);
-
   return (
     <AnimatedEntryWrapper 
       key={ item.id }
-      className={ `card card--${ layout } ${ theme?.className }` }
+      className={ `card card--${ layout }` }
       intersectionOptions={ intersectionOptions }
       styleOptions={ entryAnimation }
       wrapperElement={ elementType }

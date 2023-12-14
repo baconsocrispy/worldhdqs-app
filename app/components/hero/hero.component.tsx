@@ -41,11 +41,12 @@ const Hero: FC<HeroProps> = ({
   const handleSectionClick = (index: number, theme: Theme | undefined) => {
     setSelectedContent(content[index].component);
     setTheme(theme);
+    console.log(theme);
     setSelectedTheme(theme);
   };
 
   return (
-    <div className={ `hero ${ theme?.className ?? '' }`}>
+    <div className={ `hero` }>
       <div className="hero__content-container">
         { hoverContent ?? selectedContent }
         <div className="hero__text"> 
