@@ -13,7 +13,13 @@ type SectionProps = {
   intersectionOptions?: IntersectionObserverInit;
 };
 
-const Section: FC<SectionProps> = ({ children, className, entryAnimation, id, intersectionOptions }) => {
+const Section: FC<SectionProps> = ({ 
+  children, 
+  className, 
+  entryAnimation, 
+  id, 
+  intersectionOptions 
+}) => {
   return (
     <AnimatedEntryWrapper 
       className={ `section ${ className ?? '' }`}

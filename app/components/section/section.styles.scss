@@ -1,5 +1,7 @@
 .section {
-  padding: $padding-default;
+  display: grid;
+  gap: 1rem;
+  padding: $padding-default;  
 }
 
 #welcome {

@@ -1,4 +1,10 @@
 .heading {
+  display: flex;
+
+  &__text {
+    position: relative;
+  }
+
   &--2 {
     text-align: center;
     text-transform: uppercase;

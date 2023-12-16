@@ -15,6 +15,7 @@ import ContactForm from "@/app/forms/contact-form/contact-form.component";
 import { cardMedia, caseStudyMedia, cases, heroContent, processItems, services } from "@/app/data";
 import Image from "next/image";
 import List from "@/app/components/list/list.component";
+import Underline from "@/app/components/underline/underline.component";
 
 const Home = () => {
   return (
@@ -29,7 +30,7 @@ const Home = () => {
       </Section>
 
       <Section id="departments">
-        <Heading size={ 2 }>
+        <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Departments
         </Heading>
         <TextArea text={
@@ -48,7 +49,7 @@ const Home = () => {
       </Section>
 
       <Section id="process">
-        <Heading size={ 2 }>
+        <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Process
         </Heading>
         <div className="center-wrapper">
@@ -67,7 +68,7 @@ const Home = () => {
           colorTiming: '0.5s ease-in' 
         }}
       >
-        <Heading size={ 2 }>
+        <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Selected Works
         </Heading>
         <TextArea text='Whether helping businesses and individuals breathe life into existing websites or building out an entire brand presence from scratch, World Headquarters has the tools to meet your needs.'/>
@@ -91,7 +92,7 @@ const Home = () => {
       </Section>
       
       <Section id="contact">
-        <Heading size={ 2 }>
+        <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Contact
         </Heading>
         <TextArea text='Please leave a message' />

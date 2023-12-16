@@ -34,6 +34,11 @@ $winter--border-radius: 1rem;
   section.intersected {
     background-color: $winter--green;
     color: $winter--white;
+
+    .underline__side,
+    .underline__vertical {
+      background-color: $winter--white;
+    }
   }
 
   iframe {

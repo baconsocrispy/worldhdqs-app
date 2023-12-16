@@ -11,6 +11,7 @@
   &--alternating {
     grid-template-columns: 1fr;
 
+    // flip image to right on even numbered cards
     > .card--horizontal:nth-child(even) {
       grid-template-columns: 25% 75%;
       
