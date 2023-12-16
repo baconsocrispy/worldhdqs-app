@@ -12,8 +12,9 @@ import TextArea from "@/app/components/text-area/text-area.component";
 import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
-import { cardMedia, caseStudyMedia, cases, heroContent, services } from "@/app/data";
+import { cardMedia, caseStudyMedia, cases, heroContent, processItems, services } from "@/app/data";
 import Image from "next/image";
+import List from "@/app/components/list/list.component";
 
 const Home = () => {
   return (
@@ -50,14 +51,15 @@ const Home = () => {
         <Heading size={ 2 }>
           Process
         </Heading>
-        <Image 
-          alt='mittens'
-          src='./graphics/SVG/Asset 2.svg'
-          width={ 100 }
-          height={ 100 }
-        />
+        <div className="center-wrapper">
+          <List 
+            entryAnimation={{ transitionDelay: 0.2 }}
+            listitems={ processItems } 
+            intersectionOptions={{ threshold: 0.5 }}
+          />
+        </div>
+     
       </Section>
-
       <Section 
         id="selected-works" 
         intersectionOptions={{ threshold: 0.15 }}

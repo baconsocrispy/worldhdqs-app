@@ -1,0 +1,32 @@
+.list {
+  max-width: 50%;
+  display: grid;
+  gap: 2rem;
+
+  &__item {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content 1fr;
+    gap: 1rem 3rem;
+    padding: $padding-default;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 1s ease-in-out;
+    filter: blur(5px);
+    background-color: white;
+    box-shadow: -.5rem -.5rem 20px rgba(0, 0, 0, .5);
+    border-radius: 1rem;
+  }
+
+  &.intersected {
+    .list__item {
+      transform: translateY(0%);
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
+
+  &__image {
+    grid-row: 1 / -1;
+  }
+}

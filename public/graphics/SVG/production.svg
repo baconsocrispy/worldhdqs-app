@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 274">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke: #000;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        fill: #ff8080;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: #ffba4a;
+      }
+
+      .cls-7 {
+        fill: #603813;
+      }
+
+      .cls-2 {
+        stroke: #603813;
+      }
+    </style>
+  </defs>
+  <g id="Mittens">
+    <g>
+      <g>
+        <circle class="cls-5" cx="134.45" cy="204.32" r="48.9"/>
+        <circle class="cls-5" cx="134.45" cy="138.93" r="39.56" transform="translate(-24.22 249.4) rotate(-80.78)"/>
+        <path class="cls-5" d="m158.81,83.42c0,13.47-10.92,24.39-24.39,24.39-8.02,0-15.75-4.21-20.2-10.72-.97-1.42-4.43-6.63-4.18-13.66.38-10.9,9.58-24.39,24.39-24.39,13.47,0,24.39,10.92,24.39,24.39Z"/>
+        <polygon class="cls-6" points="135.46 81.84 176.46 84.61 135.46 87.23 135.46 81.84"/>
+        <ellipse class="cls-3" cx="135.89" cy="162.24" rx="4.61" ry="3.07"/>
+        <ellipse class="cls-3" cx="135.89" cy="144.91" rx="4.61" ry="3.07"/>
+        <ellipse class="cls-3" cx="135.89" cy="127.77" rx="4.61" ry="3.07"/>
+        <ellipse class="cls-3" cx="126.89" cy="75.77" rx="4.61" ry="3.07"/>
+        <ellipse class="cls-3" cx="142.89" cy="75.77" rx="4.61" ry="3.07"/>
+        <polyline class="cls-6" points="171.46 58.73 110.04 58.97 94.89 59.03"/>
+        <rect class="cls-4" x="110.04" y="20.77" width="48.77" height="36.42"/>
+        <circle class="cls-3" cx="119.46" cy="91.23" r="1.5"/>
+        <circle class="cls-3" cx="149.46" cy="91.23" r="1.5"/>
+        <circle class="cls-3" cx="125.96" cy="96.73" r="2"/>
+        <circle class="cls-3" cx="143.96" cy="96.73" r="2"/>
+        <circle class="cls-3" cx="135.46" cy="98.23" r="2.5"/>
+        <polygon class="cls-7" points="109.33 95.31 109.63 91.52 101.96 91.83 101.95 97.73 126.07 97.57 126.29 95.66 109.33 95.31"/>
+        <g>
+          <polyline class="cls-2" points="218.48 92.84 212.32 105.04 225.64 110.51"/>
+          <line class="cls-2" x1="212.32" y1="105.04" x2="170.25" y2="122.08"/>
+        </g>
+        <g>
+          <polyline class="cls-2" points="44.36 106.83 57.55 103.27 52.74 89.71"/>
+          <line class="cls-2" x1="57.55" y1="103.27" x2="98.33" y2="123.21"/>
+        </g>
+      </g>
+      <rect class="cls-1" width="270" height="274"/>
+    </g>
+  </g>
+</svg>

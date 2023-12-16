@@ -15,6 +15,7 @@ export type AnimatedEntryWrapperStyles = {
   translateX?: number; // x-axis offset in rem at start
   translateY?: number; // y-axis offset in rem at start
   colorTiming?: string; // color & backgroundColor transition in seconds and timing function
+  transitionDelay?: number;
 };
 
 type AnimatedEntryWrapperProps = {

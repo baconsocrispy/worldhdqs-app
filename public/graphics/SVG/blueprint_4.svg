@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255.24 255.24">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        stroke: #000;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-6 {
+        font-family: ProfilePro, 'Profile Pro';
+        font-size: 12.22px;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        fill: #ffba4a;
+      }
+
+      .cls-2 {
+        stroke: #603813;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Mittens">
+    <g>
+      <rect class="cls-1" width="255.24" height="255.24"/>
+      <g>
+        <rect class="cls-4" x="38.12" y="38.12" width="179" height="179"/>
+        <g>
+          <g>
+            <circle class="cls-4" cx="125.48" cy="156.99" r="28.61"/>
+            <circle class="cls-4" cx="125.48" cy="118.74" r="23.15"/>
+            <circle class="cls-4" cx="125.48" cy="87.56" r="17.04"/>
+          </g>
+          <polyline class="cls-4" points="72.98 70.68 64.81 70.68 64.81 104.6 72.98 104.6"/>
+          <polyline class="cls-4" points="64.81 104.6 64.81 141.88 72.98 141.88"/>
+          <polyline class="cls-4" points="64.81 141.88 64.81 185.6 72.98 185.6"/>
+          <polyline class="cls-4" points="96.87 185.6 96.87 193.08 155.04 193.08 155.04 185.6"/>
+          <polyline class="cls-4" points="108.44 70.52 108.44 62.16 142.51 62.16 142.51 70.52"/>
+          <polygon class="cls-5" points="163.62 81.45 188.05 85.95 163.62 90.21 163.62 81.45"/>
+          <ellipse class="cls-3" cx="167.48" cy="107.81" rx="3.86" ry="2.57"/>
+          <text class="cls-6" transform="translate(175.61 111.09)"><tspan x="0" y="0">x </tspan><tspan class="cls-7" x="7.77" y="0">1</tspan><tspan x="11.3" y="0">1</tspan></text>
+          <g>
+            <polyline class="cls-2" points="156.56 123.24 165.55 133.53 175.62 123.24"/>
+            <line class="cls-2" x1="165.55" y1="133.53" x2="165.55" y2="178.92"/>
+          </g>
+          <text class="cls-6" transform="translate(175.48 153.9)"><tspan x="0" y="0">x 2</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

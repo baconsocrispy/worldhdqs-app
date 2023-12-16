@@ -11,7 +11,13 @@ export type Case = {
 export type HeroContent = {
   component: ReactNode;
   theme?: Theme;
-}
+};
+
+export type ListItem = {
+  image?: SerializedImage;
+  text: string;
+  textHighlight?: string;
+};
 
 export type Logo = {
   id: number;
