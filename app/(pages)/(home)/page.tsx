@@ -55,8 +55,8 @@ const Home = () => {
         <div className="center-wrapper">
           <List 
             entryAnimation={{ transitionDelay: 0.2 }}
-            listitems={ processItems } 
-            intersectionOptions={{ threshold: 0.5 }}
+            listItems={ processItems } 
+            intersectionOptions={{ threshold: 0.25 }}
           />
         </div>
      

@@ -14,6 +14,7 @@ export type HeroContent = {
 };
 
 export type ListItem = {
+  href?: string;
   image?: SerializedImage;
   text: string;
   textHighlight?: string;

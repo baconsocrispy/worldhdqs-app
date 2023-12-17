@@ -23,6 +23,10 @@ $winter--border-radius: 1rem;
     transform: translate(-50%, -40%)
   }
 
+  .link--nav::after {
+    background-color: $winter--pink;
+  }
+
   .card--vertical {
     background-color: $winter--black;
     color: $winter--white;
@@ -38,6 +42,22 @@ $winter--border-radius: 1rem;
     .underline__side,
     .underline__vertical {
       background-color: $winter--white;
+    }
+  }
+
+  .link--cta {
+    border-radius: $winter--border-radius;
+
+    &:hover {
+      background-color: $winter--pink;
+    }
+  }
+
+  .button {
+    border-radius: $winter--border-radius;
+
+    &:hover {
+      background-color: $winter--pink;
     }
   }
 

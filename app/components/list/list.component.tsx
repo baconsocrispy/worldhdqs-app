@@ -3,11 +3,12 @@ import { FC } from "react";
 
 // components
 import AnimatedEntryWrapper, { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
+import Heading from "../heading/heading.component";
 import Image from "next/image";
 
 // types
-import { ListItem, SerializedImage } from "@/app/types";
-import Heading from "../heading/heading.component";
+import { ListItem } from "@/app/types";
+import Link from "../link/link.component";
 
 type ListProps = {
   className?: string;
@@ -15,9 +16,9 @@ type ListProps = {
   heading?: string;
   id?: string | number;
   intersectionOptions?: IntersectionObserverInit;
-  listitems: ListItem[];
+  listItems?: ListItem[];
   text?: string;
-  type?: 'drop'
+  type?: 'drop' | 'link' | 'nav';
 };
 
 const List: FC<ListProps> = ({ 
@@ -25,8 +26,8 @@ const List: FC<ListProps> = ({
   entryAnimation,
   id, 
   intersectionOptions,
-  listitems, 
-  type = 'drop' 
+  listItems = [], 
+  type = 'drop'
 }) => {
   const transitionDelay = entryAnimation?.transitionDelay ?? 0;
 
@@ -38,13 +39,13 @@ const List: FC<ListProps> = ({
       styleOptions={ entryAnimation }
       wrapperElement={ 'ul' }
     >
-      { listitems.map((item, index) => 
+      { listItems.map((item, index) => 
         <li 
-          className={ `list__item` } 
+          className={ `list__item list__item--${ type }` } 
           key={ index } 
           style={{ 
             transitionDelay: (transitionDelay * index).toString() + 's', 
-            zIndex: listitems.length - index
+            zIndex: listItems.length - index
           }}
         >
           { item.image &&  
@@ -57,13 +58,24 @@ const List: FC<ListProps> = ({
               />
           }
 
-          <Heading className="list__item-highlight" size={ 4 }>
-            { item.textHighlight }
-          </Heading>
+          { item.textHighlight &&
+              <Heading className="list__item-highlight" size={ 4 }>
+                { item.textHighlight }
+              </Heading>
+          }
 
-          <p className="list__item-text">
-            { item.text }
-          </p>
+          { type === 'nav' || type === 'link' ?
+              <Link 
+                href={ item.href ?? '#' }
+                type={ type === 'nav' ? 'nav' : 'default' }
+              >
+                { item.text }
+              </Link> :
+
+              <p className="list__item-text">
+                { item.text }
+              </p>
+          }
         </li>
       )}
     </AnimatedEntryWrapper>

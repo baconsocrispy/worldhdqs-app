@@ -4,8 +4,10 @@
 @import '@/app/styles/global/fonts.styles';
 @import '@/app/styles/global/animations.styles';
 @import '@/app/styles/global/base.styles';
-@import '@/app/styles/global/themes.styles';
 @import '@/app/styles/global/utilities.styles';
+
+// themes
+@import '@/app/styles/themes/winter.theme';
 
 // components
 @import '@/app/components/button/button.styles';

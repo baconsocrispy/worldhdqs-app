@@ -42,6 +42,15 @@ export const heroContent: HeroContent[] = [
   { component: <WinterScene color={ 'white' } image={ images[1] } key={ 1 } />, theme: { className: 'winter-theme' }}
 ];
 
+export const navLinks: ListItem[] =[
+  { text: 'home', href: '/' },
+  { text: 'services', href: '/services' },
+  { text: 'portfolio', href: '/portfolio' },
+  { text: 'about', href: '/about' },
+  { text: 'blog', href: '/blog' },
+  { text: 'store', href: '/store' }
+]
+
 export const processItems: ListItem[] = [
   {
     image: { id: 1, src: './graphics/SVG/mittens_1.svg' },

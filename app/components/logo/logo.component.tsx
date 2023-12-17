@@ -8,7 +8,7 @@ type LogoProps = {
 
 const Logo: FC<LogoProps> = ({ className, style }) => {
   return (
-    <div className={ `logo ${ className }`} style={ style }>
+    <div className={ `logo ${ className ?? '' }`} style={ style }>
       Logo
     </div>
   )

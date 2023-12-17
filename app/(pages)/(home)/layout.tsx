@@ -6,6 +6,9 @@ import { ReactNode } from 'react';
 import Grid from '@/app/components/grid/grid.component';
 import Nav from '@/app/components/nav/nav.component';
 
+// data
+import { navLinks } from '@/app/data';
+
 // styles
 import '@/app/styles/main.styles.scss';
 import { ThemeProvider } from '@/app/contexts/theme.context';
@@ -23,7 +26,7 @@ export default function RootLayout(
       <body>
         <Grid>
           <ThemeProvider>
-            <Nav />
+            <Nav navLinks={ navLinks } />
             { children }
           </ThemeProvider>
         </Grid>
