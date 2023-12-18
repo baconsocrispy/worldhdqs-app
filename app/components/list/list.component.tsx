@@ -5,20 +5,18 @@ import { FC } from "react";
 import AnimatedEntryWrapper, { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
 import Heading from "../heading/heading.component";
 import Image from "next/image";
+import Link from "../link/link.component";
 
 // types
 import { ListItem } from "@/app/types";
-import Link from "../link/link.component";
 
 type ListProps = {
   className?: string;
   entryAnimation?: AnimatedEntryWrapperStyles;
-  heading?: string;
   id?: string | number;
   intersectionOptions?: IntersectionObserverInit;
   listItems?: ListItem[];
-  text?: string;
-  type?: 'drop' | 'link' | 'nav';
+  type?: 'drop' | 'flow-right' | 'link' | 'nav';
 };
 
 const List: FC<ListProps> = ({ 

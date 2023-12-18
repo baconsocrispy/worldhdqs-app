@@ -11,6 +11,10 @@ import FlipCarousel from "./components/carousel-flip/carousel-flip.component";
 import WebsitePreview from "./components/website-preview/website-preview.component";
 import City from "./content/city/city.content";
 import WinterScene from "./content/winter-scene/winter-scene.content";
+import LogoDesign from "./content/logo-design/logo-design.content";
+import GraphicDesign from "./content/graphic-design/graphic-design.content";
+import ColorAnalysis from "./content/color-analysis/color-analysis.content";
+import BrandVoice from "./content/brand-voice/brand-voice.content";
 
 export const cases: Case[] = [
   { 
@@ -42,13 +46,20 @@ export const heroContent: HeroContent[] = [
   { component: <WinterScene color={ 'white' } image={ images[1] } key={ 1 } />, theme: { className: 'winter-theme' }}
 ];
 
-export const navLinks: ListItem[] =[
+export const kingLogos: ListItem[] = [
+  { image: { id: 1, src: '/logos/king/white.png' }},
+  { image: { id: 2, src: '/logos/king/blue.png' }},
+  { image: { id: 3, src: '/logos/king/purple.png' }},
+];
+
+export const navLinks: ListItem[] = [
   { text: 'home', href: '/' },
   { text: 'services', href: '/services' },
   { text: 'portfolio', href: '/portfolio' },
   { text: 'about', href: '/about' },
   { text: 'blog', href: '/blog' },
-  { text: 'store', href: '/store' }
+  { text: 'store', href: '/store' },
+  { text: 'contact', href: '/contact' }
 ]
 
 export const processItems: ListItem[] = [
@@ -141,11 +152,10 @@ export const skills: Skill[] = [
 ];
 
 export const rotatingContent: ReactNode[] = [
-  <p key={ 0 }>Test 1</p>,
-  <p key={ 1 }>Test 2</p>,
-  <p key={ 2 }>Test 3</p>,
-  <p key={ 3 }>Test 4</p>,
-  <p key={ 4 }>Test 5</p>,
+  <LogoDesign key={ 0 } />,
+  <GraphicDesign key={ 1 } />,
+  <ColorAnalysis key={ 2 } />,
+  <BrandVoice key={ 3 } />
 ];
 
 export const cardMedia: ReactNode[] = [

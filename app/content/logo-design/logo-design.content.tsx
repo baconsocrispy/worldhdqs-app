@@ -1,0 +1,19 @@
+// components
+import Heading from "@/app/components/heading/heading.component";
+import List from "@/app/components/list/list.component";
+
+// data
+import { kingLogos } from "@/app/data";
+
+const LogoDesign = () => {
+  return (
+    <div className="logo-design">
+      <Heading size={ 4 }>
+        Logo Design & Analysis
+      </Heading>
+      <List listItems={ kingLogos } type="flow-right"/>
+    </div>
+  )
+};
+
+export default LogoDesign;
