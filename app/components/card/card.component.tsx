@@ -2,17 +2,17 @@
 import { ElementType, FC, ReactNode } from "react";
 
 // components
-import AnimatedEntryWrapper, { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
+import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
 import Heading from "../heading/heading.component";
 import Image from "next/image";
 import Link from "../link/link.component";
 
 // types
-import { Case, Service } from "@/app/types";
+import { AnimationOptions, Case, Service } from "@/app/types";
 
 type CardProps = {
   elementType?: ElementType;
-  entryAnimation?: AnimatedEntryWrapperStyles;
+  animationOptions?: AnimationOptions;
   href?: string;
   intersectionOptions?: IntersectionObserverInit;
   item: Case | Service;
@@ -23,7 +23,7 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({ 
   elementType = 'li',
-  entryAnimation,
+  animationOptions,
   href,
   intersectionOptions,
   item, 
@@ -33,10 +33,10 @@ const Card: FC<CardProps> = ({
 }) => {
   return (
     <AnimatedEntryWrapper 
-      key={ item.id }
+      animationOptions={ animationOptions }
       className={ `card card--${ layout }` }
       intersectionOptions={ intersectionOptions }
-      styleOptions={ entryAnimation }
+      key={ item.id }
       wrapperElement={ elementType }
     >
       <div className="card__media"> 

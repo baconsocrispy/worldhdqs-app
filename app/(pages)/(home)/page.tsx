@@ -13,9 +13,7 @@ import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
 import { cardMedia, caseStudyMedia, cases, heroContent, processItems, services } from "@/app/data";
-import Image from "next/image";
 import List from "@/app/components/list/list.component";
-import Underline from "@/app/components/underline/underline.component";
 
 const Home = () => {
   return (
@@ -37,10 +35,11 @@ const Home = () => {
           'With expertise and a proven track record in many of today\'s cutting edge technologies, as well as years of experience in the content creation business, World Headquarters will bring your ideas to life.'
         } />
         <Cards 
-          cardEntryAnimation={{
-            opacity: '1s ease-in-out',
-            transform: '0.5s ease-in-out',
-            translateY: 5
+          cardAnimationOptions={{
+            opacity: '0',
+            transitionDuration: '1s',
+            transitionFunction: 'ease-in-out',
+            translateY: 25
           }}
           cardLinkText="Learn More"
           cardMedia={ cardMedia }
@@ -54,29 +53,38 @@ const Home = () => {
         </Heading>
         <div className="center-wrapper">
           <List 
-            entryAnimation={{ transitionDelay: 0.2 }}
+            animationOptions={{
+              blur: '5px',
+              opacity: '0',
+              transitionDelay: 0.2,
+              transitionDuration: '1s',
+              transitionFunction: 'ease-in',
+              translateY: -100
+            }}
             listItems={ processItems } 
-            intersectionOptions={{ threshold: 0.25 }}
+            intersectionOptions={{ threshold: .25 }}
           />
         </div>
      
       </Section>
       <Section 
+        animationOptions={{
+          transitionDuration: '0.5s',
+          transitionFunction: 'ease-in'
+        }}
         id="selected-works" 
         intersectionOptions={{ threshold: 0.15 }}
-        entryAnimation={{
-          colorTiming: '0.5s ease-in' 
-        }}
       >
         <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Selected Works
         </Heading>
         <TextArea text='Whether helping businesses and individuals breathe life into existing websites or building out an entire brand presence from scratch, World Headquarters has the tools to meet your needs.'/>
         <Cards 
-          cardEntryAnimation={{
-            opacity: '0.5s ease-in',
-            transform: '0.5s ease-in',
-            translateX: -10
+          cardAnimationOptions={{
+            opacity: '0',
+            translateX: -10,
+            transitionDuration: '0.5s',
+            transitionFunction: 'ease-in'
           }}
           cardIntersectionOptions={{
             threshold: 0.5

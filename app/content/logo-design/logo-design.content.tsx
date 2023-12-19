@@ -11,7 +11,14 @@ const LogoDesign = () => {
       <Heading size={ 4 }>
         Logo Design & Analysis
       </Heading>
-      <List listItems={ kingLogos } type="flow-right"/>
+      <List 
+        imageOptions={{
+          width: '100%',
+          height: '100%'
+        }}
+        listItems={ kingLogos } 
+        type="flow-right"
+      />
     </div>
   )
 };

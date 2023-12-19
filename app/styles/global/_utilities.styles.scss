@@ -2,3 +2,9 @@
   display: flex;
   justify-content: center;
 }
+
+.intersected {
+  transform: translate(0);
+  filter: blur(0);
+  opacity: 1;
+}

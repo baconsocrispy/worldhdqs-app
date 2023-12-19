@@ -1,93 +1,106 @@
 'use client'
+
 // library
 import { 
   ElementType, 
-  FC, 
+  forwardRef,
+  MutableRefObject,
   ReactNode, 
   useEffect, 
   useRef 
 } from "react";
 
 // types
-export type AnimatedEntryWrapperStyles = {
-  opacity?: string; // opacity transition in seconds and timing function (i.e. '0.5s ease-in-out')
-  transform?: string;  // transform transition in seconds
-  translateX?: number; // x-axis offset in rem at start
-  translateY?: number; // y-axis offset in rem at start
-  colorTiming?: string; // color & backgroundColor transition in seconds and timing function
-  transitionDelay?: number;
-};
+import { AnimationOptions } from "@/app/types";
 
 type AnimatedEntryWrapperProps = {
+  animationOptions?: AnimationOptions;
   children: ReactNode;
   className?: string;
   id?: string | number;
+  index?: number;
   intersectionOptions?: IntersectionObserverInit;
-  styleOptions?: AnimatedEntryWrapperStyles;
+  intersectionTarget?: MutableRefObject<HTMLElement | null>;
   wrapperElement: ElementType;
 };
 
-const AnimatedEntryWrapper: FC<AnimatedEntryWrapperProps>  = ({ 
+const AnimatedEntryWrapper = forwardRef<HTMLElement, AnimatedEntryWrapperProps>(
+  function AnimatedEntryWrapper ({ 
+  animationOptions,
   children, 
   className,
   id,
+  index = 1,
   intersectionOptions, 
-  styleOptions, 
+  intersectionTarget,
   wrapperElement: Wrapper
-}) => {
+}, ref) {
   // state
   const targetElement = useRef<HTMLElement | null>(null);
+  const transitionDelay = animationOptions?.transitionDelay ?? 0;
 
   // instantiate intersection observer on mount
   useEffect(() => {
     // return if not planning to use intersection observer
-    if (!intersectionOptions && !styleOptions) return;
+    if (!intersectionOptions && !animationOptions) return;
 
-    const element = targetElement.current;
+    const thisElement = targetElement.current;
+    const intersectionElement = intersectionTarget?.current ?? thisElement;
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && element) {
+        if (entry.isIntersecting && intersectionElement && thisElement) {
           // add intersected class to target element for additional styling
-          element.classList.add('intersected')
+          intersectionElement?.classList.add('intersected')
 
-          // reset opacity and translate to final position
-          element.style.opacity = '1';
-          element.style.transform = 'translateX(0)';
-          element.style.transform = 'translateY(0)';
-        } else if (!entry.isIntersecting && element) {
-          element.classList.remove('intersected');
+          console.log(entry.isIntersecting);
+
+          // reset animation properties
+          thisElement.style.opacity = '1';
+          thisElement.style.transform = 'translateX(0)';
+          thisElement.style.transform = 'translateY(0)';
+          thisElement.style.filter = 'blur(0px)';
+        } else if (!entry.isIntersecting && intersectionElement) {
+          intersectionElement?.classList.remove('intersected');
         }
       });
     }, intersectionOptions);
 
-    if (element) {
-      observer.observe(element);
+    if (intersectionElement) {
+      observer.observe(intersectionElement);
     }
-  }, [ intersectionOptions, styleOptions ]);
+  }, [ animationOptions, intersectionOptions, intersectionTarget ]);
 
   return (
     <Wrapper 
       className={ className }
       id={ id }
-      ref={ targetElement }
+      ref={ (refInstance: HTMLElement | null) => {
+        targetElement.current = refInstance;
+        if (typeof ref === 'function') {
+          ref(refInstance);
+        } else if (ref) {
+          ref.current = refInstance
+        }
+      }}
       style={{ 
-        opacity: `${ styleOptions?.opacity ? 0 : 1 }`, 
+        filter: `blur(${ animationOptions?.blur ?? '0px' })`,
+        opacity: `${ animationOptions?.opacity ?? '0s' }`, 
         transform: `
-          translateX(${ styleOptions?.translateX ?? '0' }rem)
-          translateY(${ styleOptions?.translateY ?? '0' }rem)
+          translateX(${ animationOptions?.translateX ?? '0' }%)
+          translateY(${ animationOptions?.translateY ?? '0' }%)
         `, 
         transition: `
-          opacity ${ styleOptions?.opacity ?? '0s' },
-          transform ${ styleOptions?.transform ?? '0s' },
-          background-color ${ styleOptions?.colorTiming ?? '0s' },
-          color ${ styleOptions?.colorTiming ?? '0s' }
-        `
+          all
+          ${ animationOptions?.transitionDuration ?? '0s' }
+          ${ animationOptions?.transitionFunction ?? 'linear'}
+        `,
+        transitionDelay: (transitionDelay * index).toString() + 's',
       }} 
     >
       { children }
     </Wrapper>
   )
-};
+});
 
 export default AnimatedEntryWrapper;

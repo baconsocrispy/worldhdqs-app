@@ -5,11 +5,10 @@ import { FC, ReactNode } from "react";
 import Card from "../card/card.component";
 
 // types
-import { Case, Service } from "@/app/types";
-import { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
+import { AnimationOptions, Case, Service } from "@/app/types";
 
 type CardsProps = {
-  cardEntryAnimation?: AnimatedEntryWrapperStyles;
+  cardAnimationOptions?: AnimationOptions;
   cardLinkText?: string;
   cardMedia?: ReactNode[];
   cardIntersectionOptions?: IntersectionObserverInit;
@@ -19,7 +18,7 @@ type CardsProps = {
 };
 
 const Cards: FC<CardsProps> = ({ 
-  cardEntryAnimation,
+  cardAnimationOptions,
   cardIntersectionOptions,
   cardLinkText,
   cardMedia,
@@ -28,9 +27,9 @@ const Cards: FC<CardsProps> = ({
   layout = 'grid',
 }) => {
   // reverse translateX for even numbered list items when in alternating mode
-  const alternatingEntryAnimation = {
-    ...cardEntryAnimation,
-    translateX: cardEntryAnimation?.translateX && -cardEntryAnimation?.translateX
+  const alternatingEntryAnimation: AnimationOptions = {
+    ...cardAnimationOptions,
+    translateX: cardAnimationOptions?.translateX && -cardAnimationOptions?.translateX
   };
 
   return (
@@ -39,9 +38,9 @@ const Cards: FC<CardsProps> = ({
         items.map((item, index) => 
           <Card
             key={ item.id }
-            entryAnimation={ (layout === 'alternating' && index % 2 !== 0) ? 
+            animationOptions={ (layout === 'alternating' && index % 2 !== 0) ? 
               alternatingEntryAnimation :
-              cardEntryAnimation
+              cardAnimationOptions
             }
             intersectionOptions={ cardIntersectionOptions }
             item={ item }

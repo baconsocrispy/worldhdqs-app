@@ -1,6 +1,18 @@
 // types
 import { ReactNode } from "react";
 
+export type AnimationOptions = {
+  backgroundColor?: string; // i.e. 'teal'
+  blur?: string; // i.e '5px'
+  color?: string; // i.e. 'white'
+  opacity?: string; // i.e. '1'
+  translateX?: number; // %
+  translateY?: number; // %
+  transitionDelay?: number; // s
+  transitionDuration?: string; // i.e. '5s'
+  transitionFunction?: string; // i.e 'ease-in-out'
+}
+
 export type Case = {
   description: string;
   id: number;

@@ -1,59 +1,86 @@
+'use client'
 // library
-import { FC } from "react";
+import { FC, useRef } from "react";
 
 // components
-import AnimatedEntryWrapper, { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
+import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
 import Heading from "../heading/heading.component";
 import Image from "next/image";
 import Link from "../link/link.component";
 
 // types
-import { ListItem } from "@/app/types";
+import { AnimationOptions, ListItem } from "@/app/types";
 
 type ListProps = {
+  animationOptions?: AnimationOptions;
+  animationTarget?: 'ul' | 'li'; 
   className?: string;
-  entryAnimation?: AnimatedEntryWrapperStyles;
   id?: string | number;
+  imageOptions?: {
+    width?: string;
+    height?: string;
+  };
   intersectionOptions?: IntersectionObserverInit;
+  intersectionTarget?: 'ul' | 'li';
   listItems?: ListItem[];
-  type?: 'drop' | 'flow-right' | 'link' | 'nav';
+  type?: 'drop' | 'flow-right' | 'horizontal' | 'link' | 'nav' | 'vertical';
 };
 
 const List: FC<ListProps> = ({ 
+  animationOptions,
+  animationTarget = 'li',
   className, 
-  entryAnimation,
   id, 
+  imageOptions = {
+    width: '100px',
+    height: '100px'
+  },
   intersectionOptions,
+  intersectionTarget = 'ul',
   listItems = [], 
-  type = 'drop'
+  type = 'vertical'
 }) => {
-  const transitionDelay = entryAnimation?.transitionDelay ?? 0;
+  const ulRef = useRef<HTMLElement | null>(null);
 
   return (
-    <AnimatedEntryWrapper 
-      className={ `list list--${ type } ${ className ?? '' }`}
+    <AnimatedEntryWrapper
+      animationOptions={ animationTarget === 'ul' ? animationOptions : undefined }
+      className={ `
+        list 
+        list--${ type } 
+        ${ className ?? '' }
+      `}
       id={ id }
-      intersectionOptions={ intersectionOptions }
-      styleOptions={ entryAnimation }
+      intersectionOptions={ intersectionTarget === 'ul' ? intersectionOptions : undefined }
+      ref={ ulRef }
       wrapperElement={ 'ul' }
     >
       { listItems.map((item, index) => 
-        <li 
+        <AnimatedEntryWrapper 
+          animationOptions={ animationTarget === 'li' ? animationOptions : undefined }
+          intersectionOptions={ intersectionOptions }
+          intersectionTarget={ intersectionTarget === 'ul' ? ulRef : undefined }
           className={ `list__item list__item--${ type }` } 
+          index={ index }
           key={ index } 
-          style={{ 
-            transitionDelay: (transitionDelay * index).toString() + 's', 
-            zIndex: listItems.length - index
-          }}
+          wrapperElement={ 'li' }
         >
           { item.image &&  
-              <Image 
-                className="list__image"
-                src={ item.image.src }
-                width={ 100 }
-                height={ 100 }
-                alt="item"
-              />
+              <div 
+                className="list__image-container"
+                style={{
+                  height: `${ imageOptions.height }`,
+                  width: `${ imageOptions.width }`
+                }}
+              >
+                <Image 
+                  className="list__image"
+                  src={ item.image.src }
+                  fill
+                  objectFit="contain"
+                  alt="item"
+                />
+              </div>
           }
 
           { item.textHighlight &&
@@ -74,7 +101,7 @@ const List: FC<ListProps> = ({
                 { item.text }
               </p>
           }
-        </li>
+        </AnimatedEntryWrapper>
       )}
     </AnimatedEntryWrapper>
   )

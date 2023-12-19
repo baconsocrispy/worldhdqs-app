@@ -2,28 +2,30 @@
 import { FC, ReactNode } from "react";
 
 // components
-import AnimatedEntryWrapper, { AnimatedEntryWrapperStyles } from "../animated-entry-wrapper/animated-entry-wrapper";
+import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
 
 // types
+import { AnimationOptions } from "@/app/types";
+
 type SectionProps = {
+  animationOptions?: AnimationOptions;
   children: ReactNode;
   className?: string;
-  entryAnimation?: AnimatedEntryWrapperStyles;
   id?: string;
   intersectionOptions?: IntersectionObserverInit;
 };
 
 const Section: FC<SectionProps> = ({ 
+  animationOptions,
   children, 
-  className, 
-  entryAnimation, 
+  className,  
   id, 
   intersectionOptions 
 }) => {
   return (
     <AnimatedEntryWrapper 
       className={ `section ${ className ?? '' }`}
-      styleOptions={ entryAnimation }
+      animationOptions={ animationOptions }
       id={ id }
       intersectionOptions={ intersectionOptions }
       wrapperElement={ 'section' }
