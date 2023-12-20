@@ -12,12 +12,19 @@ const LogoDesign = () => {
         Logo Design & Analysis
       </Heading>
       <List 
+        animationOptions={{
+          opacity: '0',
+          translateX: -100,
+          transitionDuration: '10s',
+          transitionFunction: 'ease-in'
+        }}
+        intersectionOptions={{ threshold: 0.5 }}
         imageOptions={{
+          height: '100%',
           width: '100%',
-          height: '100%'
         }}
         listItems={ kingLogos } 
-        type="flow-right"
+        type="horizontal"
       />
     </div>
   )

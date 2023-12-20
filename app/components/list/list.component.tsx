@@ -45,11 +45,9 @@ const List: FC<ListProps> = ({
   return (
     <AnimatedEntryWrapper
       animationOptions={ animationTarget === 'ul' ? animationOptions : undefined }
-      className={ `
-        list 
-        list--${ type } 
-        ${ className ?? '' }
-      `}
+      className={ 
+        `list list--${ type } ${ className ?? '' }`
+      }
       id={ id }
       intersectionOptions={ intersectionTarget === 'ul' ? intersectionOptions : undefined }
       ref={ ulRef }

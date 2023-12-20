@@ -85,7 +85,7 @@ const AnimatedEntryWrapper = forwardRef<HTMLElement, AnimatedEntryWrapperProps>(
       }}
       style={{ 
         filter: `blur(${ animationOptions?.blur ?? '0px' })`,
-        opacity: `${ animationOptions?.opacity ?? '0s' }`, 
+        opacity: `${ animationOptions?.opacity ?? '1' }`, 
         transform: `
           translateX(${ animationOptions?.translateX ?? '0' }%)
           translateY(${ animationOptions?.translateY ?? '0' }%)
