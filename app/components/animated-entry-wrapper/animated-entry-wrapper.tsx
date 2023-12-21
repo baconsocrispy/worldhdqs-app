@@ -2,6 +2,7 @@
 
 // library
 import { 
+  CSSProperties,
   ElementType, 
   forwardRef,
   MutableRefObject,
@@ -21,6 +22,7 @@ type AnimatedEntryWrapperProps = {
   index?: number;
   intersectionOptions?: IntersectionObserverInit;
   intersectionTarget?: MutableRefObject<HTMLElement | null>;
+  style?: CSSProperties;
   wrapperElement: ElementType;
 };
 
@@ -33,6 +35,7 @@ const AnimatedEntryWrapper = forwardRef<HTMLElement, AnimatedEntryWrapperProps>(
   index = 1,
   intersectionOptions, 
   intersectionTarget,
+  style,
   wrapperElement: Wrapper
 }, ref) {
   // state
@@ -96,6 +99,7 @@ const AnimatedEntryWrapper = forwardRef<HTMLElement, AnimatedEntryWrapperProps>(
           ${ animationOptions?.transitionFunction ?? 'linear'}
         `,
         transitionDelay: (transitionDelay * index).toString() + 's',
+        ...style
       }} 
     >
       { children }

@@ -151,11 +151,29 @@ export const skills: Skill[] = [
   }
 ];
 
+export const adjectives = [
+  "Authentic", "Innovative", "Creative", "Trustworthy", "Friendly", 
+  "Sophisticated", "Reliable", "Dynamic", "Approachable", "Professional", 
+  "Bold", "Engaging", "Playful", "Empowering", "Modern", "Chic", 
+  "Accessible", "Energetic", "Welcoming", "Inspirational", "Unique", 
+  "Versatile", "Fresh", "Vibrant", "Credible", "Ethical", 
+  "Transparent", "Diverse", "Passionate", "Visionary", "Impactful", 
+  "Resilient", "Thoughtful", "Dependable", "Intuitive", "Trendy", 
+  "Expressive", "Memorable", "Adaptable", "Spirited", "Relevant", 
+  "Human", "Progressive", "Distinctive", "Tenacious", "Collaborative", 
+  "Pragmatic", "Inclusive", "Spontaneous", "Magnetic", "Relatable", 
+  "Futuristic", "Resonant", "Unconventional", "Provocative", "Exceptional", 
+  "Cultured", "Assertive", "Timeless", "Convivial", "Imaginative", 
+  "Cutting-edge", "Trailblazing", "Iconic", "Radiant", "Striking", 
+  "Enduring", "Empathetic", "Pioneering", "Disruptive", 
+  "Captivating", "Genuine", "Unforgettable", "Uncompromising"
+];
+
 export const rotatingContent: ReactNode[] = [
   <LogoDesign key={ 0 } />,
   <GraphicDesign key={ 1 } />,
   <ColorAnalysis key={ 2 } />,
-  <BrandVoice key={ 3 } />
+  <BrandVoice key={ 3 } stringList={ adjectives }/>
 ];
 
 export const cardMedia: ReactNode[] = [
