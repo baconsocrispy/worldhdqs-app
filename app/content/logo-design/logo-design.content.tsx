@@ -14,8 +14,8 @@ const LogoDesign = () => {
       <List 
         animationOptions={{
           opacity: '0',
-          translateX: -100,
-          transitionDuration: '10s',
+          translateX: -50,
+          transitionDuration: '2s',
           transitionFunction: 'ease-in'
         }}
         intersectionOptions={{ threshold: 0.5 }}
