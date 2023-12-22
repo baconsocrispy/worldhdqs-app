@@ -1,34 +1,39 @@
 'use client'
 // library
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 // components
 import Image from "next/image";
 
 // types
-import { Skill } from "@/app/types";
+import { SerializedImage, Skill } from "@/app/types";
+
+export type AnimatedCarouselItem = {
+  image: SerializedImage;
+  text?: string;
+}
 
 type AnimatedCarouselProps = {
-  headingAnimation?: string;
-  logoAnimation?: string;
-  skills: Skill[];
+  textAnimation?: string;
+  imageAnimation?: string;
+  items: AnimatedCarouselItem[];
   time?: number; // animation duration in seconds
 };
 
 const AnimatedCarousel: FC<AnimatedCarouselProps> = ({ 
-  headingAnimation,
-  logoAnimation, 
-  skills, 
+  textAnimation,
+  imageAnimation, 
+  items, 
   time = 2
 }) => {
   // state
-  const [ currentSkillIndex, setCurrentSkillIndex ] = useState(0);
-  const onLastIndex = currentSkillIndex === skills.length - 1;
+  const [ currentItemIndex, setCurrentItemIndex ] = useState(0);
+  const onLastIndex = currentItemIndex === items.length - 1;
 
   const handelAnimationIteration = () => {
     const rotateNext = () => {
-      const nextIndex = onLastIndex ? 0 : currentSkillIndex + 1;
-      setCurrentSkillIndex(nextIndex);
+      const nextIndex = onLastIndex ? 0 : currentItemIndex + 1;
+      setCurrentItemIndex(nextIndex);
     };
     rotateNext();
   };
@@ -37,22 +42,22 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
     <div className="animated-carousel">
       <h4 
         className="animated-carousel__heading"
-        style={{ animation: `${ headingAnimation } ${ time * 1000 }ms ease-in-out infinite`}}
+        style={{ animation: `${ textAnimation } ${ time * 1000 }ms ease-in-out infinite`}}
         onAnimationIteration={ handelAnimationIteration }
       >
-        { skills[currentSkillIndex].name }
+        { items[currentItemIndex].text ?? '' }
       </h4>
-      <div 
+      <div
         className="animated-carousel__image-container"
         onAnimationIteration={ handelAnimationIteration }
-        style={{ animation: `${ logoAnimation } ${ time * 1000 }ms ease-in-out infinite` }}
+        style={{ animation: `${ imageAnimation } ${ time * 1000 }ms ease-in-out infinite` }}
       >
         <Image
           alt='img'
           className="animated-carousel__image"
-          src={ skills[currentSkillIndex].logo.src }
-          width={ 100 }
-          height={ 100 }  
+          src={ items[currentItemIndex].image.src }
+          fill
+          objectFit="contain"
         />
       </div>
     </div>

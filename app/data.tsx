@@ -2,7 +2,7 @@
 import { ReactNode } from "react";
 
 // components
-import AnimatedCarousel from "./components/carousel-animated/carousel-animated.component";
+import AnimatedCarousel, { AnimatedCarouselItem } from "./components/carousel-animated/carousel-animated.component";
 import RotatingCarousel from "./components/carousel-rotating/carousel-rotating.component";
 
 // types
@@ -15,6 +15,8 @@ import LogoDesign from "./content/logo-design/logo-design.content";
 import GraphicDesign from "./content/graphic-design/graphic-design.content";
 import ColorAnalysis from "./content/color-analysis/color-analysis.content";
 import BrandVoice from "./content/brand-voice/brand-voice.content";
+import PhotoShoot from "./content/photo-shoot/photo-shoot.content";
+import Video from "./components/video/video.component";
 
 export const cases: Case[] = [
   { 
@@ -108,46 +110,62 @@ export const services: Service[] = [
   }
 ];
 
-export const skills: Skill[] = [
+export const skills: AnimatedCarouselItem[] = [
   {
-    id: 1,
-    logo: {
+    image: {
       id: 1,
       src: '/logos/ruby.svg'
     },
-    name: 'Ruby'
+    text: 'Ruby'
   },
   {
-    id: 2,
-    logo: {
+    image: {
       id: 2,
       src: '/logos/js.png'
     },
-    name: 'JavaScript'
+    text: 'JavaScript'
   },
   {
-    id: 3,
-    logo: {
+    image: {
       id: 3,
       src: '/logos/ts.png'
     },
-    name: 'TypeScript'
+    text: 'TypeScript'
   },
   {
-    id: 4,
-    logo: {
+    image: {
       id: 4,
       src: '/logos/next-js.svg'
     },
-    name: 'Next.js'
+    text: 'Next.js'
   },
   {
-    id: 5,
-    logo: {
+    image: {
       id: 5,
       src: '/logos/react.png'
     },
-    name: 'React'
+    text: 'React'
+  }
+];
+
+export const graphics: AnimatedCarouselItem[] = [
+  {
+    image: {
+      id: 1,
+      src: '/graphics/SVG/icon.ico'
+    }
+  },
+  {
+    image: {
+      id: 2,
+      src: '/graphics/animals/TRex.png'
+    }
+  },
+  {
+    image: {
+      id: 3,
+      src: '/graphics/SVG/Sticker_v8.png'
+    }
   }
 ];
 
@@ -169,19 +187,82 @@ export const adjectives = [
   "Captivating", "Genuine", "Unforgettable", "Uncompromising"
 ];
 
+const photos: AnimatedCarouselItem[] = [
+  {
+    image: {
+      id: 1,
+      src: '/photos/1.jpg'
+    }
+  },
+  {
+    image: {
+      id: 2,
+      src: '/photos/3.jpg'
+    }
+  },
+  {
+    image: {
+      id: 3,
+      src: '/photos/6.jpg'
+    }
+  },
+  {
+    image: {
+      id: 4,
+      src: '/photos/4.jpg'
+    }
+  },
+  {
+    image: {
+      id: 5,
+      src: '/photos/5.jpg'
+    }
+  },
+  {
+    image: {
+      id: 6,
+      src: '/photos/6.jpg'
+    }
+  },
+  {
+    image: {
+      id: 7,
+      src: '/photos/7.jpg'
+    }
+  },
+  {
+    image: {
+      id: 8,
+      src: '/photos/8.jpg'
+    }
+  },
+  {
+    image: {
+      id: 9,
+      src: '/photos/9.jpg'
+    }
+  },
+  {
+    image: {
+      id: 10,
+      src: '/photos/10.jpg'
+    }
+  },
+];
+
 export const rotatingContent: ReactNode[] = [
   <LogoDesign key={ 0 } />,
   <GraphicDesign key={ 1 } />,
   <ColorAnalysis key={ 2 } />,
-  <BrandVoice key={ 3 } stringList={ adjectives }/>
+  <BrandVoice key={ 3 } stringList={ adjectives } />
 ];
 
 export const cardMedia: ReactNode[] = [
   <AnimatedCarousel
     key={ 0 }
-    headingAnimation="whizLeftToRight"
-    logoAnimation='whizRightToLeft'
-    skills={ skills } 
+    textAnimation="whizLeftToRight"
+    imageAnimation='whizRightToLeft'
+    items={ skills } 
     time={ 2 }
   />,
   <RotatingCarousel 
@@ -196,16 +277,14 @@ export const cardMedia: ReactNode[] = [
     panelOffset={ 15 }
   />,
   <FlipCarousel 
+    duration={ 5 }
     items={[ 
-      <p key={ 0 }>test 1</p>,
-      <p key={ 1 }>test 2</p>,
-      <p key={ 2 }>test 3</p>,
-      <p key={ 3 }>test 4</p>,
-      <p key={ 4 }>test 5</p>, 
-      <p key={ 5 }>test 6</p>,
-      <p key={ 6 }>test 7</p>,
-      <p key={ 7 }>test 8</p>,
-      <p key={ 8 }>test 9</p>,
+      <AnimatedCarousel 
+        imageAnimation="noAnimation"
+        time={ 1 }
+        items={ photos }
+      />,
+      <Video src='/vid/raptor_1.mp4' />
     ]}
     key={ 2 }
   />

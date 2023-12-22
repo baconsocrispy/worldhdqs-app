@@ -1,7 +1,8 @@
 .animated-carousel {
   position: relative;
   display: grid;
-  grid-template-rows: 25% 75%;
+  grid-template-rows: max-content 1fr;
+  gap: $padding-default;
   width: 100%;
   height: 100%;
   padding: $padding-default;
@@ -13,13 +14,8 @@
   }
 
   &__image-container {
-    height: 100%;
+    position: relative;
     width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  &__image {
     height: 100%;
   }
 }

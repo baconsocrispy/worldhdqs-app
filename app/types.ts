@@ -53,7 +53,7 @@ export type Service = {
 export type Skill = {
   id: number; 
   logo: SerializedImage;
-  name: string;
+  name?: string;
 };
 
 export type Theme = {
