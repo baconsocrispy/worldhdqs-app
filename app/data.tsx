@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 
 // components
 import AnimatedCarousel, { AnimatedCarouselItem } from "./components/carousel-animated/carousel-animated.component";
+import List from "./components/list/list.component";
 import RotatingCarousel from "./components/carousel-rotating/carousel-rotating.component";
 
 // types
@@ -15,7 +16,6 @@ import LogoDesign from "./content/logo-design/logo-design.content";
 import GraphicDesign from "./content/graphic-design/graphic-design.content";
 import ColorAnalysis from "./content/color-analysis/color-analysis.content";
 import BrandVoice from "./content/brand-voice/brand-voice.content";
-import PhotoShoot from "./content/photo-shoot/photo-shoot.content";
 import Video from "./components/video/video.component";
 
 export const cases: Case[] = [
@@ -135,6 +135,7 @@ export const skills: AnimatedCarouselItem[] = [
   {
     image: {
       id: 4,
+      invert: true,
       src: '/logos/next-js.svg'
     },
     text: 'Next.js'
@@ -191,63 +192,186 @@ const photos: AnimatedCarouselItem[] = [
   {
     image: {
       id: 1,
-      src: '/photos/1.jpg'
+      src: '/photos/lifestyle/1.jpg'
     }
   },
   {
     image: {
       id: 2,
-      src: '/photos/3.jpg'
+      src: '/photos/lifestyle/3.jpg'
     }
   },
   {
     image: {
       id: 3,
-      src: '/photos/6.jpg'
+      src: '/photos/lifestyle/6.jpg'
     }
   },
   {
     image: {
       id: 4,
-      src: '/photos/4.jpg'
+      src: '/photos/lifestyle/4.jpg'
     }
   },
   {
     image: {
       id: 5,
-      src: '/photos/5.jpg'
+      src: '/photos/lifestyle/5.jpg'
     }
   },
   {
     image: {
       id: 6,
-      src: '/photos/6.jpg'
+      src: '/photos/lifestyle/6.jpg'
     }
   },
   {
     image: {
       id: 7,
-      src: '/photos/7.jpg'
+      src: '/photos/lifestyle/7.jpg'
     }
   },
   {
     image: {
       id: 8,
-      src: '/photos/8.jpg'
+      src: '/photos/lifestyle/8.jpg'
     }
   },
   {
     image: {
       id: 9,
-      src: '/photos/9.jpg'
+      src: '/photos/lifestyle/9.jpg'
     }
   },
   {
     image: {
       id: 10,
-      src: '/photos/10.jpg'
+      src: '/photos/lifestyle/10.jpg'
     }
   },
+];
+
+const studio: AnimatedCarouselItem[] = [
+  {
+    image: {
+      id: 1,
+      src: '/photos/studio/kvvadwo-d-smoke-2.png'
+    }
+  },
+  {
+    image: {
+      id: 2,
+      src: '/photos/studio/kvvadwo-d-smoke-3.png'
+    }
+  },
+  {
+    image: {
+      id: 3,
+      src: '/photos/studio/kvvadwo-kirk-franklin-1.png'
+    }
+  },
+  {
+    image: {
+      id: 4,
+      src: '/photos/studio/kvvadwo-madison-calley-1.png'
+    }
+  },
+  {
+    image: {
+      id: 5,
+      src: '/photos/studio/kvvadwo-saba-1.png'
+    }
+  },
+  {
+    image: {
+      id: 6,
+      src: '/photos/studio/kvvadwo-toby-nwigwe-2.png'
+    }
+  }
+];
+
+const product: AnimatedCarouselItem[] = [
+  {
+    image: {
+      id: 1,
+      src: '/photos/product/timber-frame-ge-1.png'
+    }
+  },
+  {
+    image: {
+      id: 2,
+      src: '/photos/product/timber-frame-ge-2.png'
+    }
+  },
+  {
+    image: {
+      id: 3,
+      src: '/photos/product/timber-frame-ge-3.png'
+    }
+  },
+  {
+    image: {
+      id: 4,
+      src: '/photos/product/timber-frame-ge-4.png'
+    }
+  },
+  {
+    image: {
+      id: 5,
+      src: '/photos/product/kate-adams-neutrogena-4.jpeg'
+    }
+  },
+  {
+    image: {
+      id: 6,
+      src: '/photos/product/kate-adams-neutrogena-5.jpeg'
+    }
+  },
+  {
+    image: {
+      id: 7,
+      src: '/photos/product/kate-adams-neutrogena-7.jpeg'
+    }
+  },
+  {
+    image: {
+      id: 8,
+      src: '/photos/product/kate-adams-neutrogena-8.jpeg'
+    }
+  },
+  
+];
+const lineProd: AnimatedCarouselItem[] = [
+  {
+    image: {
+      id: 1,
+      src: '/logos/line/hot-budget.png'
+    }
+  },
+  {
+    image: {
+      id: 2,
+      src: '/logos/line/movie-magic.png'
+    }
+  },
+  {
+    image: {
+      id: 3,
+      src: '/logos/line/premiere.png'
+    }
+  },
+  {
+    image: {
+      id: 4,
+      src: '/logos/line/showbiz.png'
+    }
+  },
+  {
+    image: {
+      id: 5,
+      src: '/logos/line/wrapbook.png'
+    }
+  }
 ];
 
 export const rotatingContent: ReactNode[] = [
@@ -277,14 +401,57 @@ export const cardMedia: ReactNode[] = [
     panelOffset={ 15 }
   />,
   <FlipCarousel 
-    duration={ 5 }
+    duration={ 10 }
     items={[ 
-      <AnimatedCarousel 
-        imageAnimation="noAnimation"
-        time={ 1 }
-        items={ photos }
+      { 
+        content: <AnimatedCarousel 
+                    animationDelay={ 1 }
+                    imageAnimation="noAnimation"
+                    time={ 1 }
+                    items={ photos }
+                  />,
+        text: 'Lifestyle/Street Photography'
+      },
+      {
+        content: <Video src='/vid/raptor_1.mp4' />,
+        text: 'Commercial Video'
+      },
+      {
+        content: <List 
+        animationOptions={{
+          opacity: '0',
+          translateX: -50,
+          transitionDuration: '2s',
+          transitionFunction: 'ease-in'
+        }}
+        intersectionOptions={{ threshold: 0.5 }}
+        imageOptions={{
+          height: '100%',
+          width: '100%',
+        }}
+        listItems={ lineProd } 
+        type="horizontal"
       />,
-      <Video src='/vid/raptor_1.mp4' />
+      text: 'Line Production & Editing'
+      },
+      { 
+        content: <AnimatedCarousel 
+                    animationDelay={ 1 }
+                    imageAnimation="noAnimation"
+                    time={ 1 }
+                    items={ studio }
+                  />,
+        text: 'Studio Production'
+      },
+      { 
+        content: <AnimatedCarousel 
+                    animationDelay={ 1 }
+                    imageAnimation="noAnimation"
+                    time={ 1 }
+                    items={ product }
+                  />,
+        text: 'Product Photography'
+      },
     ]}
     key={ 2 }
   />

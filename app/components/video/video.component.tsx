@@ -19,8 +19,9 @@ const Video: FC<VideoProps> = ({
       }}
     >
       <video 
-        autoPlay
+        autoPlay={ true }
         loop 
+        muted
         src={ src }
       />
     </div>

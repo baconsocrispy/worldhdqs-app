@@ -1,12 +1,12 @@
 'use client'
 // library
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 
 // components
 import Image from "next/image";
 
 // types
-import { SerializedImage, Skill } from "@/app/types";
+import { SerializedImage } from "@/app/types";
 
 export type AnimatedCarouselItem = {
   image: SerializedImage;
@@ -14,6 +14,7 @@ export type AnimatedCarouselItem = {
 }
 
 type AnimatedCarouselProps = {
+  animationDelay?: number;
   textAnimation?: string;
   imageAnimation?: string;
   items: AnimatedCarouselItem[];
@@ -21,14 +22,16 @@ type AnimatedCarouselProps = {
 };
 
 const AnimatedCarousel: FC<AnimatedCarouselProps> = ({ 
+  animationDelay = 0,
   textAnimation,
   imageAnimation, 
   items, 
-  time = 2
+  time = 2,
 }) => {
   // state
   const [ currentItemIndex, setCurrentItemIndex ] = useState(0);
   const onLastIndex = currentItemIndex === items.length - 1;
+  const currentItem = items[currentItemIndex];
 
   const handelAnimationIteration = () => {
     const rotateNext = () => {
@@ -38,24 +41,26 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
     rotateNext();
   };
 
+ 
+
   return (
     <div className="animated-carousel">
       <h4 
         className="animated-carousel__heading"
-        style={{ animation: `${ textAnimation } ${ time * 1000 }ms ease-in-out infinite`}}
+        style={{ animation: `${ textAnimation } ${ time * 1000 }ms ease-in-out infinite ${ animationDelay * 1000 }ms`}}
         onAnimationIteration={ handelAnimationIteration }
       >
-        { items[currentItemIndex].text ?? '' }
+        { currentItem.text ?? '' }
       </h4>
       <div
         className="animated-carousel__image-container"
         onAnimationIteration={ handelAnimationIteration }
-        style={{ animation: `${ imageAnimation } ${ time * 1000 }ms ease-in-out infinite` }}
+        style={{ animation: `${ imageAnimation } ${ time * 1000 }ms ease-in-out infinite ${ animationDelay * 1000 }ms` }}
       >
         <Image
           alt='img'
-          className="animated-carousel__image"
-          src={ items[currentItemIndex].image.src }
+          className={ `animated-carousel__image ${ currentItem.image.invert ? 'inverted' : '' }` }
+          src={ currentItem.image.src }
           fill
           objectFit="contain"
         />

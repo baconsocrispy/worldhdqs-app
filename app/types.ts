@@ -40,6 +40,7 @@ export type Logo = {
 
 export type SerializedImage = {
   id: number;
+  invert?: boolean;
   src: string;
 };
 

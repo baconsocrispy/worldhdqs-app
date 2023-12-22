@@ -32,7 +32,7 @@ const Home = () => {
           Departments
         </Heading>
         <TextArea text={
-          'With expertise and a proven track record in many of today\'s cutting edge technologies, as well as years of experience in the content creation business, World Headquarters will bring your ideas to life.'
+          'With expertise in many of today\'s cutting edge technologies, as well as years of experience in the content creation business, World Headquarters will bring your ideas to life.'
         } />
         <Cards 
           cardAnimationOptions={{

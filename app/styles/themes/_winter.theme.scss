@@ -43,6 +43,10 @@ $winter--border-radius: 1rem;
     min-height: $height-card;
   }
 
+  .card--vertical .inverted {
+    filter: invert(1);
+  }
+
   section.intersected {
     background-color: $winter--green;
     color: $winter--white;
