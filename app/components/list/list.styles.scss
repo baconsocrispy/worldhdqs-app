@@ -4,8 +4,12 @@
   list-style: none;
 
   &--vertical {
-    max-width: 50%;
+    width: 100%;
     gap: 2rem;
+
+    @media (min-width: $breakpoint-md) {
+      max-width: 50%;
+    }
   }
 
   &--horizontal {
