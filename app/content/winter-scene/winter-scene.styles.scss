@@ -14,15 +14,25 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 10rem;
+    height: 3rem;
+
+    @media (min-width: $breakpoint-md) {
+      height: 10rem;
+    }
   }
   
   &__smoke-container {
     position: absolute;
-    left: 47.8%;
-    top: -16%;
+    left: 50%;
+    top: 13%;
     width: 10%;
     aspect-ratio: 100 / 250;
+
+    @media (min-width: $breakpoint-md) {
+      left: 47.8%;
+      top: -16%;
+      width: 10%;
+    }
   }
 
   &__smoke-img {
@@ -50,10 +60,17 @@
     z-index: -2;
     position: absolute;
     border-radius: 50%;
-    left: 51%;
-    top: 31%;
-    width: 20px;
-    height: 20px;
+    left: 55%;
+    top: 31.5%;
+    width: 15px;
+    height: 15px;
     animation: flicker 0.2s linear infinite;
+
+    @media (min-width: $breakpoint-md) {
+      width: 20px;
+      height: 20px;
+      left: 51%;
+      top: 31%;
+    }
   }
 }

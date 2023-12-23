@@ -2,17 +2,35 @@
   display: flex;
 
   &__text {
+    font-size: inherit;
     position: relative;
+  }
+
+  &--1 {
+    font-variation-settings: $font-weight-header;
+    font-size: $font-size-header;
   }
 
   &--2 {
     text-align: center;
     text-transform: uppercase;
     font-variation-settings: $font-weight-header;
-    font-size: $font-size-header;
+    font-size: $font-size-header--mobile;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-header;
+    }
   }
 
   &--3 {
     text-transform: uppercase;
+  }
+
+  &--4 {
+    font-size: $font-size-sub-heading--mobile;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-sub-heading;
+    }
   }
 }

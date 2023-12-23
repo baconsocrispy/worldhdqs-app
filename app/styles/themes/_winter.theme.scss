@@ -9,6 +9,8 @@ $winter--font-primary:  "profile-pro", sans-serif;
 $winter--font-heading: "great-vibes";
 $winter--font-size-copy: 1.6rem;
 $winter--font-size-lg: 5rem;
+$winter--font-size-md: 4rem;
+$winter--font-size-sm: 3rem;
 
 // details
 $winter--box-shadow:  -.5rem .5rem 20px rgba(0, 0, 0, .5);
@@ -79,11 +81,19 @@ $winter--border-radius: 1rem;
   }
 
   p {
-    font-size: $winter--font-size-copy;
+    font-size: $font-size-default;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $winter--font-size-copy;
+    }
   }
 
   h1 {
-    font-size: $winter--font-size-lg;
+    font-size: $winter--font-size-md;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $winter--font-size-lg;
+    }
   }
 
   h4 {

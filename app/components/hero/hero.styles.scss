@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
 
   &__text {
     @include absolute-center;
@@ -11,13 +11,8 @@
     color: white;
   }
 
-  &__heading {
-    font-variation-settings: $font-weight-header;
-    font-size: $font-size-header;
-  }
-
-  &__sub-heading {
-    font-size: 2rem;
+  @media (min-width: $breakpoint-md) {
+    aspect-ratio: 16 / 9;
   }
 }
 
