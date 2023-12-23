@@ -8,6 +8,7 @@
   &--vertical {
     grid-template-rows: 50% repeat(2, max-content) 1fr;
     height: $height-card;
+    max-width: 35rem;
   }
 
   &--horizontal {
