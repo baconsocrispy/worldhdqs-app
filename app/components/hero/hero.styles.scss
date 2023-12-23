@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  height: $height-section;
+  aspect-ratio: 16 / 9;
 
   &__text {
     @include absolute-center;

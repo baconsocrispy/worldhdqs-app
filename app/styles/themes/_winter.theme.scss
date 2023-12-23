@@ -94,4 +94,28 @@ $winter--border-radius: 1rem;
     font-family: $winter--font-heading;
     text-transform: capitalize;
   }
+
+  #contact {
+    aspect-ratio: 16 / 9;
+    .heading,
+    label,
+    p {
+      mix-blend-mode: difference;
+      color: white;
+    }
+
+    input, 
+    textarea {
+      border-radius: $winter--border-radius;
+      border: none;
+
+      &:focus {
+        outline: 2px solid $winter--pink;
+      }
+    }
+
+    video {
+      box-shadow: $winter--box-shadow;
+    }
+  }
 }

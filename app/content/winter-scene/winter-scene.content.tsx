@@ -13,12 +13,10 @@ type WinterSceneProps = {
   backgroundColor?: string;
   color?: string;
   image: SerializedImage;
-  skyColor?: string;
 };
 
 const WinterScene: FC<WinterSceneProps> = ({ 
-  image, 
-  skyColor = 'black' 
+  image
 }) => {
   // state
   const { theme } = useContext(ThemeContext);
@@ -32,10 +30,46 @@ const WinterScene: FC<WinterSceneProps> = ({
           className="winter-scene__image"
           fill
           src={ image.src }
-          style={{ background: skyColor }}
         />
-      <div className="winter-scene__snow">
-      </div>
+        <div 
+          className="winter-scene__sky"
+          style={{
+            backgroundImage: `url(${ '/sky/night-sky.jpg'})`,
+            backgroundSize: 'contain'
+         }}
+        />
+        <div className="winter-scene__smoke">
+          <div className="winter-scene__smoke-container">
+            <Image 
+              alt='chimney smoke'
+              className="winter-scene__smoke-img--1"
+              fill
+              objectFit="contain"
+              src={ '/smoke/smoke-1.png' }
+            />
+          </div>
+          <div className="winter-scene__smoke-container">
+            <Image 
+              alt='chimney smoke'
+              className="winter-scene__smoke-img--2"
+              fill
+              objectFit="contain"
+              src={ '/smoke/smoke-1.png' }
+            />
+          </div>
+          <div className="winter-scene__smoke-container">
+            <Image 
+              alt='chimney smoke'
+              className="winter-scene__smoke-img--3"
+              fill
+              objectFit="contain"
+              src={ '/smoke/smoke-1.png' }
+            />
+          </div>
+        </div>
+        <div className="winter-scene__fire">
+        </div>
+      <div className="winter-scene__snow" />
     </div>
   )
 };

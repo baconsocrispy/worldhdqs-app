@@ -2,4 +2,5 @@
   display: grid;
   gap: $padding-default;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }

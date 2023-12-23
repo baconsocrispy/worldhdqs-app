@@ -14,6 +14,7 @@ import ContactForm from "@/app/forms/contact-form/contact-form.component";
 // data
 import { cardMedia, caseStudyMedia, cases, heroContent, processItems, services } from "@/app/data";
 import List from "@/app/components/list/list.component";
+import Video from "@/app/components/video/video.component";
 
 const Home = () => {
   return (
@@ -105,6 +106,7 @@ const Home = () => {
         </Heading>
         <TextArea text='Please leave a message' />
         <ContactForm />
+        <Video src="/vid/winter/noble-winter-1.mp4" type="background"/>
       </Section>
       <Footer />
     </Page>

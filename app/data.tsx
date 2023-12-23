@@ -44,7 +44,7 @@ export const images: SerializedImage[] = [
 ];
 
 export const heroContent: HeroContent[] = [
-  { component: <City image={ images[0] } key={ 0 } />  }, 
+  // { component: <City image={ images[0] } key={ 0 } />  }, 
   { component: <WinterScene color={ 'white' } image={ images[1] } key={ 1 } />, theme: { className: 'winter-theme' }}
 ];
 
@@ -55,13 +55,13 @@ export const kingLogos: ListItem[] = [
 ];
 
 export const navLinks: ListItem[] = [
-  { text: 'home', href: '/' },
-  { text: 'services', href: '/services' },
-  { text: 'portfolio', href: '/portfolio' },
-  { text: 'about', href: '/about' },
-  { text: 'blog', href: '/blog' },
-  { text: 'store', href: '/store' },
-  { text: 'contact', href: '/contact' }
+  { text: 'home', href: '#welcome' },
+  { text: 'services', href: '#departments' },
+  { text: 'process', href: '#process' },
+  { text: 'portfolio', href: '#selected-works' },
+  // { text: 'blog', href: '/blog' },
+  // { text: 'store', href: '/store' },
+  { text: 'contact', href: '#contact' }
 ]
 
 export const processItems: ListItem[] = [
@@ -432,7 +432,7 @@ export const cardMedia: ReactNode[] = [
         listItems={ lineProd } 
         type="horizontal"
       />,
-      text: 'Line Production & Editing'
+      text: 'Line Producing & Editing'
       },
       { 
         content: <AnimatedCarousel 

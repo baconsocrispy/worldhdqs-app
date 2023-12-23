@@ -5,15 +5,17 @@ import { FC } from "react";
 type VideoProps = {
   aspectRatio?: string;
   src: string;
+  type?: 'background';
 };
 
 const Video: FC<VideoProps> = ({ 
   aspectRatio = '16 / 9',
-  src 
+  src,
+  type
 }) => {
   return (
     <div 
-      className='video'
+      className={ `video video--${ type ?? '' }`}
       style={{
         aspectRatio: aspectRatio
       }}
