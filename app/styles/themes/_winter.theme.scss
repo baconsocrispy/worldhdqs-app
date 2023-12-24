@@ -110,26 +110,39 @@ $winter--border-radius: 1rem;
   }
 
   #contact {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 16;
+
     .heading,
     label,
     p {
-      mix-blend-mode: difference;
-      color: white;
+      @media (min-width: $breakpoint-md) {
+        mix-blend-mode: difference;
+        color: white;
+      }
     }
 
     input, 
     textarea {
       border-radius: $winter--border-radius;
       border: none;
+      outline: 1px solid black;
 
       &:focus {
         outline: 2px solid $winter--pink;
+      }
+
+      @media (min-width: $breakpoint-md) {
+        border-radius: $winter--border-radius;
+        border: none;
       }
     }
 
     video {
       box-shadow: $winter--box-shadow;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      aspect-ratio: 16 / 9;
     }
   }
 }

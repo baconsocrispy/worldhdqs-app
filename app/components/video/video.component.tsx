@@ -1,23 +1,26 @@
 // library
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 
 // types
 type VideoProps = {
   aspectRatio?: string;
   src: string;
+  style?: CSSProperties;
   type?: 'background';
 };
 
 const Video: FC<VideoProps> = ({ 
   aspectRatio = '16 / 9',
   src,
+  style,
   type
 }) => {
   return (
     <div 
       className={ `video video--${ type ?? '' }`}
       style={{
-        aspectRatio: aspectRatio
+        aspectRatio: aspectRatio,
+        ...style
       }}
     >
       <video 

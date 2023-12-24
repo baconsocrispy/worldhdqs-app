@@ -66,8 +66,8 @@ const Home = () => {
             intersectionOptions={{ threshold: .25 }}
           />
         </div>
-     
       </Section>
+
       <Section 
         animationOptions={{
           transitionDuration: '0.5s',
@@ -106,7 +106,10 @@ const Home = () => {
         </Heading>
         <TextArea text='Please leave a message' />
         <ContactForm />
-        <Video src="/vid/winter/noble-winter-1.mp4" type="background"/>
+        <Video 
+          src="/vid/winter/noble-winter-1.mp4" 
+          type="background"
+        />
       </Section>
       <Footer />
     </Page>
