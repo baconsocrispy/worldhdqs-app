@@ -13,8 +13,12 @@
 
   &--horizontal {
     position: relative;
-    grid-template-rows: repeat(2, max-content) 1fr max-content;
-    grid-template-columns: 70% 25%;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-rows: repeat(2, max-content) 1fr max-content;
+      grid-template-columns: 70% 25%;
+    }
   }
 
   &--horizontal > 
