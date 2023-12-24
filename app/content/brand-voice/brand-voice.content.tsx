@@ -28,7 +28,7 @@ const BrandVoice: FC<BrandVoiceProps> = ({ stringList = [] }) => {
                 transitionFunction: 'ease-in'
               }}
               index={ index }
-              intersectionOptions={{ threshold: 0.9 }}
+              intersectionOptions={{ root: null, threshold: 0.1 }}
               className="randomizer__content"
               key={ index }
               style={{
