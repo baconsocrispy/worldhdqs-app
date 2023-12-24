@@ -35,9 +35,13 @@
     background-color: black;
   }
 
-  &__back-content {
+  &__front-content {
     -webkit-transform: translate3d(0,0,0);
-    transform: rotateX(180deg);
+    transform: rotateX(0deg);
   }
 
+  &__back-content {
+ 
+    transform: rotateX(180deg);
+  }
 }
