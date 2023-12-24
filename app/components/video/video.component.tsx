@@ -27,6 +27,7 @@ const Video: FC<VideoProps> = ({
         autoPlay={ true }
         loop 
         muted
+        playsInline
         src={ src }
       />
     </div>
