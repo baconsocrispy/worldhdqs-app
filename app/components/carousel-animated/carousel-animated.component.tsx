@@ -55,7 +55,7 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
       <div
         className="animated-carousel__image-container"
         onAnimationIteration={ handelAnimationIteration }
-        style={{ animation: `${ imageAnimation } ${ time * 1000 }ms ease-in-out infinite ${ animationDelay * 1000 }ms` }}
+        style={{ animation: `${ imageAnimation } ${ time * 1000 }ms ease-in-out infinite ${ animationDelay * 0 }ms` }}
       >
         <Image
           alt='img'

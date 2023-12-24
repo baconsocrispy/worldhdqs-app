@@ -42,7 +42,7 @@ const FlipCarousel: FC<FlipCarouselProps> = ({
     const interval = setInterval(rotateNext, duration * 1000);
 
     return () => clearInterval(interval);
-  }, [ backIndex, duration, flipped, frontIndex, items.length ]);
+  }, [ currentIndex, backIndex, duration, flipped, frontIndex, items.length ]);
 
   return (
     <div className="flip-carousel">
