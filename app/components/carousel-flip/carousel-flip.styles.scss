@@ -28,6 +28,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
 
@@ -36,6 +37,7 @@
     width: 100%;
     height: 100%;
     transform: rotateX(180deg);
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
 
