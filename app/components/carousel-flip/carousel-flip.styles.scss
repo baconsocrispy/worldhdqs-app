@@ -29,19 +29,13 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    background-color: black;
+    -webkit-backface-visibility: hidden;
   }
 
   &__back-content {
-    // position: absolute;
-    // width: 100%;
-    // height: 100%;
     -webkit-transform: translate3d(0,0,0);
     transform: rotateX(180deg);
-    // -webkit-backface-visibility: hidden;
-    // backface-visibility: hidden;
   }
 
 }
