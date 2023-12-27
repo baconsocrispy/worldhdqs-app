@@ -8,7 +8,7 @@ type TextAreaProps = {
 
 const TextArea: FC<TextAreaProps> = ({ text }) => {
   return (
-    <div className={ `text-area` }>
+    <div className='text-area'>
       <p className="text-area__text">
         { text }
       </p>

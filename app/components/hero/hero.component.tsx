@@ -46,7 +46,7 @@ const Hero: FC<HeroProps> = ({
   };
 
   return (
-    <div className={ `hero` }>
+    <div className='hero'>
       <div className="hero__content-container">
         { hoverContent ?? selectedContent }
         <div className="hero__text"> 

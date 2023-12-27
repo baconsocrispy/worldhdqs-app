@@ -1,6 +1,9 @@
 // library
 import { FC } from "react";
 
+// helpers
+import { cleanClassName } from "@/app/helpers";
+
 // types
 type FormInputProps = {
   id: string;
@@ -21,7 +24,7 @@ const FormInput: FC<FormInputProps> = ({
     <>
       { label && 
         <label 
-          className={ `form-input__label ${ labelClass ?? '' }`}
+          className={ cleanClassName('form-input__label', undefined, labelClass) }
           htmlFor={ id }
         >
           { label }
@@ -29,7 +32,7 @@ const FormInput: FC<FormInputProps> = ({
       }
 
       <input 
-        className={ `form-input__input ${ inputClass ?? '' }`}
+        className={ cleanClassName('form-input__input', undefined, inputClass) }
         id={ id } 
         type={ type } 
       />

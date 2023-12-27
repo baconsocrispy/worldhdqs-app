@@ -1,6 +1,9 @@
 // library
 import { FC } from "react";
 
+// helpers
+import { cleanClassName } from "@/app/helpers";
+
 // types
 type ButtonProps = {
   className?: string;
@@ -15,7 +18,7 @@ const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <button 
-      className={ `button button__${ type } ${ className ?? '' }`}
+      className={ cleanClassName('button', type, className) }
       type={ type }
     >
       { text }

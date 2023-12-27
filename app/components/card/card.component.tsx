@@ -7,6 +7,9 @@ import Heading from "../heading/heading.component";
 import Image from "next/image";
 import Link from "../link/link.component";
 
+// helpers
+import { cleanClassName } from "@/app/helpers";
+
 // types
 import { AnimationOptions, Case, Service } from "@/app/types";
 
@@ -34,7 +37,7 @@ const Card: FC<CardProps> = ({
   return (
     <AnimatedEntryWrapper 
       animationOptions={ animationOptions }
-      className={ `card card--${ layout }` }
+      className={ cleanClassName('card', layout) }
       intersectionOptions={ intersectionOptions }
       key={ item.id }
       wrapperElement={ elementType }
@@ -50,7 +53,7 @@ const Card: FC<CardProps> = ({
         }
       </div>
       
-      <Heading size={ 3 } className={ `card__heading`}>
+      <Heading size={ 3 } className="card__heading">
         { item.name }
       </Heading>
 

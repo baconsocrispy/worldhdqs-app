@@ -4,6 +4,9 @@ import { CSSProperties, FC, ReactNode } from "react";
 // components
 import Underline from "../underline/underline.component";
 
+// helpers
+import { cleanClassName } from "@/app/helpers";
+
 // types
 type HeadingProps = {
   children: ReactNode;
@@ -26,7 +29,7 @@ const Heading: FC<HeadingProps> = ({
 
   return (
     <HeadingTag 
-      className={ `heading heading--${ size } ${ className ?? '' }` }
+      className={ cleanClassName('heading', size.toString(), className) }
       style={{ justifyContent: position, ...style }}
     >
       <div className="heading__text">

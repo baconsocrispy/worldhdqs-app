@@ -5,6 +5,9 @@ import { FC, useState } from "react";
 // components
 import Image from "next/image";
 
+// helpers
+import { cleanClassName } from "@/app/helpers";
+
 // types
 import { SerializedImage } from "@/app/types";
 
@@ -59,7 +62,11 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
       >
         <Image
           alt='img'
-          className={ `animated-carousel__image ${ currentItem.image.invert ? 'inverted' : '' }` }
+          className={ cleanClassName(
+            'animated-carousel__image',
+            '', 
+            currentItem.image.invert ? 'inverted' : undefined
+          )}
           src={ currentItem.image.src }
           fill
           objectFit="contain"

@@ -4,6 +4,9 @@ import { FC, ReactNode } from "react";
 // components
 import Card from "../card/card.component";
 
+// helpers
+import { cleanClassName } from "@/app/helpers";
+
 // types
 import { AnimationOptions, Case, Service } from "@/app/types";
 
@@ -33,7 +36,7 @@ const Cards: FC<CardsProps> = ({
   };
 
   return (
-    <ul className={ `cards cards--${ layout }`}>
+    <ul className={ cleanClassName('cards', layout) }>
       {
         items.map((item, index) => 
           <Card

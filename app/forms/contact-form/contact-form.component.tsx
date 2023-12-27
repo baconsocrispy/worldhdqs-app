@@ -1,3 +1,4 @@
+// components
 import Button from "@/app/components/button/button.component";
 import FormInput from "@/app/components/form-input/form-input.component";
 import FormTextArea from "@/app/components/form-text-area/form-text-area.component";

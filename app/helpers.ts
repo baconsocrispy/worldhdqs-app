@@ -94,3 +94,17 @@ export const getTriadicHSL = (hslHue: number, index: number) => {
   };
 };
 
+  // css helpers
+  export const cleanClassName = (
+    element: string,
+    modifier?: string,
+    className?: string,
+  ) => {
+    const classNames = [ element ];
+
+    modifier && classNames.push( `${ element }--${ modifier }`)
+    className && classNames.push( `${ className }` )
+
+    return classNames.join(' ');
+  };
+

@@ -4,6 +4,9 @@ import { FC, ReactNode } from "react";
 // components
 import NextLink from "next/link";
 
+// helpers
+import { cleanClassName } from "@/app/helpers";
+
 // types
 type LinkProps = {
   className?: string;
@@ -20,7 +23,7 @@ const Link: FC<LinkProps> = ({
 }) => {
   return (
     <NextLink 
-      className={ `link link--${ type } ${ className ?? '' }` } 
+      className={ cleanClassName('link', type, className) } 
       href={ href ?? '#' }
     >
       { children }

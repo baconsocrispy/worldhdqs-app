@@ -1,6 +1,9 @@
 // library
 import { FC } from "react";
 
+// helpers
+import { cleanClassName } from "@/app/helpers";
+
 // types
 type FormTextAreaProps = {
   id: string;
@@ -19,14 +22,14 @@ const FormTextArea: FC<FormTextAreaProps> = ({
     <>
       { label && 
         <label 
-          className={ `form-text-area__label ${ labelClass ?? '' }` }
+          className={ cleanClassName('form-text-area__label', undefined, labelClass) }
           htmlFor={ id }>
           { label }
         </label>
       }
 
       <textarea
-        className={ `form-text-area__text-area ${ textAreaClass ?? '' }` }
+        className={ cleanClassName('form-text-area__text-area', undefined, textAreaClass) }
         id={ id }
       />
     </>

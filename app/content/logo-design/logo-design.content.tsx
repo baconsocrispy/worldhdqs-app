@@ -19,10 +19,6 @@ const LogoDesign = () => {
           transitionFunction: 'ease-in'
         }}
         intersectionOptions={{ threshold: 0.5 }}
-        imageOptions={{
-          height: '100%',
-          width: '100%',
-        }}
         listItems={ kingLogos } 
         type="horizontal"
       />

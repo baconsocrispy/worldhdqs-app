@@ -1,6 +1,9 @@
 // library
 import { CSSProperties, FC } from "react";
 
+// helpers
+import { cleanClassName } from "@/app/helpers";
+
 // types
 type VideoProps = {
   aspectRatio?: string;
@@ -17,7 +20,7 @@ const Video: FC<VideoProps> = ({
 }) => {
   return (
     <div 
-      className={ `video video--${ type ?? '' }`}
+      className={ cleanClassName('video', type) }
       style={{
         aspectRatio: aspectRatio,
         ...style
