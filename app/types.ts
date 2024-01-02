@@ -1,5 +1,5 @@
 // types
-import { ReactNode } from "react";
+import { MutableRefObject, ReactNode } from "react";
 
 export type AnimationOptions = {
   backgroundColor?: string; // i.e. 'teal'
@@ -23,6 +23,14 @@ export type Case = {
 export type HeroContent = {
   component: ReactNode;
   theme?: Theme;
+};
+
+export type IntersectionObserverOptions = {
+  intersectionObserverInit?: IntersectionObserverInit;
+  intersectionTarget?: MutableRefObject<HTMLElement | null>;
+  transitionClass?: string;
+  transitionDelay?: number;
+  transitionRepeat?: boolean;
 };
 
 export type ListItem = {

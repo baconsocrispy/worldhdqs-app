@@ -1,5 +1,5 @@
 // library
-import { FC, MutableRefObject } from "react";
+import { FC } from "react";
 
 // components
 import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
@@ -11,54 +11,47 @@ import Link from "../link/link.component";
 import { cleanClassName } from "@/app/helpers";
 
 // types
-import { AnimationOptions, ListItem } from "@/app/types";
+import { IntersectionObserverOptions, ListItem } from "@/app/types";
 
 type ListItemProps = {
-  animationOptions?: AnimationOptions;
-  className?: string;
   imageOptions?: {
     width?: string;
     height?: string;
   };
-  index?: number;
-  intersectionOptions?: IntersectionObserverInit;
-  intersectionTarget?: MutableRefObject<HTMLElement | null>;
+  intersectionObserverOptions?: IntersectionObserverOptions;
   item: ListItem;
   type?: string;
 };
 
 const ListItem: FC<ListItemProps> = ({
-  animationOptions,
-  className,
   imageOptions = {
     width: '100px',
     height: '100px'
   },
-  index,
-  intersectionOptions,
-  intersectionTarget,
+  intersectionObserverOptions,
   item,
   type
 }) => {
   return (
     <AnimatedEntryWrapper
-      animationOptions={ animationOptions }
-      className={ cleanClassName('list__item', type) } 
-      index={ index }
-      intersectionOptions={ intersectionOptions }
-      intersectionTarget={ intersectionTarget }
+      className={ cleanClassName(
+        'list-item', 
+        type, 
+        intersectionObserverOptions?.transitionClass
+      )} 
+      intersectionOptions={ intersectionObserverOptions }
       wrapperElement={ 'li' }
     > 
       { item.image &&  
           <div 
-            className="list__image-container"
+            className="list-item__image-container"
             style={{
               height: `${ imageOptions.height }`,
               width: `${ imageOptions.width }`
             }}
           >
             <Image 
-              className="list__image"
+              className="list-item__image"
               src={ item.image.src }
               fill
               objectFit="contain"
@@ -68,7 +61,7 @@ const ListItem: FC<ListItemProps> = ({
       }
 
       { item.textHighlight &&
-          <Heading className="list__item-highlight" size={ 4 }>
+          <Heading className="list-item__item-highlight" size={ 4 }>
             { item.textHighlight }
           </Heading>
       }

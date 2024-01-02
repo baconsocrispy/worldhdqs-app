@@ -1,6 +1,9 @@
 // library
 import { FC } from "react";
 
+// helpers
+import { cleanClassName } from "@/app/helpers";
+
 // components
 import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
 
@@ -12,9 +15,9 @@ type UnderlineProps = {
 const Underline: FC<UnderlineProps> = ({ type = 'converge' }) => {
   return (
     <AnimatedEntryWrapper 
-      className='underline' 
+      className={ cleanClassName('underline', type) }
       wrapperElement={ 'div' }
-      intersectionOptions={{ threshold: 1.0 }}
+      intersectionOptions={{ intersectionObserverInit: { threshold: 1.0 }}}
     >
       <div className="underline__side underline__side--left"></div>
       <div className="underline__side underline__side--right"></div>

@@ -5,12 +5,37 @@
   padding: $padding-default;
   overflow: hidden;
 
+  &__media {
+    position: relative;
+    height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__text {
+    display: grid;
+    gap: $padding-default;
+  }
+
+  &__heading {
+    font-variation-settings: $font-weight-header;
+  }
+
+  &__link {
+    text-decoration: underline;
+  }
+
+  // vertical orientation styles
   &--vertical {
     grid-template-rows: 50% repeat(2, max-content) 1fr;
     height: $height-card;
     max-width: 35rem;
   }
 
+  // horizontal orientation styles
   &--horizontal {
     position: relative;
     grid-template-columns: 1fr;
@@ -35,27 +60,8 @@
     height: 100%;
     object-fit: cover;
   }
-
-  &__media {
-    position: relative;
-    height: 100%;
-  }
-
-  &__image {
-    width: 100%;
-    height: auto;
-  }
-
-  &__text {
-    display: grid;
-    gap: $padding-default;
-  }
-
-  &__heading {
-    font-variation-settings: $font-weight-header;
-  }
-
-  &__link {
-    text-decoration: underline;
+  
+  &.intersected {
+    @include transition-all;
   }
 }

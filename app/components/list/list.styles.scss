@@ -25,24 +25,12 @@
     grid-auto-columns: minmax(min-content, max-content);
     gap: 1rem;
   }
+  
+  &.intersected {
+    @include transition-all;
 
-  &__item {
-    &--vertical {
-      display: grid;
-      grid-template-columns: max-content 1fr;
-      grid-template-rows: max-content 1fr;
-      gap: 1rem 3rem;
-      padding: $padding-default;
+    > .list-item {
+      @include transition-all;
     }
-
-    &--horizontal {
-      position: relative;
-      width: 100%;
-    }
-  }
-
-  &__image-container {
-    position: relative;
-    grid-row: 1 / -1;
   }
 }

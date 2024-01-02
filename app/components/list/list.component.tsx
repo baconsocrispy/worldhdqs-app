@@ -6,26 +6,22 @@ import { FC, useRef } from "react";
 import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
 import ListItem from "../list-item/list-item.component";
 
-// types
-import { AnimationOptions, ListItem as ListItemType } from "@/app/types";
+// helpers
 import { cleanClassName } from "@/app/helpers";
 
+// types
+import { IntersectionObserverOptions, ListItem as ListItemType } from "@/app/types";
+
 type ListProps = {
-  animationOptions?: AnimationOptions;
   animationTarget?: 'ul' | 'li'; 
-  className?: string;
-  id?: string | number;
-  intersectionOptions?: IntersectionObserverInit;
+  intersectionOptions?: IntersectionObserverOptions;
   intersectionTarget?: 'ul' | 'li';
   listItems?: ListItemType[];
   type?: 'horizontal' | 'link' | 'nav' | 'vertical';
 };
 
 const List: FC<ListProps> = ({ 
-  animationOptions,
   animationTarget = 'li',
-  className, 
-  id,
   intersectionOptions,
   intersectionTarget = 'ul',
   listItems = [], 
@@ -36,21 +32,34 @@ const List: FC<ListProps> = ({
 
   return (
     <AnimatedEntryWrapper
-      animationOptions={ animationTarget === 'ul' ? animationOptions : undefined }
-      className={ cleanClassName('list', type, className) }
-      id={ id }
-      intersectionOptions={ intersectionTarget === 'ul' ? intersectionOptions : undefined }
+      className={ cleanClassName(
+        'list', 
+        type, 
+        animationTarget === 'ul' ?
+          intersectionOptions?.transitionClass :
+          undefined
+      )}
+      intersectionOptions={{ 
+        intersectionObserverInit: intersectionTarget === 'ul' ? 
+          intersectionOptions?.intersectionObserverInit : 
+          undefined 
+      }}
       ref={ ulRef }
       wrapperElement={ 'ul' }
     >
       { listItems.map((item, index) => 
         <ListItem
-          animationOptions={ animationTarget === 'li' ? animationOptions : undefined}
-          index={ index }
-          intersectionOptions={ intersectionOptions }
-          intersectionTarget={ intersectionTarget === 'ul' ? ulRef : undefined }
-          item={ item }
           key={ index }
+          intersectionObserverOptions={{
+            intersectionObserverInit: intersectionOptions?.intersectionObserverInit,
+            intersectionTarget: intersectionTarget === 'ul' ?
+              ulRef : undefined,
+            transitionClass: animationTarget === 'li' ?
+              intersectionOptions?.transitionClass : undefined,
+            transitionDelay: intersectionOptions?.transitionDelay ? 
+              intersectionOptions.transitionDelay * index : undefined
+          }}
+          item={ item }
           type={ type }
         />
       )}

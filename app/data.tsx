@@ -7,7 +7,7 @@ import List from "./components/list/list.component";
 import RotatingCarousel from "./components/carousel-rotating/carousel-rotating.component";
 
 // types
-import { Case, HeroContent, ListItem, SerializedImage, Service, Skill } from "./types";
+import { Case, HeroContent, ListItem, SerializedImage, Service } from "./types";
 import FlipCarousel from "./components/carousel-flip/carousel-flip.component";
 import WebsitePreview from "./components/website-preview/website-preview.component";
 import City from "./content/city/city.content";
@@ -44,7 +44,7 @@ export const images: SerializedImage[] = [
 ];
 
 export const heroContent: HeroContent[] = [
-  // { component: <City image={ images[0] } key={ 0 } />  }, 
+  { component: <City image={ images[0] } key={ 0 } />  }, 
   { component: <WinterScene color={ 'white' } image={ images[1] } key={ 1 } />, theme: { className: 'winter-theme' }}
 ];
 
@@ -425,10 +425,6 @@ export const cardMedia: ReactNode[] = [
           transitionFunction: 'ease-in'
         }}
         intersectionOptions={{ threshold: 0.5 }}
-        imageOptions={{
-          height: '100%',
-          width: '100%',
-        }}
         listItems={ lineProd } 
         type="horizontal"
       />,

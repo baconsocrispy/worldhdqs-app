@@ -4,3 +4,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// set transition properties to final positions
+@mixin transition-all {
+  transform: translate(0%);
+  filter: blur(0px);
+  opacity: 1;
+}

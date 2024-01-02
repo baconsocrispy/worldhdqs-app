@@ -29,8 +29,8 @@ $winter--border-radius: 1rem;
     background-color: $winter--pink;
   }
 
-  .list {
-    &__item--vertical {
+  .list-item {
+    &--vertical {
       background-color: white;
       box-shadow: $winter--box-shadow;
       border-radius: $winter--border-radius;

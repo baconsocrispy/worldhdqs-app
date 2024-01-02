@@ -1,0 +1,23 @@
+.list-item {
+  &--vertical {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content 1fr;
+    gap: 1rem 3rem;
+    padding: $padding-default;
+  }
+
+  &--horizontal {
+    position: relative;
+    width: 100%;
+  }
+
+  &__image-container {
+    position: relative;
+    grid-row: 1 / -1;
+  }
+  
+  &.intersected {
+    @include transition-all;
+  }
+}

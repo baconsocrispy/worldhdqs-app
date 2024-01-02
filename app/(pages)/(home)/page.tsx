@@ -36,11 +36,9 @@ const Home = () => {
           'With expertise in many of today\'s cutting edge technologies, as well as years of experience in the content creation business, World Headquarters will bring your ideas to life.'
         } />
         <Cards 
-          cardAnimationOptions={{
-            opacity: '0',
-            transitionDuration: '1s',
-            transitionFunction: 'ease-in-out',
-            translateY: 25
+          cardIntersectionOptions={{ 
+            intersectionObserverInit: { threshold: 0.5 },
+            transitionClass: 'fade-in-up' 
           }}
           cardLinkText="Learn More"
           cardMedia={ cardMedia }
@@ -54,41 +52,34 @@ const Home = () => {
         </Heading>
         <div className="center-wrapper">
           <List 
-            animationOptions={{
-              blur: '5px',
-              opacity: '0',
-              transitionDelay: 0.2,
-              transitionDuration: '1s',
-              transitionFunction: 'ease-in',
-              translateY: -100
-            }}
             listItems={ processItems } 
-            intersectionOptions={{ threshold: .25 }}
+            intersectionOptions={{
+              intersectionObserverInit: { threshold: .25 },
+              transitionClass: 'fade-blur-in-drop-100',
+              transitionDelay: 0.2
+            }}
           />
         </div>
       </Section>
 
-      <Section 
-        animationOptions={{
-          transitionDuration: '0.5s',
-          transitionFunction: 'ease-in'
-        }}
+      <Section
         id="selected-works" 
-        intersectionOptions={{ threshold: 0.15 }}
+        intersectionObserverOptions={{ 
+          intersectionObserverInit: { threshold: 0.15 },
+          transitionClass: 'bg-color-change',
+          transitionRepeat: true
+        }}
       >
         <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Selected Works
         </Heading>
         <TextArea text='Whether helping businesses and individuals breathe life into existing websites or building out an entire brand presence from scratch, World Headquarters has the tools to meet your needs.'/>
         <Cards 
-          cardAnimationOptions={{
-            opacity: '0',
-            translateX: -10,
-            transitionDuration: '0.5s',
-            transitionFunction: 'ease-in'
-          }}
-          cardIntersectionOptions={{
-            threshold: 0.5
+          cardIntersectionOptions={{ 
+            intersectionObserverInit: {
+              threshold: 0.5
+            },
+            transitionClass: 'fade-in-alternate'
           }}
           cardMedia={ caseStudyMedia }
           cardType='horizontal'

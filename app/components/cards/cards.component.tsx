@@ -8,20 +8,18 @@ import Card from "../card/card.component";
 import { cleanClassName } from "@/app/helpers";
 
 // types
-import { AnimationOptions, Case, Service } from "@/app/types";
+import { AnimationOptions, Case, IntersectionObserverOptions, Service } from "@/app/types";
 
 type CardsProps = {
-  cardAnimationOptions?: AnimationOptions;
   cardLinkText?: string;
   cardMedia?: ReactNode[];
-  cardIntersectionOptions?: IntersectionObserverInit;
+  cardIntersectionOptions?: IntersectionObserverOptions;
   cardType?: "horizontal" | "vertical";
   items: Case[] | Service[];
   layout?: "alternating" | "grid";
 };
 
 const Cards: FC<CardsProps> = ({ 
-  cardAnimationOptions,
   cardIntersectionOptions,
   cardLinkText,
   cardMedia,
@@ -29,23 +27,13 @@ const Cards: FC<CardsProps> = ({
   items, 
   layout = 'grid',
 }) => {
-  // reverse translateX for even numbered list items when in alternating mode
-  const alternatingEntryAnimation: AnimationOptions = {
-    ...cardAnimationOptions,
-    translateX: cardAnimationOptions?.translateX && -cardAnimationOptions?.translateX
-  };
-
   return (
     <ul className={ cleanClassName('cards', layout) }>
       {
         items.map((item, index) => 
           <Card
             key={ item.id }
-            animationOptions={ (layout === 'alternating' && index % 2 !== 0) ? 
-              alternatingEntryAnimation :
-              cardAnimationOptions
-            }
-            intersectionOptions={ cardIntersectionOptions }
+            intersectionObserverOptions={ cardIntersectionOptions }
             item={ item }
             layout={ cardType }
             linkText={ cardLinkText }

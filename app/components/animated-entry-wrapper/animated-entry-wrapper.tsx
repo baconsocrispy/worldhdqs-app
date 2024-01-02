@@ -5,74 +5,63 @@ import {
   CSSProperties,
   ElementType, 
   forwardRef,
-  MutableRefObject,
   ReactNode, 
   useEffect, 
   useRef 
 } from "react";
 
 // types
-import { AnimationOptions } from "@/app/types";
+import { IntersectionObserverOptions } from "@/app/types";
 
 type AnimatedEntryWrapperProps = {
-  animationOptions?: AnimationOptions;
   children: ReactNode;
   className?: string;
   id?: string | number;
-  index?: number;
-  intersectionOptions?: IntersectionObserverInit;
-  intersectionTarget?: MutableRefObject<HTMLElement | null>;
+  intersectionOptions?: IntersectionObserverOptions;
   style?: CSSProperties;
   wrapperElement: ElementType;
 };
 
 const AnimatedEntryWrapper = forwardRef<HTMLElement, AnimatedEntryWrapperProps>(
   function AnimatedEntryWrapper ({ 
-  animationOptions,
   children, 
   className,
   id,
-  index = 1,
-  intersectionOptions, 
-  intersectionTarget,
+  intersectionOptions,
   style,
   wrapperElement: Wrapper
 }, ref) {
   // state
   const targetElement = useRef<HTMLElement | null>(null);
-  const transitionDelay = animationOptions?.transitionDelay ?? 0;
 
   // instantiate intersection observer on mount
   useEffect(() => {
     // return if not planning to use intersection observer
-    if (!intersectionOptions && !animationOptions) return;
+    if (!intersectionOptions) return;
 
     const thisElement = targetElement.current;
-    const intersectionElement = intersectionTarget?.current ?? thisElement;
+    const intersectionElement = intersectionOptions?.intersectionTarget?.current ?? thisElement;
 
+    console.log(intersectionOptions);
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting && intersectionElement && thisElement) {
-          // add intersected class to target element for additional styling
+          // add intersected class to target element to trigger styling / animations
           intersectionElement?.classList.add('intersected')
-
-          console.log(entry.isIntersecting);
-
-          // reset animation properties
-          thisElement.style.opacity = '1';
-          thisElement.style.transform = 'translateX(0)';
-          thisElement.style.transform = 'translateY(0)';
-          thisElement.style.filter = 'blur(0px)';
-        } else if (!entry.isIntersecting && intersectionElement) {
+        } else if (
+          !entry.isIntersecting && 
+          intersectionElement && 
+          intersectionOptions.transitionRepeat
+        ) {
           intersectionElement?.classList.remove('intersected');
         }
       });
-    }, intersectionOptions);
+    }, intersectionOptions?.intersectionObserverInit);
 
     if (intersectionElement) {
       observer.observe(intersectionElement);
     }
-  }, [ animationOptions, intersectionOptions, intersectionTarget ]);
+  }, [ intersectionOptions ]);
 
   return (
     <Wrapper 
@@ -86,21 +75,11 @@ const AnimatedEntryWrapper = forwardRef<HTMLElement, AnimatedEntryWrapperProps>(
           ref.current = refInstance
         }
       }}
-      style={{ 
-        filter: `blur(${ animationOptions?.blur ?? '0px' })`,
-        opacity: `${ animationOptions?.opacity ?? '1' }`, 
-        transform: `
-          translateX(${ animationOptions?.translateX ?? '0' }%)
-          translateY(${ animationOptions?.translateY ?? '0' }%)
-        `, 
-        transition: `
-          all
-          ${ animationOptions?.transitionDuration ?? '0s' }
-          ${ animationOptions?.transitionFunction ?? 'linear'}
-        `,
-        transitionDelay: (transitionDelay * index).toString() + 's',
-        ...style
-      }} 
+      style={{
+        ...style,
+        transitionDelay: intersectionOptions?.transitionDelay ?
+          intersectionOptions.transitionDelay.toString() + 's' : '0s'
+      }}
     >
       { children }
     </Wrapper>

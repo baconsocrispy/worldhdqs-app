@@ -8,30 +8,29 @@ import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapp
 import { cleanClassName } from "@/app/helpers";
 
 // types
-import { AnimationOptions } from "@/app/types";
+import { IntersectionObserverOptions } from "@/app/types";
 
 
 type SectionProps = {
-  animationOptions?: AnimationOptions;
   children: ReactNode;
-  className?: string;
   id?: string;
-  intersectionOptions?: IntersectionObserverInit;
+  intersectionObserverOptions?: IntersectionObserverOptions;
 };
 
 const Section: FC<SectionProps> = ({ 
-  animationOptions,
   children, 
-  className,  
   id, 
-  intersectionOptions 
+  intersectionObserverOptions 
 }) => {
   return (
     <AnimatedEntryWrapper 
-      className={ cleanClassName('section', '', className) }
-      animationOptions={ animationOptions }
+      className={ cleanClassName(
+        'section', 
+        undefined,
+        intersectionObserverOptions?.transitionClass
+      )}
       id={ id }
-      intersectionOptions={ intersectionOptions }
+      intersectionOptions={ intersectionObserverOptions }
       wrapperElement={ 'section' }
     >
       { children }

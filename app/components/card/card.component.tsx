@@ -11,13 +11,13 @@ import Link from "../link/link.component";
 import { cleanClassName } from "@/app/helpers";
 
 // types
-import { AnimationOptions, Case, Service } from "@/app/types";
+import { AnimationOptions, Case, IntersectionObserverOptions, Service } from "@/app/types";
 
 type CardProps = {
   elementType?: ElementType;
   animationOptions?: AnimationOptions;
   href?: string;
-  intersectionOptions?: IntersectionObserverInit;
+  intersectionObserverOptions?: IntersectionObserverOptions;
   item: Case | Service;
   linkText?: string;
   layout?: "horizontal" | "vertical";
@@ -28,7 +28,7 @@ const Card: FC<CardProps> = ({
   elementType = 'li',
   animationOptions,
   href,
-  intersectionOptions,
+  intersectionObserverOptions,
   item, 
   layout = 'vertical' ,
   linkText,
@@ -37,8 +37,12 @@ const Card: FC<CardProps> = ({
   return (
     <AnimatedEntryWrapper 
       animationOptions={ animationOptions }
-      className={ cleanClassName('card', layout) }
-      intersectionOptions={ intersectionOptions }
+      className={ cleanClassName(
+        'card', 
+        layout, 
+        intersectionObserverOptions?.transitionClass
+      )}
+      intersectionOptions={ intersectionObserverOptions?.intersectionObserverInit }
       key={ item.id }
       wrapperElement={ elementType }
     >
