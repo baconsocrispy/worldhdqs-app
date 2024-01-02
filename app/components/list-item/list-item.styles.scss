@@ -16,8 +16,4 @@
     position: relative;
     grid-row: 1 / -1;
   }
-  
-  &.intersected {
-    @include transition-all;
-  }
 }

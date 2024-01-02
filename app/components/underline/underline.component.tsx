@@ -5,7 +5,7 @@ import { FC } from "react";
 import { cleanClassName } from "@/app/helpers";
 
 // components
-import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
+import IntersectionObserverWrapper from "../intersection-observer-wrapper/intersection-observer-wrapper.component";
 
 // types
 type UnderlineProps = {
@@ -14,7 +14,7 @@ type UnderlineProps = {
 
 const Underline: FC<UnderlineProps> = ({ type = 'converge' }) => {
   return (
-    <AnimatedEntryWrapper 
+    <IntersectionObserverWrapper 
       className={ cleanClassName('underline', type) }
       wrapperElement={ 'div' }
       intersectionOptions={{ intersectionObserverInit: { threshold: 1.0 }}}
@@ -23,7 +23,7 @@ const Underline: FC<UnderlineProps> = ({ type = 'converge' }) => {
       <div className="underline__side underline__side--right"></div>
       <div className="underline__vertical underline__vertical--left"></div>
       <div className="underline__vertical underline__vertical--right"></div>
-    </AnimatedEntryWrapper>
+    </IntersectionObserverWrapper>
   )
 };
 

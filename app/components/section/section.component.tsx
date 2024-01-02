@@ -2,7 +2,7 @@
 import { FC, ReactNode } from "react";
 
 // components
-import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
+import IntersectionObserverWrapper from "../intersection-observer-wrapper/intersection-observer-wrapper.component";
 
 // helpers
 import { cleanClassName } from "@/app/helpers";
@@ -23,7 +23,7 @@ const Section: FC<SectionProps> = ({
   intersectionObserverOptions 
 }) => {
   return (
-    <AnimatedEntryWrapper 
+    <IntersectionObserverWrapper 
       className={ cleanClassName(
         'section', 
         undefined,
@@ -34,7 +34,7 @@ const Section: FC<SectionProps> = ({
       wrapperElement={ 'section' }
     >
       { children }
-    </AnimatedEntryWrapper>
+    </IntersectionObserverWrapper>
   )
 };
 

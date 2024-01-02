@@ -3,7 +3,7 @@
 import { FC, useRef } from "react";
 
 // components
-import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
+import IntersectionObserverWrapper from "../intersection-observer-wrapper/intersection-observer-wrapper.component";
 import ListItem from "../list-item/list-item.component";
 
 // helpers
@@ -31,7 +31,7 @@ const List: FC<ListProps> = ({
   const ulRef = useRef<HTMLElement | null>(null);
 
   return (
-    <AnimatedEntryWrapper
+    <IntersectionObserverWrapper
       className={ cleanClassName(
         'list', 
         type, 
@@ -63,7 +63,7 @@ const List: FC<ListProps> = ({
           type={ type }
         />
       )}
-    </AnimatedEntryWrapper>
+    </IntersectionObserverWrapper>
   )
 };
 

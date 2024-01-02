@@ -13,7 +13,7 @@ import {
 // types
 import { IntersectionObserverOptions } from "@/app/types";
 
-type AnimatedEntryWrapperProps = {
+type IntersectionObserverWrapperProps = {
   children: ReactNode;
   className?: string;
   id?: string | number;
@@ -22,8 +22,8 @@ type AnimatedEntryWrapperProps = {
   wrapperElement: ElementType;
 };
 
-const AnimatedEntryWrapper = forwardRef<HTMLElement, AnimatedEntryWrapperProps>(
-  function AnimatedEntryWrapper ({ 
+const IntersectionObserverWrapper = forwardRef<HTMLElement, IntersectionObserverWrapperProps>(
+  function IntersectionObserverWrapper ({ 
   children, 
   className,
   id,
@@ -86,4 +86,4 @@ const AnimatedEntryWrapper = forwardRef<HTMLElement, AnimatedEntryWrapperProps>(
   )
 });
 
-export default AnimatedEntryWrapper;
+export default IntersectionObserverWrapper;

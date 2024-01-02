@@ -27,8 +27,6 @@
   }
   
   &.intersected {
-    @include transition-all;
-
     > .list-item {
       @include transition-all;
     }

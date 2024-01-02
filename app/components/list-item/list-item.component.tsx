@@ -2,7 +2,7 @@
 import { FC } from "react";
 
 // components
-import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
+import IntersectionObserverWrapper from "../intersection-observer-wrapper/intersection-observer-wrapper.component";
 import Heading from "../heading/heading.component";
 import Image from "next/image";
 import Link from "../link/link.component";
@@ -33,7 +33,7 @@ const ListItem: FC<ListItemProps> = ({
   type
 }) => {
   return (
-    <AnimatedEntryWrapper
+    <IntersectionObserverWrapper
       className={ cleanClassName(
         'list-item', 
         type, 
@@ -78,7 +78,7 @@ const ListItem: FC<ListItemProps> = ({
             { item.text }
           </p>
       }
-    </AnimatedEntryWrapper>
+    </IntersectionObserverWrapper>
   )
 };
 

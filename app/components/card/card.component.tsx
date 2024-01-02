@@ -2,7 +2,7 @@
 import { ElementType, FC, ReactNode } from "react";
 
 // components
-import AnimatedEntryWrapper from "../animated-entry-wrapper/animated-entry-wrapper";
+import IntersectionObserverWrapper from "../intersection-observer-wrapper/intersection-observer-wrapper.component";
 import Heading from "../heading/heading.component";
 import Image from "next/image";
 import Link from "../link/link.component";
@@ -35,14 +35,13 @@ const Card: FC<CardProps> = ({
   media
 }) => {
   return (
-    <AnimatedEntryWrapper 
-      animationOptions={ animationOptions }
+    <IntersectionObserverWrapper 
       className={ cleanClassName(
         'card', 
         layout, 
         intersectionObserverOptions?.transitionClass
       )}
-      intersectionOptions={ intersectionObserverOptions?.intersectionObserverInit }
+      intersectionOptions={ intersectionObserverOptions }
       key={ item.id }
       wrapperElement={ elementType }
     >
@@ -76,7 +75,7 @@ const Card: FC<CardProps> = ({
             </Link>
           </div>
       }
-    </AnimatedEntryWrapper>
+    </IntersectionObserverWrapper>
   )
 };
 

@@ -3,7 +3,7 @@ import { FC } from "react";
 
 // components
 import Heading from "@/app/components/heading/heading.component";
-import AnimatedEntryWrapper from "@/app/components/animated-entry-wrapper/animated-entry-wrapper";
+import IntersectionObserverWrapper from "@/app/components/intersection-observer-wrapper/intersection-observer-wrapper.component";
 
 // types
 type BrandVoiceProps = {
@@ -20,17 +20,19 @@ const BrandVoice: FC<BrandVoiceProps> = ({ stringList = [] }) => {
       <div className="randomizer">
         {
           stringList?.map((string, index) => 
-            <AnimatedEntryWrapper 
-              animationOptions={{
-                opacity: '0',
-                transitionDelay: 0.2,
-                transitionDuration: '1s',
-                transitionFunction: 'ease-in'
-              }}
-              index={ index }
-              intersectionOptions={{ threshold: 0 }}
-              className="randomizer__content"
+            <IntersectionObserverWrapper 
+              // animationOptions={{
+              //   opacity: '0',
+              //   transitionDelay: 0.2,
+              //   transitionDuration: '1s',
+              //   transitionFunction: 'ease-in'
+              // }}
               key={ index }
+              className="randomizer__content fade-in"
+              intersectionOptions={{ 
+                intersectionObserverInit: { threshold: 0 },
+                transitionDelay: 0.2 * index
+              }}
               style={{
                 top: `${ Math.floor(Math.random() * 100)}%`,
                 left: `${ Math.floor(Math.random() * 100)}%`,
@@ -43,7 +45,7 @@ const BrandVoice: FC<BrandVoiceProps> = ({ stringList = [] }) => {
               >
                 { string }
               </p>
-            </AnimatedEntryWrapper>
+            </IntersectionObserverWrapper>
           )
         }        
       </div>
