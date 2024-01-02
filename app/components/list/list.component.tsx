@@ -17,14 +17,16 @@ type ListProps = {
   intersectionOptions?: IntersectionObserverOptions;
   intersectionTarget?: 'ul' | 'li';
   listItems?: ListItemType[];
+  listItemType?: 'grid' | 'link' | 'nav-link';
   type?: 'horizontal' | 'link' | 'nav' | 'vertical';
 };
 
-const List: FC<ListProps> = ({ 
+const List: FC<ListProps> = ({
   animationTarget = 'li',
   intersectionOptions,
   intersectionTarget = 'ul',
-  listItems = [], 
+  listItems = [],
+  listItemType = 'grid',
   type = 'vertical'
 }) => {
   // create ref of outer ul to pass to li when using ul for intersection target
@@ -60,7 +62,7 @@ const List: FC<ListProps> = ({
               intersectionOptions.transitionDelay * index : undefined
           }}
           item={ item }
-          type={ type }
+          type={ listItemType }
         />
       )}
     </IntersectionObserverWrapper>

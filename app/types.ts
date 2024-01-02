@@ -33,6 +33,11 @@ export type IntersectionObserverOptions = {
   transitionRepeat?: boolean;
 };
 
+export type Link = {
+  href: string;
+  text: string;
+};
+
 export type ListItem = {
   href?: string;
   image?: SerializedImage;

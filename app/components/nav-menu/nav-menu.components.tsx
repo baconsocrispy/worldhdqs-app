@@ -17,6 +17,7 @@ const NavMenu: FC<NavMenuProps> = ({ navLinks }) => {
       <List 
         type='nav' 
         listItems={ navLinks } 
+        listItemType="nav-link"
       />
     </nav>
   )

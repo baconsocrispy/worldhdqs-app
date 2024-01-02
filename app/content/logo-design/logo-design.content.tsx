@@ -12,15 +12,13 @@ const LogoDesign = () => {
         Logo Design & Analysis
       </Heading>
       <List 
-        animationOptions={{
-          opacity: '0',
-          translateX: -50,
-          transitionDuration: '2s',
-          transitionFunction: 'ease-in'
+        intersectionOptions={{ 
+          intersectionObserverInit: { threshold: 0.5 }, 
+          transitionClass: 'fade-in-alternate'
         }}
-        intersectionOptions={{ threshold: 0.5 }}
-        listItems={ kingLogos } 
-        type="horizontal"
+        listItems={ kingLogos }
+        listItemType="nav-link"
+        type="nav"
       />
     </div>
   )

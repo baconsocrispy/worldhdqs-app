@@ -7,7 +7,7 @@ import List from "./components/list/list.component";
 import RotatingCarousel from "./components/carousel-rotating/carousel-rotating.component";
 
 // types
-import { Case, HeroContent, ListItem, SerializedImage, Service } from "./types";
+import { Case, HeroContent, Link, ListItem, SerializedImage, Service } from "./types";
 import FlipCarousel from "./components/carousel-flip/carousel-flip.component";
 import WebsitePreview from "./components/website-preview/website-preview.component";
 import City from "./content/city/city.content";
@@ -54,7 +54,7 @@ export const kingLogos: ListItem[] = [
   { image: { id: 3, src: '/logos/king/purple.png' }},
 ];
 
-export const navLinks: ListItem[] = [
+export const navLinks: Link[] = [
   { text: 'home', href: '#welcome' },
   { text: 'services', href: '#departments' },
   { text: 'process', href: '#process' },
@@ -418,17 +418,14 @@ export const cardMedia: ReactNode[] = [
       },
       {
         content: <List 
-        animationOptions={{
-          opacity: '0',
-          translateX: -50,
-          transitionDuration: '2s',
-          transitionFunction: 'ease-in'
-        }}
-        intersectionOptions={{ threshold: 0.5 }}
-        listItems={ lineProd } 
-        type="horizontal"
-      />,
-      text: 'Line Producing & Editing'
+                    intersectionOptions={{ 
+                      intersectionObserverInit: { threshold: 0.5 },
+                      transitionClass: 'fade-in-alternate'
+                    }}
+                    listItems={ lineProd } 
+                    type="nav"
+                  />,
+        text: 'Line Producing & Editing'
       },
       { 
         content: <AnimatedCarousel 
@@ -458,3 +455,14 @@ export const caseStudyMedia = [
   <WebsitePreview key={ 1 } src={ 'https://www.brothers-sonsamerica.com'  } />,
   <WebsitePreview key={ 2 } src={ 'https://player.vimeo.com/video/827770760' } />
 ];
+
+export const contactLinks: Link[] = [
+  { text: 'info@worldheadquarters.co', href: 'mailto: info@worldheadquarters.co' },
+  { text: '+1 (617) 571-6120', href: 'tel: +16175716120' },
+]
+
+export const socialLinks: Link[] = [
+  { text: 'instagram', href: 'www.instagram.com/wrldhdqtrs' },
+  { text: 'linkedIn', href: 'www.linkedin.com/baconsocrispy' },
+  { text: 'github', href: 'www.github.com/baconsocrispy' }
+]

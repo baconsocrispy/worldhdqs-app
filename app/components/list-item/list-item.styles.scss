@@ -1,10 +1,14 @@
 .list-item {
-  &--vertical {
+  &--grid {
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-template-rows: max-content 1fr;
     gap: 1rem 3rem;
     padding: $padding-default;
+  }
+
+  &--nav-link {
+
   }
 
   &--horizontal {

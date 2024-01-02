@@ -1,6 +1,18 @@
 .footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
   background-color: black;
   color: white;
   height: $height-footer;
   padding: $padding-default;
+
+  &__content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: max-content;
+    gap: 2rem;
+  }
 }

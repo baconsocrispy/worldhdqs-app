@@ -20,7 +20,7 @@ type ListItemProps = {
   };
   intersectionObserverOptions?: IntersectionObserverOptions;
   item: ListItem;
-  type?: string;
+  type?: 'grid' | 'link' | 'nav-link';
 };
 
 const ListItem: FC<ListItemProps> = ({
@@ -66,15 +66,15 @@ const ListItem: FC<ListItemProps> = ({
           </Heading>
       }
 
-      { type === 'nav' || type === 'link' ?
+      { type === 'nav-link' || type === 'link' ?
           <Link 
             href={ item.href ?? '#' }
-            type={ type === 'nav' ? 'nav' : 'default' }
+            type={ type === 'nav-link' ? 'nav' : 'default' }
           >
             { item.text }
           </Link> :
 
-          <p className="list__item-text">
+          <p className="list-item__text">
             { item.text }
           </p>
       }
