@@ -14,6 +14,8 @@ import { cleanClassName } from "@/app/helpers";
 
 // types
 import { ListItem } from "@/app/types";
+import OrbitLogo from "@/app/content/logos/whq-orbit.logo";
+import OrbitingText from "../text-orbit/text-orbit.component";
 
 type NavProps = {
   navLinks?: ListItem[];
@@ -25,7 +27,7 @@ const Nav: FC<NavProps>  = ({ navLinks }) => {
 
   return (
     <header className={ cleanClassName('nav', undefined, theme?.className) }>
-      <Logo />
+      <OrbitingText text='World Headquarters' />
       <NavMenu navLinks={ navLinks }/>
     </header>
   )

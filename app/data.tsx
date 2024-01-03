@@ -462,7 +462,7 @@ export const contactLinks: Link[] = [
 ]
 
 export const socialLinks: Link[] = [
-  { text: 'instagram', href: 'www.instagram.com/wrldhdqtrs' },
-  { text: 'linkedIn', href: 'www.linkedin.com/baconsocrispy' },
-  { text: 'github', href: 'www.github.com/baconsocrispy' }
+  { text: 'instagram', href: 'https://www.instagram.com/wrldhdqtrs' },
+  { text: 'linkedIn', href: 'https://www.linkedin.com/in/carterbacon' },
+  { text: 'github', href: 'https://www.github.com/baconsocrispy' }
 ]

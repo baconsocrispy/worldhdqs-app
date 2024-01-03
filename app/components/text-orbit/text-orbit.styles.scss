@@ -1,0 +1,39 @@
+.orbiting-text {
+  position: relative;
+  transform-style: preserve-3d;
+
+  &__panels {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: rotate 3s linear infinite;
+  }
+
+  &__panel {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+
+    &::before {
+      content: var(--content);
+      position: absolute;
+      left: var(--left);
+      color: rgb(255, 127, 127);
+      font-size: var(--font-size);
+      font-family: $winter--font-heading;
+      width: max-content; // keep text inline
+    }
+  }
+
+  &__child {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+  }
+}

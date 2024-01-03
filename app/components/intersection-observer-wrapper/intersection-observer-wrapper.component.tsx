@@ -42,7 +42,6 @@ const IntersectionObserverWrapper = forwardRef<HTMLElement, IntersectionObserver
     const thisElement = targetElement.current;
     const intersectionElement = intersectionOptions?.intersectionTarget?.current ?? thisElement;
 
-    console.log(intersectionOptions);
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting && intersectionElement && thisElement) {
