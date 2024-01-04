@@ -14,6 +14,7 @@ import { IntersectionObserverOptions, ListItem as ListItemType } from "@/app/typ
 
 type ListProps = {
   animationTarget?: 'ul' | 'li'; 
+  className?: string;
   intersectionOptions?: IntersectionObserverOptions;
   intersectionTarget?: 'ul' | 'li';
   listItems?: ListItemType[];
@@ -23,6 +24,7 @@ type ListProps = {
 
 const List: FC<ListProps> = ({
   animationTarget = 'li',
+  className,
   intersectionOptions,
   intersectionTarget = 'ul',
   listItems = [],
@@ -39,7 +41,7 @@ const List: FC<ListProps> = ({
         type, 
         animationTarget === 'ul' ?
           intersectionOptions?.transitionClass :
-          undefined
+          className
       )}
       intersectionOptions={{ 
         intersectionObserverInit: intersectionTarget === 'ul' ? 

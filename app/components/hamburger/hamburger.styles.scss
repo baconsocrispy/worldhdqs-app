@@ -1,0 +1,66 @@
+.hamburger {
+  z-index: 1000;
+  position: absolute;
+  right: $padding-default;
+  top: $padding-default;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  transition: background-color 0.5s ease-in-out;
+
+  &--star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  &--open {
+    background-color: black;
+
+    .hamburger__line,
+    .hamburger__line::before,
+    .hamburger__line::after {
+      background-color: white;
+    }
+  }
+
+  &__lines {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__line {
+    position: absolute;
+    height: 2px;
+    width: 1rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 1rem;
+      background-color: currentColor;
+    }
+
+    &::before {
+      transform: translateY(-4px);
+    }
+
+    &::after {
+      transform: translateY(2px);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255, 127, 127);
+  }
+
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+}

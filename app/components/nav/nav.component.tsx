@@ -1,9 +1,8 @@
 'use client'
 // library
-import { FC, useContext } from "react";
+import { FC, MouseEventHandler, useContext, useState } from "react";
 
 // components
-import Logo from "../logo/logo.component";
 import NavMenu from "../nav-menu/nav-menu.components";
 
 // context
@@ -14,8 +13,8 @@ import { cleanClassName } from "@/app/helpers";
 
 // types
 import { ListItem } from "@/app/types";
-import OrbitLogo from "@/app/content/logos/whq-orbit.logo";
 import OrbitingText from "../text-orbit/text-orbit.component";
+import Hamburger from "../hamburger/hamburger.component";
 
 type NavProps = {
   navLinks?: ListItem[];
@@ -24,11 +23,39 @@ type NavProps = {
 const Nav: FC<NavProps>  = ({ navLinks }) => {
   // state
   const { theme } = useContext(ThemeContext);
+  const [ menuOpen, setMenuOpen ] = useState(false);
+
+  // handlers
+  const handleClick: MouseEventHandler<HTMLDivElement> = () => {
+    console.log('TEST');
+    setMenuOpen(!menuOpen);
+  };
 
   return (
-    <header className={ cleanClassName('nav', undefined, theme?.className) }>
-      <OrbitingText text='World Headquarters' />
-      <NavMenu navLinks={ navLinks }/>
+    <header className={ cleanClassName(
+      'nav', 
+      menuOpen ? undefined : 'blend', 
+      theme?.className
+    )}>
+      <OrbitingText 
+        text='World Headquarters' 
+      >
+        <div 
+          className="orbiting-text__child"
+          style={ menuOpen ? { backgroundColor: 'black' } : undefined }
+        />
+      </OrbitingText>
+
+      <Hamburger 
+        className={ menuOpen ? 'hamburger--open' : undefined }
+        onClick={ handleClick }
+        shape="star" 
+      />
+      <NavMenu 
+        navLinks={ navLinks } 
+        onClick={ handleClick } 
+        open={ menuOpen } 
+      />
     </header>
   )
 };

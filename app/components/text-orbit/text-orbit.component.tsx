@@ -4,13 +4,13 @@ import { FC, ReactNode, useEffect, useRef, useState } from "react";
 
 // types
 type OrbitingTextProps = {
-  // children: ReactNode;
+  children: ReactNode;
   debounce?: number; // number representing milliseconds
   panelCount?: number;
   text: string;
 };
  // state
-const OrbitingText: FC<OrbitingTextProps> = ({ debounce = 0, panelCount = 360, text }) => {
+const OrbitingText: FC<OrbitingTextProps> = ({ children, debounce = 0, panelCount = 360, text }) => {
 
   const orbitingText = useRef<HTMLDivElement>(null);
   // apothem is the radius from the center of a regular 
@@ -92,7 +92,7 @@ const OrbitingText: FC<OrbitingTextProps> = ({ debounce = 0, panelCount = 360, t
           )
         }
       </div>
-      <div className="orbiting-text__child"></div>
+      { children }
     </div>
   )
 };
