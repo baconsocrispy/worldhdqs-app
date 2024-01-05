@@ -4,22 +4,12 @@
   right: $padding-default;
   top: $padding-default;
   background-color: white;
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
   transition: background-color 0.5s ease-in-out;
 
   &--star {
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  }
-
-  &--open {
-    background-color: black;
-
-    .hamburger__line,
-    .hamburger__line::before,
-    .hamburger__line::after {
-      background-color: white;
-    }
   }
 
   &__lines {
@@ -58,6 +48,16 @@
   &:hover {
     cursor: pointer;
     background-color: rgb(255, 127, 127);
+  }
+
+  &--open {
+    background-color: black;
+
+    .hamburger__line,
+    .hamburger__line::before,
+    .hamburger__line::after {
+      background-color: white;
+    }
   }
 
   @media (min-width: $breakpoint-md) {
