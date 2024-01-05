@@ -69,7 +69,6 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
           )}
           src={ currentItem.image.src }
           fill
-          objectFit="contain"
         />
       </div>
     </div>

@@ -44,7 +44,7 @@ export const images: SerializedImage[] = [
 ];
 
 export const heroContent: HeroContent[] = [
-  { component: <City image={ images[0] } key={ 0 } />  }, 
+  // { component: <City image={ images[0] } key={ 0 } />  }, 
   { component: <WinterScene color={ 'white' } image={ images[1] } key={ 1 } />, theme: { className: 'winter-theme' }}
 ];
 

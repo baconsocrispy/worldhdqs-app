@@ -7,9 +7,9 @@
     padding: $padding-default;
   }
 
-  &--nav-link {
+  // &--nav-link {
 
-  }
+  // }
 
   &--horizontal {
     position: relative;
@@ -19,5 +19,9 @@
   &__image-container {
     position: relative;
     grid-row: 1 / -1;
+  }
+
+  &__image {
+    object-fit: contain;
   }
 }

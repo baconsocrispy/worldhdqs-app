@@ -36,6 +36,7 @@
   }
 
   &__smoke-img {
+    object-fit: contain;
     &--1 {
       animation: smoke 3s linear infinite;
     }

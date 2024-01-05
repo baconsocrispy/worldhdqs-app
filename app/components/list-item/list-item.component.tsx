@@ -54,7 +54,6 @@ const ListItem: FC<ListItemProps> = ({
               className="list-item__image"
               src={ item.image.src }
               fill
-              objectFit="contain"
               alt="item"
             />
           </div>

@@ -44,7 +44,6 @@ const WinterScene: FC<WinterSceneProps> = ({
               alt='chimney smoke'
               className="winter-scene__smoke-img--1"
               fill
-              objectFit="contain"
               src={ '/smoke/smoke-1.png' }
             />
           </div>
@@ -53,7 +52,6 @@ const WinterScene: FC<WinterSceneProps> = ({
               alt='chimney smoke'
               className="winter-scene__smoke-img--2"
               fill
-              objectFit="contain"
               src={ '/smoke/smoke-1.png' }
             />
           </div>
@@ -62,7 +60,6 @@ const WinterScene: FC<WinterSceneProps> = ({
               alt='chimney smoke'
               className="winter-scene__smoke-img--3"
               fill
-              objectFit="contain"
               src={ '/smoke/smoke-1.png' }
             />
           </div>
