@@ -30,6 +30,7 @@ const WinterScene: FC<WinterSceneProps> = ({
           className="winter-scene__image"
           fill
           src={ image.src }
+          unoptimized
         />
         <div 
           className="winter-scene__sky"
