@@ -23,14 +23,14 @@
   
   &__smoke-container {
     position: absolute;
-    left: 50%;
-    top: 13%;
+    left: 49%;
+    top: 22%;
     width: 10%;
     aspect-ratio: 100 / 250;
 
     @media (min-width: $breakpoint-md) {
       left: 47.8%;
-      top: -16%;
+      top: -9%;
       width: 10%;
     }
   }
@@ -61,8 +61,8 @@
     z-index: -2;
     position: absolute;
     border-radius: 50%;
-    left: 55%;
-    top: 31.5%;
+    left: 53%;
+    top: 40%;
     width: 15px;
     height: 15px;
     animation: flicker 0.2s linear infinite;
@@ -71,7 +71,7 @@
       width: 20px;
       height: 20px;
       left: 51%;
-      top: 31%;
+      top: 40%;
     }
   }
 }
