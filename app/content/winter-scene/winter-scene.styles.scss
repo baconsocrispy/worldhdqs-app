@@ -6,20 +6,6 @@
     z-index: -1;
     object-fit: cover;
   }
-
-  &__snow {
-    z-index: -1;
-    position: absolute;
-    background-color: white;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3rem;
-
-    @media (min-width: $breakpoint-md) {
-      height: 10rem;
-    }
-  }
   
   &__smoke-container {
     position: absolute;
@@ -60,18 +46,18 @@
   &__fire {
     z-index: -2;
     position: absolute;
-    border-radius: 50%;
-    left: 53%;
-    top: 40%;
-    width: 15px;
-    height: 15px;
-    animation: flicker 0.2s linear infinite;
+    left: 54%;
+    top: 38.9%;
+    width: 30px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(240,127,6,.5) 9%,  rgba(240,127,6,.5) 9% 100%);
+    animation: flicker 2s linear infinite;
 
     @media (min-width: $breakpoint-md) {
       width: 20px;
       height: 20px;
       left: 51%;
-      top: 40%;
+      top: 39%;
     }
   }
 }

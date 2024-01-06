@@ -65,9 +65,7 @@ const WinterScene: FC<WinterSceneProps> = ({
             />
           </div>
         </div>
-        <div className="winter-scene__fire">
-        </div>
-      <div className="winter-scene__snow" />
+        <div className="winter-scene__fire" />
     </div>
   )
 };

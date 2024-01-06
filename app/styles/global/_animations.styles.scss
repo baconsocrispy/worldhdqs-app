@@ -163,15 +163,36 @@
 
 @keyframes flicker {
   0% {
-    transform: scale(1);
-    background: radial-gradient(circle, rgba(240,127,6,.5) 9%,  rgba(240,127,6,.5) 9% 100%);
+    filter: brightness(randomNumber(50, 100) / 100);
+  }
+  10% {
+    filter: brightness(randomNumber(50, 100) / 100);
+  }
+  20% {
+    filter: brightness(randomNumber(50, 100) / 100);
+  }
+  30% {
+    filter: brightness(randomNumber(50, 100) / 100);
+  }
+  40% {
+    filter: brightness(randomNumber(50, 100) / 100);
   }
   50% {
-    transform: scale(2);
-    background: radial-gradient(circle, rgba(240,127,6,.75) 9%,  rgba(240,127,6,.75) 9% 100%);
+   filter: brightness(randomNumber(50, 100) / 100);
+  }
+  60% {
+    filter: brightness(randomNumber(50, 100) / 100);
+  }
+  70% {
+    filter: brightness(randomNumber(50, 100) / 100);
+  }
+  80% {
+    filter: brightness(randomNumber(50, 100) / 100);
+  }
+  90% {
+    filter: brightness(randomNumber(50, 100) / 100);
   }
   100% {
-    transform: scale(1);
-    background: radial-gradient(circle, rgba(240,127,6,.5) 9%,  rgba(240,127,6,.5) 9% 100%);
+    filter: brightness(randomNumber(50, 100) / 100);
   }
 }
