@@ -40,7 +40,7 @@ export const cases: Case[] = [
 ];
 
 export const images: SerializedImage[] = [
-  { id: 1, src: '/1x/bg1.png' }, { id: 2, src: '/winter/1x/winter-scene_3.png' }, { id: 3, src: '/1x/bg3.png' }, { id: 4, src: '/1x/bg4.png' }, { id: 5, src: '/1x/bg5.png' }, { id: 6, src: '/1x/bg6.png' }
+  { id: 1, src: '/1x/bg1.png' }, { id: 2, src: '/winter/SVG/winter-scene_4.svg' }, { id: 3, src: '/1x/bg3.png' }, { id: 4, src: '/1x/bg4.png' }, { id: 5, src: '/1x/bg5.png' }, { id: 6, src: '/1x/bg6.png' }
 ];
 
 export const heroContent: HeroContent[] = [
