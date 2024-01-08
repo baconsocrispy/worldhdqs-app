@@ -24,7 +24,7 @@ export const ThemeContext = createContext<ThemeContextProps>({
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   // state
-  const [ theme, setTheme ] = useState<Theme | undefined>(undefined);
+  const [ theme, setTheme ] = useState<Theme | undefined>({ className: 'winter-theme'});
 
   // actions
   const resetTheme = () => setTheme(undefined);

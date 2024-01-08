@@ -1,0 +1,17 @@
+.text-block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+
+
+  &__text {
+    // font-style: italic;
+    width: 75%;
+    padding: $padding-default;
+    // font-size: 3rem;
+    animation: fadeInOut 1s linear;
+    animation-timeline: view(0px);
+  }
+}

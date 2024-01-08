@@ -4,17 +4,17 @@ import Footer from "@/app/components/footer/footer.component";
 import Heading from "@/app/components/heading/heading.component";
 import Hero from "@/app/components/hero/hero.component";
 import Link from "@/app/components/link/link.component";
+import List from "@/app/components/list/list.component";
 import Page from "@/app/components/page/page.component";
 import Section from "@/app/components/section/section.component";
-import TextArea from "@/app/components/text-area/text-area.component";
+import TextBlock from "@/app/components/text-block/text-block.component";
+import Video from "@/app/components/video/video.component";
 
 // forms
 import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
 import { cardMedia, caseStudyMedia, cases, heroContent, processItems, services } from "@/app/data";
-import List from "@/app/components/list/list.component";
-import Video from "@/app/components/video/video.component";
 
 const Home = () => {
   return (
@@ -26,21 +26,24 @@ const Home = () => {
           leadIn='You Have Reached'
           subHeading="Creative Workshop"
         />
+        <TextBlock 
+          text={
+            "Ideas. \nStorytelling. \nCraftsmanship."
+          }
+        />
       </Section>
 
-      <Section id="departments">
+      <Section id="services">
         <Heading size={ 2 } position={ 'center' } underlineType="converge">
-          Departments
+          Services
         </Heading>
-        <TextArea text={
-          'With expertise in many of today\'s cutting edge technologies, as well as years of experience in the content creation business, World Headquarters will bring your ideas to life.'
-        } />
         <Cards 
+          cardHref="#contact"
           cardIntersectionOptions={{ 
             intersectionObserverInit: { threshold: 0.5 },
             transitionClass: 'fade-in-up' 
           }}
-          cardLinkText="Learn More"
+          cardLinkText="Inquire"
           cardMedia={ cardMedia }
           items={ services }
         />
@@ -73,7 +76,6 @@ const Home = () => {
         <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Selected Works
         </Heading>
-        <TextArea text='Whether helping businesses and individuals breathe life into existing websites or building out an entire brand presence from scratch, World Headquarters has the tools to meet your needs.'/>
         <Cards 
           cardIntersectionOptions={{ 
             intersectionObserverInit: {
@@ -95,7 +97,11 @@ const Home = () => {
         <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Contact
         </Heading>
-        <TextArea text='Please leave a message' />
+
+        <div className="center-wrapper">
+          <p>Please leave a message</p>
+        </div>
+
         <ContactForm />
         <Video 
           src="/vid/winter/noble-winter-1.mp4" 

@@ -50,9 +50,9 @@ const Hero: FC<HeroProps> = ({
       <div className="hero__content-container">
         { hoverContent ?? selectedContent }
         <div className="hero__text"> 
-          <p className="hero__lead-in">
+          <Heading className="hero__lead-in" size={ 5 }>
             { leadIn }
-          </p>
+          </Heading>
           <Heading className="hero__heading" size={ 1 }>
             { heading }
           </Heading>

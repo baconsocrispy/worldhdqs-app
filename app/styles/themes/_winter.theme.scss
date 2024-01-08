@@ -80,14 +80,6 @@ $winter--border-radius: 1rem;
     box-shadow: $winter--box-shadow;
   }
 
-  p {
-    font-size: $font-size-default;
-
-    @media (min-width: $breakpoint-md) {
-      font-size: $winter--font-size-copy;
-    }
-  }
-
   h1 {
     font-size: $winter--font-size-md;
 

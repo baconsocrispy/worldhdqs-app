@@ -11,6 +11,7 @@ import { cleanClassName } from "@/app/helpers";
 import { AnimationOptions, Case, IntersectionObserverOptions, Service } from "@/app/types";
 
 type CardsProps = {
+  cardHref?: string;
   cardLinkText?: string;
   cardMedia?: ReactNode[];
   cardIntersectionOptions?: IntersectionObserverOptions;
@@ -20,6 +21,7 @@ type CardsProps = {
 };
 
 const Cards: FC<CardsProps> = ({ 
+  cardHref,
   cardIntersectionOptions,
   cardLinkText,
   cardMedia,
@@ -33,6 +35,7 @@ const Cards: FC<CardsProps> = ({
         items.map((item, index) => 
           <Card
             key={ item.id }
+            href={ cardHref }
             intersectionObserverOptions={ cardIntersectionOptions }
             item={ item }
             layout={ cardType }
