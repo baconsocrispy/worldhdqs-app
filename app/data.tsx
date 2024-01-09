@@ -56,11 +56,9 @@ export const kingLogos: ListItem[] = [
 
 export const navLinks: Link[] = [
   { text: 'home', href: '#welcome' },
-  { text: 'services', href: '#departments' },
+  { text: 'services', href: '#services' },
   { text: 'process', href: '#process' },
   { text: 'portfolio', href: '#selected-works' },
-  // { text: 'blog', href: '/blog' },
-  // { text: 'store', href: '/store' },
   { text: 'contact', href: '#contact' }
 ]
 
@@ -188,7 +186,7 @@ export const adjectives = [
   "Captivating", "Genuine", "Unforgettable", "Uncompromising"
 ];
 
-const photos: AnimatedCarouselItem[] = [
+export const photos: AnimatedCarouselItem[] = [
   {
     image: {
       id: 1,
@@ -251,7 +249,7 @@ const photos: AnimatedCarouselItem[] = [
   },
 ];
 
-const studio: AnimatedCarouselItem[] = [
+export const studio: AnimatedCarouselItem[] = [
   {
     image: {
       id: 1,
@@ -290,7 +288,7 @@ const studio: AnimatedCarouselItem[] = [
   }
 ];
 
-const product: AnimatedCarouselItem[] = [
+export const product: AnimatedCarouselItem[] = [
   {
     image: {
       id: 1,
@@ -341,7 +339,7 @@ const product: AnimatedCarouselItem[] = [
   },
   
 ];
-const lineProd: AnimatedCarouselItem[] = [
+export const lineProd: AnimatedCarouselItem[] = [
   {
     image: {
       id: 1,

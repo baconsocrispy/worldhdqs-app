@@ -1,0 +1,35 @@
+.content-display {
+  position: relative;
+  display: grid;
+  grid-template-rows: min-content max-content;
+  gap: $padding-default;
+  width: 100%;
+  justify-content: center;
+  background-color: rgb(255, 127, 127);
+
+
+  &__content {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    max-height: 30rem;
+    overflow: hidden;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 2rem;
+
+    &--left,
+    &--right {
+      cursor: pointer;
+      scale: 1;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        scale: 1.2;
+      }
+    }
+  }
+}

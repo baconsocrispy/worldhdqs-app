@@ -1,4 +1,5 @@
 'use client'
+import { cleanClassName } from "@/app/helpers";
 // library
 import { FC, ReactNode, useEffect, useRef, useState } from "react";
 
@@ -10,6 +11,7 @@ type RotatingCarouselProps = {
     timingFunction: string;
     iterationCount: string;
   };
+  className?: string;
   debounce?: number; // number representing milliseconds
   items: ReactNode[];
   panelOffset?: number;
@@ -20,6 +22,7 @@ const RotatingCarousel: FC<RotatingCarouselProps> = ({
     timingFunction: 'linear', 
     iterationCount: 'infinite' 
   }, 
+  className,
   debounce = 0, 
   items, 
   panelOffset
@@ -65,7 +68,11 @@ const RotatingCarousel: FC<RotatingCarouselProps> = ({
 
   return (
     <div 
-      className="rotating-carousel" 
+      className={ cleanClassName(
+        'rotating-carousel',
+        undefined,
+        className
+      )}
       ref={ carousel }
     >
       <div 

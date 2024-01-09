@@ -15,6 +15,7 @@ import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
 import { cardMedia, caseStudyMedia, cases, heroContent, processItems, services } from "@/app/data";
+import ContentDisplay from "@/app/components/content-display/content-display.component";
 
 const Home = () => {
   return (
@@ -37,6 +38,13 @@ const Home = () => {
         <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Services
         </Heading>
+        <ContentDisplay content={ cardMedia } />
+      </Section>
+
+      {/* <Section id="services">
+        <Heading size={ 2 } position={ 'center' } underlineType="converge">
+          Services
+        </Heading>
         <Cards 
           cardHref="#contact"
           cardIntersectionOptions={{ 
@@ -47,7 +55,7 @@ const Home = () => {
           cardMedia={ cardMedia }
           items={ services }
         />
-      </Section>
+      </Section> */}
 
       <Section id="process">
         <Heading size={ 2 } position={ 'center' } underlineType="converge">

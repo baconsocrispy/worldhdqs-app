@@ -3,6 +3,14 @@
   justify-content: center;
 }
 
+.email {
+  text-transform: lowercase;
+}
+
+.hidden {
+  display: none;
+}
+
 .intersected {
   @include transition-all;
 }

@@ -1,7 +1,12 @@
 'use client'
 // library
 import { FC, ReactNode, useEffect, useState } from "react";
+
+//components
 import Heading from "../heading/heading.component";
+
+// helpers
+import { cleanClassName } from "@/app/helpers";
 
 // types
 export type FlipCarouselItem = {
@@ -10,12 +15,14 @@ export type FlipCarouselItem = {
 };
 
 type FlipCarouselProps = {
+  className?: string;
   duration?: number; // time panel faces viewer
   items: FlipCarouselItem[];
   transition?: number; // time to rotate panel
 };
 
 const FlipCarousel: FC<FlipCarouselProps> = ({ 
+  className,
   duration = 2, 
   items, 
   transition = 1
@@ -45,7 +52,11 @@ const FlipCarousel: FC<FlipCarouselProps> = ({
   }, [ currentIndex, backIndex, duration, flipped, frontIndex, items.length ]);
 
   return (
-    <div className="flip-carousel">
+    <div className={ cleanClassName(
+      'flip-carousel',
+      undefined,
+      className
+    )}>
       {
         items[currentIndex].text &&
           <Heading 
@@ -61,9 +72,10 @@ const FlipCarousel: FC<FlipCarouselProps> = ({
           </Heading>
       }
       <div 
-        className={ flipped ? 
-          `flip-carousel__content-container flip-carousel__content-container--flipped` :
-          'flip-carousel__content-container'
+        className={ cleanClassName(
+            'flip-carousel__content-container',
+            flipped ? 'flipped' : undefined
+          )
         }
         style={{ transition: `transform ${ transition }s ease-in-out` }}
       >
