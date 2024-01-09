@@ -16,6 +16,7 @@ export type FlipCarouselItem = {
 
 type FlipCarouselProps = {
   className?: string;
+  control?: 'auto' | 'manual' | 'remote';
   duration?: number; // time panel faces viewer
   items: FlipCarouselItem[];
   transition?: number; // time to rotate panel
@@ -38,12 +39,12 @@ const FlipCarousel: FC<FlipCarouselProps> = ({
       setFlipped(!flipped);
       flipped ? 
         setFrontIndex(
-          backIndex === items.length - 1  ? 0 : backIndex + 1
+          (frontIndex + 2) % items.length
         ):
         setBackIndex(
-          frontIndex === items.length - 1 ? 0 : frontIndex + 1
+          (backIndex + 2) % items.length
         );
-      setCurrentIndex(currentIndex === items.length -1 ? 0 : currentIndex + 1);
+      setCurrentIndex((currentIndex + 1) % items.length);
     };
 
     const interval = setInterval(rotateNext, duration * 1000);
