@@ -71,6 +71,7 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
           className={ contentIndex === 1 ? undefined : 'hidden' }
           items={ rotatingContent }
           panelOffset={ 15 }
+          remoteIndex={ currentSlideIndex }
         />
         <FlipCarousel 
           key={ `carousel-${ contentIndex }-2}` }

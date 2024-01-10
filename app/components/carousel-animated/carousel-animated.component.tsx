@@ -38,7 +38,7 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
   time = 2,
 }) => {
   // state
-  const [ currentItemIndex, setCurrentItemIndex ] = useState(remoteIndex ?? 0);
+  const [ currentItemIndex, setCurrentItemIndex ] = useState(0);
   const onFirstIndex = currentItemIndex === 0;
   const onLastIndex = currentItemIndex === items.length - 1;
   const currentItem = items[currentItemIndex];

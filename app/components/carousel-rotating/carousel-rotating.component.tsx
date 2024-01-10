@@ -12,9 +12,11 @@ type RotatingCarouselProps = {
     iterationCount: string;
   };
   className?: string;
+  control?: 'auto' | 'manual' | 'remote';
   debounce?: number; // number representing milliseconds
   items: ReactNode[];
   panelOffset?: number;
+  remoteIndex?: number;
 };
 
 const RotatingCarousel: FC<RotatingCarouselProps> = ({ 
@@ -23,16 +25,21 @@ const RotatingCarousel: FC<RotatingCarouselProps> = ({
     iterationCount: 'infinite' 
   }, 
   className,
+  control = 'remote',
   debounce = 0, 
   items, 
-  panelOffset
+  panelOffset,
+  remoteIndex
 }) => {
   // state
   const carousel = useRef<HTMLDivElement>(null);
   // apothem is the radius from the center of a regular 
   // polygon to the middle of one of its sides
   const [ apothem, setApothem ] = useState(0);
+  const [ currentSlideIndex, setCurrentSlideIndex ] = useState(0);
+  const [ currentRotation, setCurrentRotation ] = useState(0);
 
+  // responsively configure carousel panel dimensions as viewport changes size
   useEffect(() => {
     let resizeTimer: ReturnType<typeof setTimeout> | null;
 
@@ -66,6 +73,25 @@ const RotatingCarousel: FC<RotatingCarouselProps> = ({
     calculateApothem();
   }, [ debounce, items.length, panelOffset ]);
 
+  // controls
+  // rotate slides from external component via remoteIndex prop
+  useEffect(() => {
+    if (control !== 'remote') return;
+
+    const rotateCarousel = () => {
+      (remoteIndex || remoteIndex === 0) && setCurrentSlideIndex(remoteIndex);
+
+      if (remoteIndex || remoteIndex === 0) {
+        const rotationDegrees = -(remoteIndex * 360 / items.length);
+        setCurrentRotation(rotationDegrees);
+      }
+    };
+
+    rotateCarousel();
+    
+  }, [ remoteIndex ]);
+  
+
   return (
     <div 
       className={ cleanClassName(
@@ -77,11 +103,15 @@ const RotatingCarousel: FC<RotatingCarouselProps> = ({
     >
       <div 
         className="rotating-carousel__content-container"
+        // style={{ 
+        //   animationName: animationOptions?.name, 
+        //   animationDuration: `${ animationOptions?.duration }s`, 
+        //   animationTimingFunction: animationOptions?.timingFunction,
+        //   animationIterationCount: animationOptions?.iterationCount
+        // }}
         style={{ 
-          animationName: animationOptions?.name, 
-          animationDuration: `${ animationOptions?.duration }s`, 
-          animationTimingFunction: animationOptions?.timingFunction,
-          animationIterationCount: animationOptions?.iterationCount
+          transform: `rotateY(${ currentRotation }deg)`,
+          transition: 'transform 1s ease-in-out' 
         }}
       >
         { items.map((item, index) => 
