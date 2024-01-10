@@ -1,12 +1,13 @@
 .animated-carousel {
   position: relative;
-  width: 100%;
-  height: 100%;
+
   padding: $padding-default;
   overflow: hidden;
 
   &__content {
     position: absolute;
+    display: grid;
+    grid-template-rows: max-content 1fr;
     width: 100%;
     height: 100%;
   }
@@ -14,11 +15,19 @@
   &__heading {
     text-align: center;
     width: 100%;
+    border: 1px solid green;
+
+    &--animated {
+      animation: whizLeftToRight 1s ease-in-out;
+    }
   }
 
   &__image-container {
+    position: relative;
     width: 100%;
     height: 100%;
+    animation: whizRightToLeft 1s ease-in-out;
+    border: 1px solid red;
   }
 
   &__image {

@@ -87,7 +87,10 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
     )}>
       <div className="animated-carousel__content">
         <h4 
-          className="animated-carousel__heading"
+          className={ cleanClassName(
+            `animated-carousel__heading`,
+            'animated'
+            )}
           // style={{ animation: `${ textAnimation } ${ time * 1000 }ms ease-in-out infinite ${ animationDelay * 1000 }ms`}}
           onAnimationIteration={ control === 'auto' ? handelAnimationIteration : undefined }
         >
@@ -111,7 +114,6 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
           />
         </div>
       </div>
-    
     </div>
   )
 };
