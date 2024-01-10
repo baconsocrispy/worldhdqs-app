@@ -20,26 +20,21 @@ type ContentDisplayProps = {
 
 const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
   // state
-  const [ contentIndex, setContentIndex ] = useState(0);
   const [ currentSlideIndex, setCurrentSlideIndex ] = useState(0);
-
-  useEffect(() => {
-    setCurrentSlideIndex(0);
-  }, [ contentIndex, setCurrentSlideIndex ])
+  const [ contentIndex, setContentIndex ] = useState(0);
 
   // handlers
   const onTabClick = (index: number) => {
     setContentIndex(index);
+    setCurrentSlideIndex(0);
   };
 
   const handleNextArrowClick: MouseEventHandler = () => {
     setCurrentSlideIndex(currentSlideIndex + 1);
-    console.log(currentSlideIndex);
   };
 
   const handlePrevArrowClick: MouseEventHandler = () => {
     setCurrentSlideIndex(currentSlideIndex - 1);
-    console.log(currentSlideIndex);
   };
 
   return (
@@ -56,13 +51,17 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
 
       <div className="content-display__content">
         <AnimatedCarousel
+          key={ `carousel-${ contentIndex }-0` }
           className={ contentIndex === 0 ? undefined : 'hidden' }
+          control="remote"
           textAnimation="whizLeftToRight"
           imageAnimation='whizRightToLeft'
           items={ skills } 
+          remoteIndex={ currentSlideIndex }
           time={ 2 }
         />
         <RotatingCarousel 
+          key={ `carousel-${ contentIndex }-1` }
           animationOptions={{
             name: 'rotate',
             duration: 10,
@@ -70,12 +69,11 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
             iterationCount: 'infinite'
           }}
           className={ contentIndex === 1 ? undefined : 'hidden' }
-          key={ 1 }
           items={ rotatingContent }
           panelOffset={ 15 }
         />
         <FlipCarousel 
-          key={ 2 }
+          key={ `carousel-${ contentIndex }-2}` }
           className={ contentIndex === 2 ? undefined : 'hidden' }
           control="remote"
           duration={ 10 }

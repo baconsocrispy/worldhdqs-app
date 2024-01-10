@@ -13,6 +13,8 @@
       cursor: pointer;
       scale: 1.1;
       z-index: 50;
+      background-color: rgba(0, 128, 128, .75);
+      color: white;
     }
 
     &--selected {

@@ -43,12 +43,14 @@ const FlipCarousel: FC<FlipCarouselProps> = ({
     if (control !== 'remote') return;
 
     const rotateCarousel = () => {
-      if (remoteIndex) {
+      if (remoteIndex || remoteIndex === 0) {
         let newIndex;
 
         remoteIndex < 0 ?
           newIndex = (remoteIndex % items.length + items.length) % items.length :
           newIndex = remoteIndex % items.length;
+        
+        console.log(remoteIndex);
 
         setFlipped(!flipped);
   

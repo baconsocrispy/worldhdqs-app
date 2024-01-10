@@ -1,6 +1,6 @@
 'use client'
 // library
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 // components
 import Image from "next/image";
@@ -22,6 +22,7 @@ type AnimatedCarouselProps = {
   control?: 'auto' | 'manual' | 'remote';
   imageAnimation?: string;
   items: AnimatedCarouselItem[];
+  remoteIndex?: number;
   textAnimation?: string;
   time?: number; // animation duration in seconds
 };
@@ -33,13 +34,35 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
   textAnimation,
   imageAnimation, 
   items, 
+  remoteIndex,
   time = 2,
 }) => {
   // state
-  const [ currentItemIndex, setCurrentItemIndex ] = useState(0);
+  const [ currentItemIndex, setCurrentItemIndex ] = useState(remoteIndex ?? 0);
   const onFirstIndex = currentItemIndex === 0;
   const onLastIndex = currentItemIndex === items.length - 1;
   const currentItem = items[currentItemIndex];
+
+  // rotate slides from external component via remoteIndex prop
+  useEffect(() => {
+    if (control !== 'remote') return;
+
+    const rotateCarousel = () => {
+      if (remoteIndex || remoteIndex === 0) {
+
+        let newIndex;
+
+        remoteIndex < 0 ?
+          newIndex = (remoteIndex % items.length + items.length) % items.length :
+          newIndex = remoteIndex % items.length;
+          
+        setCurrentItemIndex(newIndex);
+      }
+    };
+  
+    rotateCarousel();
+      
+  }, [ remoteIndex ]);
 
   // handlers
   const rotateNext = () => {
