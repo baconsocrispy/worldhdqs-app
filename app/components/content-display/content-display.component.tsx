@@ -1,6 +1,6 @@
 'use client'
 // library
-import { FC, ReactNode, useState } from "react";
+import { FC, MouseEventHandler, ReactNode, useEffect, useState } from "react";
 
 // components
 import AnimatedCarousel from "../carousel-animated/carousel-animated.component";
@@ -21,10 +21,25 @@ type ContentDisplayProps = {
 const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
   // state
   const [ contentIndex, setContentIndex ] = useState(0);
+  const [ currentSlideIndex, setCurrentSlideIndex ] = useState(0);
+
+  useEffect(() => {
+    setCurrentSlideIndex(0);
+  }, [ contentIndex, setCurrentSlideIndex ])
 
   // handlers
   const onTabClick = (index: number) => {
     setContentIndex(index);
+  };
+
+  const handleNextArrowClick: MouseEventHandler = () => {
+    setCurrentSlideIndex(currentSlideIndex + 1);
+    console.log(currentSlideIndex);
+  };
+
+  const handlePrevArrowClick: MouseEventHandler = () => {
+    setCurrentSlideIndex(currentSlideIndex - 1);
+    console.log(currentSlideIndex);
   };
 
   return (
@@ -60,7 +75,9 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
           panelOffset={ 15 }
         />
         <FlipCarousel 
+          key={ 2 }
           className={ contentIndex === 2 ? undefined : 'hidden' }
+          control="remote"
           duration={ 10 }
           items={[ 
             { 
@@ -106,13 +123,24 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
               text: 'Product Photography'
             },
           ]}
-          key={ 2 }
+          remoteIndex={ currentSlideIndex }
         />
       </div>
 
       <div className="content-display__controls">
-        <span className="content-display__controls--left">&#x2190;</span>
-        <span className="content-display__controls--right">&#x2192;</span>
+        <span 
+          className="content-display__controls--left"
+          onClick={ handlePrevArrowClick }
+        >
+          &#x2190;
+        </span>
+
+        <span 
+          className="content-display__controls--right"
+          onClick={ handleNextArrowClick }
+        >
+          &#x2192;
+        </span>
       </div>
     </div>
   )

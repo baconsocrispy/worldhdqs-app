@@ -19,22 +19,59 @@ type FlipCarouselProps = {
   control?: 'auto' | 'manual' | 'remote';
   duration?: number; // time panel faces viewer
   items: FlipCarouselItem[];
+  remoteIndex?: number;
   transition?: number; // time to rotate panel
 };
 
 const FlipCarousel: FC<FlipCarouselProps> = ({ 
   className,
+  control = 'remote',
   duration = 2, 
   items, 
+  remoteIndex,
   transition = 1
 }) => {
   // state
-  const [ frontIndex, setFrontIndex ] = useState(0);
-  const [ backIndex, setBackIndex ] = useState(1);
-  const [ flipped, setFlipped ] = useState(false);
   const [ currentIndex, setCurrentIndex ] = useState(0);
+  const [ frontIndex, setFrontIndex ] = useState(currentIndex);
+  const [ backIndex, setBackIndex ] = useState((currentIndex + 1) % items.length);
+  const [ flipped, setFlipped ] = useState(false);
 
+
+  // rotate slides from external component via remoteIndex prop
   useEffect(() => {
+    if (control !== 'remote') return;
+
+    const rotateCarousel = () => {
+      if (remoteIndex) {
+        let newIndex;
+
+        remoteIndex < 0 ?
+          newIndex = (remoteIndex % items.length + items.length) % items.length :
+          newIndex = remoteIndex % items.length;
+
+        setFlipped(!flipped);
+  
+        flipped ? 
+          setFrontIndex(
+            newIndex
+          ) :
+          setBackIndex(
+            newIndex
+          )
+          
+        setCurrentIndex(newIndex);
+      }
+    };
+
+    rotateCarousel();
+    
+  }, [ remoteIndex ]);
+
+  // automatatic slide rotation when control set to auto
+  useEffect(() => {
+    if (control !== 'auto') return;
+
     const rotateNext = () => {
       setFlipped(!flipped);
       flipped ? 
@@ -50,7 +87,7 @@ const FlipCarousel: FC<FlipCarouselProps> = ({
     const interval = setInterval(rotateNext, duration * 1000);
 
     return () => clearInterval(interval);
-  }, [ currentIndex, backIndex, duration, flipped, frontIndex, items.length ]);
+  }, [ backIndex, control, currentIndex, duration, flipped, frontIndex, items.length ]);
 
   return (
     <div className={ cleanClassName(
