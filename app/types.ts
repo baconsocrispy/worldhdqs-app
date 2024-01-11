@@ -52,9 +52,11 @@ export type Logo = {
 };
 
 export type SerializedImage = {
+  alt?: string;
   id: number;
   invert?: boolean;
   src: string;
+  title?: string;
 };
 
 export type Service = {

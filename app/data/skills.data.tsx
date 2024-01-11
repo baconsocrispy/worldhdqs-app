@@ -1,0 +1,272 @@
+export const skills = [
+  {
+    id: 0,
+    images: [
+      {
+        id: 0,
+        alt: 'Ruby programming language logo',
+        src: '/logos/programming/rails.svg',
+        title: 'Ruby'
+      },
+      {
+        id: 1,
+        alt: 'JavaScript programming language logo',
+        src: '/logos/programming/js.png',
+        title: 'JavaScript'
+      },
+      {
+        id: 2,
+        alt: 'TypeScript programming language logo',
+        src: '/logos/programming/ts.png',
+        title: 'TypeScript'
+      },
+      {
+        id: 3,
+        alt: 'JavaScript programming language logo',
+        src: '/logos/programming/js.png',
+        title: 'JavaScript'
+      },
+      {
+        id: 4,
+        alt: 'Sass styling language logo',
+        src: '/logos/programming/scss.png',
+        title: 'SCSS'
+      },
+      {
+        id: 5,
+        alt: 'CSS styling language logo',
+        src: '/logos/programming/css.png',
+        title: 'CSS'
+      },
+      {
+        id: 6,
+        alt: 'HTML markup language logo',
+        src: '/logos/programming/html.png',
+        title: 'HTML'
+      },
+      {
+        id: 7,
+        alt: 'Python programming language logo',
+        src: '/logos/programming/python.png',
+        title: 'Python'
+      },
+      {
+        id: 8,
+        alt: 'C# programming language logo',
+        src: '/logos/programming/csharp.png',
+        title: 'C#'
+      },
+    ],
+    name: 'Programming Languages',
+    text: 'With a range of programming languages under our belts, we can ensure we use the right tool for the job'
+  },
+  {
+    id: 1,
+    images: [
+      {
+        id: 0,
+        alt: 'Ruby on Rails logo',
+        src: '/logos/frameworks/rails.svg',
+        title: 'Ruby on Rails'
+      },
+      {
+        id: 1,
+        alt: 'React logo',
+        src: '/logos/frameworks/react.png',
+        title: 'React'
+      },
+      {
+        id: 2,
+        alt: 'Next.js logo',
+        invert: true,
+        src: '/logos/frameworks/next-js.svg',
+        title: 'Next.js'
+      },
+      {
+        id: 3,
+        alt: 'Create React App logo',
+        src: '/logos/frameworks/cra.png',
+        title: 'Create React App'
+      },
+      {
+        id: 4,
+        alt: 'Django logo',
+        src: '/logos/frameworks/django.png',
+        title: 'Django'
+      },
+      {
+        id: 5,
+        alt: '.NET logo',
+        src: '/logos/frameworks/net.png',
+        title: '.NET'
+      },
+      {
+        id: 6,
+        alt: 'RSpec logo',
+        src: '/logos/frameworks/rspec.png',
+        title: 'RSpec'
+      },
+      {
+        id: 7,
+        alt: 'React Testing Library logo',
+        src: '/logos/frameworks/rtl.png',
+        title: 'React Testing Library'
+      },
+      {
+        id: 8,
+        alt: 'Jest logo',
+        src: '/logos/frameworks/jest.png',
+        title: 'Jest'
+      },
+    ],
+    name: 'Libraries, Frameworks & Testing',
+    text: 'We make use of powerful frameworks and libraries to bring you state-of-the-art capabilities in a timely fashion'
+  },
+  {
+    id: 2,
+    images: [
+      {
+        id: 0,
+        alt: 'AWS Logo',
+        src: '/logos/cloud/aws.jpeg',
+        title: 'AWS'
+      },
+      {
+        id: 1,
+        alt: 'Cloudflare Logo',
+        src: '/logos/cloud/cloudflare.png',
+        title: 'Cloudflare'
+      },
+      {
+        id: 2,
+        alt: 'Firebase Logo',
+        src: '/logos/cloud/firebase.png',
+        title: 'Firebase'
+      },
+      {
+        id: 3,
+        alt: 'Heroku Logo',
+        src: '/logos/cloud/heroku.svg',
+        title: 'Heroku'
+      },
+      {
+        id: 4,
+        alt: 'Netlify Logo',
+        src: '/logos/cloud/netlify.png',
+        title: 'Netlify'
+      },
+      {
+        id: 5,
+        alt: 'OAuth 2.0 Logo',
+        src: '/logos/cloud/oauth2.svg',
+        title: 'OAuth 2.0'
+      },
+      {
+        id: 6,
+        alt: 'Postgresql Logo',
+        src: '/logos/cloud/postgresql.png',
+        title: 'Postgresql'
+      },
+      {
+        id: 7,
+        alt: 's3 Logo',
+        src: '/logos/cloud/s3.png',
+        title: 'S3'
+      },
+      {
+        id: 8,
+        alt: 'SQL Logo',
+        src: '/logos/cloud/sql.png',
+        title: 'SQL'
+      },
+      {
+        id: 9,
+        alt: 'SQLite Logo',
+        src: '/logos/cloud/sqlite.png',
+        title: 'SQLite'
+      },
+      {
+        id: 10,
+        alt: 'Vercel Logo',
+        src: '/logos/cloud/vercel.svg',
+        title: 'Vercel'
+      }
+    ],
+    name: 'Cloud & Database',
+    text: 'Tools for deploying your application, storing your information and keeping it safe'
+  },
+  {
+    id: 3,
+    images: [
+      {
+        id: 0,
+        alt: 'Shopify Logo',
+        src: '/logos/cms/shopify.png',
+        title: 'Shopify'
+      },
+      {
+        id: 1,
+        alt: 'Wordpress Logo',
+        src: '/logos/cms/wordpress.png',
+        title: 'Wordpress'
+      },
+      {
+        id: 2,
+        alt: 'Squarespace Logo',
+        src: '/logos/cms/squarespace.png',
+        title: 'Squarespace'
+      },
+    ],
+    name: 'Content Management Systems',
+    text: 'We can build, update or maintain a site for you using popular CMS platforms'
+  },
+  {
+    id: 4,
+    images: [
+      {
+        id: 0,
+        alt: 'Azure logo',
+        src: '/logos/tools/azure.png',
+        title: 'Azure'
+      },
+      {
+        id: 1,
+        alt: 'BrowserStack logo',
+        src: '/logos/tools/bs.png',
+        title: 'BrowserStack'
+      },
+      {
+        id: 2,
+        alt: 'ChatGPT logo',
+        src: '/logos/tools/chatgpt.png',
+        title: 'ChatGPT'
+      },
+      {
+        id: 3,
+        alt: 'Git logo',
+        src: '/logos/tools/git.png',
+        title: 'Git'
+      },
+      {
+        id: 4,
+        alt: 'Postman logo',
+        src: '/logos/tools/postman.png',
+        title: 'Postman'
+      },
+      {
+        id: 5,
+        alt: 'VS Code logo',
+        src: '/logos/tools/vscode.png',
+        title: 'VS Code'
+      },
+      {
+        id: 6,
+        alt: 'Yarn logo',
+        src: '/logos/tools/yarn.png',
+        title: 'Yarn'
+      }
+    ],
+    name: 'Developer Tools & Productivity',
+    text: 'We use many tools to help ensure we deliver the highest quality code'
+  }
+]

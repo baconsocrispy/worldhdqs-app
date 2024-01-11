@@ -10,12 +10,12 @@ import { cleanClassName } from "@/app/helpers";
 
 // types
 import { SerializedImage } from "@/app/types";
-import next from "next";
 
 export type AnimatedCarouselItem = {
   image: SerializedImage;
+  images?: SerializedImage[];
   text?: string;
-}
+};
 
 type AnimatedCarouselProps = {
   animationOptions?: {
@@ -50,8 +50,12 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
   const [ currentItemIndex, setCurrentItemIndex ] = useState(0);
   const [ nextItemIndex, setNextItemIndex ] = useState((currentItemIndex + 1) % items.length );
   const [ currentActive, setCurrentActive ] = useState(true);
+
+  // set initial animation states to none
   const [ currentAnimation, setCurrentAnimation ] = useState('noneEnter');
   const [ nextAnimation, setNextAnimation ] = useState('noneExit');
+  
+  // flag to prevent animation running on mount when remote controlled
   const [ firstIteration, setFirstIteration ] = useState(true);
 
   const currentItem = items[currentItemIndex];
@@ -69,12 +73,11 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
         setCurrentItemIndex(
           (nextItemIndex + 1) % items.length
         )
-  
       setCurrentItemIndex((currentItemIndex + 1) % items.length);
       setCurrentActive(!currentActive);
     };
 
-    const duration = animationOptions?.duration || 2
+    const duration = animationOptions?.duration || 2;
 
     const interval = setInterval(rotateNext, duration * 1000);
 
