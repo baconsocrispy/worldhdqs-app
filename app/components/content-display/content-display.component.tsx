@@ -52,13 +52,15 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
       <div className="content-display__content">
         <AnimatedCarousel
           key={ `carousel-${ contentIndex }-0` }
+          animationOptions={{
+            duration: 3,
+            entryAnimation: 'enter',
+            exitAnimation: 'exit',
+          }}
           className={ contentIndex === 0 ? undefined : 'hidden' }
           control="remote"
-          textAnimation="whizLeftToRight"
-          imageAnimation='whizRightToLeft'
           items={ skills } 
           remoteIndex={ currentSlideIndex }
-          time={ 2 }
         />
         <RotatingCarousel 
           key={ `carousel-${ contentIndex }-1` }
@@ -81,9 +83,8 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
           items={[ 
             { 
               content: <AnimatedCarousel 
-                          animationDelay={ 1 }
-                          imageAnimation="noAnimation"
-                          time={ 1 }
+                          control="auto"
+                          imageOptions={{ imageFit: 'cover' }}
                           items={ photos }
                         />,
               text: 'Lifestyle/Street Photography'
@@ -105,18 +106,16 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
             },
             { 
               content: <AnimatedCarousel 
-                          animationDelay={ 1 }
-                          imageAnimation="noAnimation"
-                          time={ 1 }
+                          control="auto"
+                          imageOptions={{ imageFit: 'cover' }}
                           items={ studio }
                         />,
               text: 'Studio Production'
             },
             { 
               content: <AnimatedCarousel 
-                          animationDelay={ 1 }
-                          imageAnimation="noAnimation"
-                          time={ 1 }
+                          control="auto"
+                          imageOptions={{ imageFit: 'cover' }}
                           items={ product }
                         />,
               text: 'Product Photography'

@@ -1,36 +1,86 @@
 .animated-carousel {
   position: relative;
-
   padding: $padding-default;
   overflow: hidden;
 
   &__content {
     position: absolute;
     display: grid;
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: 10% 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__heading-container,
+  &__images-container {
+    position: relative;
+    display: flex;
     width: 100%;
     height: 100%;
   }
 
   &__heading {
     text-align: center;
+    position: absolute;
     width: 100%;
-    border: 1px solid green;
+    height: 100%;
+    // transform: translateX(-100%);
 
-    &--animated {
-      animation: whizLeftToRight 1s ease-in-out;
+    &--enter {
+      animation: whizInRight 1s ease-in-out;
+      // transform: translateX(0%);
+    }
+
+    &--exit {
+      animation: whizOutRight 1s ease-in-out;
+      transform: translateX(-100%);
+    }
+
+    &--noneEnter {
+      display: block;
+      transform: translateX(0%);
+    }
+
+    &--noneExit {
+      display: none;
+      transform: translateX(0%);
     }
   }
 
   &__image-container {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
-    animation: whizRightToLeft 1s ease-in-out;
-    border: 1px solid red;
+    transform: translateX(100%);
+    
+    &--enter {
+      animation: whizInLeft 1s ease-in-out;
+      transform: translateX(0%);
+    }
+
+    &--exit {
+      animation: whizOutLeft 1s ease-in-out;
+      transform: translateX(100%);
+    }
+
+    &--noneEnter {
+      display: block;
+      transform: translateX(0%);
+    }
+
+    &--noneExit {
+      display: none;
+      transform: translateX(0%);
+    }
   }
 
   &__image {
-    object-fit: contain;
+    &--contain {
+      object-fit: contain;
+    }
+
+    &--cover {
+      object-fit: cover;
+    }
   }
 }

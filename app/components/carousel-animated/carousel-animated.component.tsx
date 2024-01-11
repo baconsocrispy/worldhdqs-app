@@ -10,6 +10,7 @@ import { cleanClassName } from "@/app/helpers";
 
 // types
 import { SerializedImage } from "@/app/types";
+import next from "next";
 
 export type AnimatedCarouselItem = {
   image: SerializedImage;
@@ -17,31 +18,68 @@ export type AnimatedCarouselItem = {
 }
 
 type AnimatedCarouselProps = {
-  animationDelay?: number;
+  animationOptions?: {
+    duration?: number;
+    entryAnimation?: string;
+    exitAnimation?: string;
+  }
   className?: string;
   control?: 'auto' | 'manual' | 'remote';
-  imageAnimation?: string;
+  imageOptions?: {
+    imageFit?: 'contain' | 'cover';
+  };
   items: AnimatedCarouselItem[];
   remoteIndex?: number;
-  textAnimation?: string;
-  time?: number; // animation duration in seconds
 };
 
 const AnimatedCarousel: FC<AnimatedCarouselProps> = ({ 
-  animationDelay = 0,
+  animationOptions = {
+    duration: 2,
+    entryAnimation: 'noneEnter',
+    exitAnimation: 'noneExit'
+  },
   className,
-  control = 'manual',
-  textAnimation,
-  imageAnimation, 
+  control = 'auto',
+  imageOptions = {
+    imageFit: 'contain'
+  },
   items, 
-  remoteIndex,
-  time = 2,
+  remoteIndex
 }) => {
   // state
   const [ currentItemIndex, setCurrentItemIndex ] = useState(0);
-  const onFirstIndex = currentItemIndex === 0;
-  const onLastIndex = currentItemIndex === items.length - 1;
+  const [ nextItemIndex, setNextItemIndex ] = useState((currentItemIndex + 1) % items.length );
+  const [ currentActive, setCurrentActive ] = useState(true);
+  const [ currentAnimation, setCurrentAnimation ] = useState('noneEnter');
+  const [ nextAnimation, setNextAnimation ] = useState('noneExit');
+  const [ firstIteration, setFirstIteration ] = useState(true);
+
   const currentItem = items[currentItemIndex];
+  const nextItem = items[nextItemIndex];
+
+  // automatatic slide rotation when control set to auto
+  useEffect(() => {
+    if (control !== 'auto') return;
+
+    const rotateNext = () => {
+      currentActive ? 
+        setNextItemIndex(
+          (currentItemIndex + 1) % items.length
+        ) :
+        setCurrentItemIndex(
+          (nextItemIndex + 1) % items.length
+        )
+  
+      setCurrentItemIndex((currentItemIndex + 1) % items.length);
+      setCurrentActive(!currentActive);
+    };
+
+    const duration = animationOptions?.duration || 2
+
+    const interval = setInterval(rotateNext, duration * 1000);
+
+    return () => clearInterval(interval);
+  }, [ currentActive ]);
 
   // rotate slides from external component via remoteIndex prop
   useEffect(() => {
@@ -56,28 +94,21 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
           newIndex = (remoteIndex % items.length + items.length) % items.length :
           newIndex = remoteIndex % items.length;
           
-        setCurrentItemIndex(newIndex);
+        currentActive ? setNextItemIndex(newIndex) : setCurrentItemIndex(newIndex);
+
+       if (animationOptions.entryAnimation && animationOptions.exitAnimation) {
+        currentActive ? setCurrentAnimation(animationOptions.exitAnimation) : setCurrentAnimation(animationOptions.entryAnimation);
+        currentActive ? setNextAnimation(animationOptions.entryAnimation) : setNextAnimation(animationOptions.exitAnimation);
+       }
+      
+       setCurrentActive(!currentActive);
       }
     };
   
-    rotateCarousel();
+    !firstIteration && rotateCarousel();
+    firstIteration && setFirstIteration(false);
       
   }, [ remoteIndex ]);
-
-  // handlers
-  const rotateNext = () => {
-    const nextIndex = onLastIndex ? 0 : currentItemIndex + 1;
-    setCurrentItemIndex(nextIndex);
-  };
-
-  const rotatePrev = () => {
-    const prevIndex = onFirstIndex ? items.length - 1 : currentItemIndex - 1;
-    setCurrentItemIndex(prevIndex);
-  };
-
-  const handelAnimationIteration = () => {
-    rotateNext();
-  };
 
   return (
     <div className={ cleanClassName(
@@ -86,32 +117,61 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
       className
     )}>
       <div className="animated-carousel__content">
-        <h4 
-          className={ cleanClassName(
-            `animated-carousel__heading`,
-            'animated'
-            )}
-          // style={{ animation: `${ textAnimation } ${ time * 1000 }ms ease-in-out infinite ${ animationDelay * 1000 }ms`}}
-          onAnimationIteration={ control === 'auto' ? handelAnimationIteration : undefined }
-        >
-          { currentItem.text ?? '' }
-        </h4>
-        
-        <div
-          className="animated-carousel__image-container"
-          onAnimationIteration={ control === 'auto' ? handelAnimationIteration : undefined }
-          // style={{ animation: `${ imageAnimation } ${ time * 1000 }ms ease-in-out infinite ${ animationDelay * 1000 }ms` }}
-        >
-          <Image
-            alt='img'
+        <div className="animated-carousel__heading-container">
+          <h4
             className={ cleanClassName(
-              'animated-carousel__image',
-              undefined, 
-              currentItem.image.invert ? 'inverted' : undefined
+              `animated-carousel__heading`,
+              currentAnimation
             )}
-            src={ currentItem.image.src }
-            fill
-          />
+          >
+            { currentItem.text ?? '' }
+          </h4>
+          <h4
+            className={ cleanClassName(
+              `animated-carousel__heading`,
+              nextAnimation
+            )}
+          >
+            { nextItem.text ?? '' }
+          </h4>
+        </div>
+        
+        <div className="animated-carousel__images-container">
+          <div
+            className={ cleanClassName(
+              "animated-carousel__image-container",
+              currentAnimation
+            )}
+          >
+            <Image
+              alt='img'
+              className={ cleanClassName(
+                'animated-carousel__image',
+                imageOptions.imageFit, 
+                currentItem.image.invert ? 'inverted' : undefined
+              )}
+              src={ currentItem.image.src }
+              fill
+            />
+          </div>
+
+          <div
+            className={ cleanClassName(
+              "animated-carousel__image-container",
+              nextAnimation
+            )}
+          >
+            <Image
+              alt='img'
+              className={ cleanClassName(
+                'animated-carousel__image',
+                imageOptions.imageFit, 
+                currentItem.image.invert ? 'inverted' : undefined
+              )}
+              src={ nextItem.image.src }
+              fill
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -36,6 +36,7 @@ const FlipCarousel: FC<FlipCarouselProps> = ({
   const [ frontIndex, setFrontIndex ] = useState(currentIndex);
   const [ backIndex, setBackIndex ] = useState((currentIndex + 1) % items.length);
   const [ flipped, setFlipped ] = useState(false);
+  const [ firstIteration, setFirstIteration ] = useState(true);
 
 
   // rotate slides from external component via remoteIndex prop
@@ -49,8 +50,6 @@ const FlipCarousel: FC<FlipCarouselProps> = ({
         remoteIndex < 0 ?
           newIndex = (remoteIndex % items.length + items.length) % items.length :
           newIndex = remoteIndex % items.length;
-        
-        console.log(remoteIndex);
 
         setFlipped(!flipped);
   
@@ -66,7 +65,8 @@ const FlipCarousel: FC<FlipCarouselProps> = ({
       }
     };
 
-    rotateCarousel();
+    !firstIteration && rotateCarousel();
+    firstIteration && setFirstIteration(false);
     
   }, [ remoteIndex ]);
 

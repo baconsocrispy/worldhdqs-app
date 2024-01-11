@@ -114,21 +114,21 @@ export const skills: AnimatedCarouselItem[] = [
       id: 1,
       src: '/logos/ruby.svg'
     },
-    text: 'Ruby'
+    text: 'Programming Languages'
   },
   {
     image: {
       id: 2,
       src: '/logos/js.png'
     },
-    text: 'JavaScript'
+    text: 'Libraries & Frameworks'
   },
   {
     image: {
       id: 3,
       src: '/logos/ts.png'
     },
-    text: 'TypeScript'
+    text: 'Cloud & Database'
   },
   {
     image: {
@@ -136,14 +136,14 @@ export const skills: AnimatedCarouselItem[] = [
       invert: true,
       src: '/logos/next-js.svg'
     },
-    text: 'Next.js'
+    text: 'Content Management Systems'
   },
   {
     image: {
       id: 5,
       src: '/logos/react.png'
     },
-    text: 'React'
+    text: 'Developer Tools & Productivity'
   }
 ];
 
@@ -382,10 +382,7 @@ export const rotatingContent: ReactNode[] = [
 export const cardMedia: ReactNode[] = [
   <AnimatedCarousel
     key={ 0 }
-    textAnimation="whizLeftToRight"
-    imageAnimation='whizRightToLeft'
     items={ skills } 
-    time={ 2 }
   />,
   <RotatingCarousel 
     animationOptions={{
@@ -403,9 +400,7 @@ export const cardMedia: ReactNode[] = [
     items={[ 
       { 
         content: <AnimatedCarousel 
-                    animationDelay={ 1 }
-                    imageAnimation="noAnimation"
-                    time={ 1 }
+                    control="auto"
                     items={ photos }
                   />,
         text: 'Lifestyle/Street Photography'
@@ -427,18 +422,14 @@ export const cardMedia: ReactNode[] = [
       },
       { 
         content: <AnimatedCarousel 
-                    animationDelay={ 1 }
-                    imageAnimation="noAnimation"
-                    time={ 1 }
+                    control="auto"
                     items={ studio }
                   />,
         text: 'Studio Production'
       },
       { 
         content: <AnimatedCarousel 
-                    animationDelay={ 1 }
-                    imageAnimation="noAnimation"
-                    time={ 1 }
+                    control="auto"
                     items={ product }
                   />,
         text: 'Product Photography'
