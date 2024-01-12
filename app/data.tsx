@@ -3,12 +3,9 @@ import { ReactNode } from "react";
 
 // components
 import AnimatedCarousel, { AnimatedCarouselItem } from "./components/carousel-animated/carousel-animated.component";
-import List from "./components/list/list.component";
-import RotatingCarousel from "./components/carousel-rotating/carousel-rotating.component";
 
 // types
 import { Case, HeroContent, Link, ListItem, SerializedImage, Service } from "./types";
-import FlipCarousel from "./components/carousel-flip/carousel-flip.component";
 import WebsitePreview from "./components/website-preview/website-preview.component";
 import City from "./content/city/city.content";
 import WinterScene from "./content/winter-scene/winter-scene.content";
@@ -108,44 +105,6 @@ export const services: Service[] = [
   }
 ];
 
-export const skills: AnimatedCarouselItem[] = [
-  {
-    image: {
-      id: 1,
-      src: '/logos/ruby.svg'
-    },
-    text: 'Programming Languages'
-  },
-  {
-    image: {
-      id: 2,
-      src: '/logos/js.png'
-    },
-    text: 'Libraries & Frameworks'
-  },
-  {
-    image: {
-      id: 3,
-      src: '/logos/ts.png'
-    },
-    text: 'Cloud & Database'
-  },
-  {
-    image: {
-      id: 4,
-      invert: true,
-      src: '/logos/next-js.svg'
-    },
-    text: 'Content Management Systems'
-  },
-  {
-    image: {
-      id: 5,
-      src: '/logos/react.png'
-    },
-    text: 'Developer Tools & Productivity'
-  }
-];
 
 export const graphics: AnimatedCarouselItem[] = [
   {
@@ -186,159 +145,7 @@ export const adjectives = [
   "Captivating", "Genuine", "Unforgettable", "Uncompromising"
 ];
 
-export const photos: AnimatedCarouselItem[] = [
-  {
-    image: {
-      id: 1,
-      src: '/photos/lifestyle/1.jpg'
-    }
-  },
-  {
-    image: {
-      id: 2,
-      src: '/photos/lifestyle/3.jpg'
-    }
-  },
-  {
-    image: {
-      id: 3,
-      src: '/photos/lifestyle/6.jpg'
-    }
-  },
-  {
-    image: {
-      id: 4,
-      src: '/photos/lifestyle/4.jpg'
-    }
-  },
-  {
-    image: {
-      id: 5,
-      src: '/photos/lifestyle/5.jpg'
-    }
-  },
-  {
-    image: {
-      id: 6,
-      src: '/photos/lifestyle/6.jpg'
-    }
-  },
-  {
-    image: {
-      id: 7,
-      src: '/photos/lifestyle/7.jpg'
-    }
-  },
-  {
-    image: {
-      id: 8,
-      src: '/photos/lifestyle/8.jpg'
-    }
-  },
-  {
-    image: {
-      id: 9,
-      src: '/photos/lifestyle/9.jpg'
-    }
-  },
-  {
-    image: {
-      id: 10,
-      src: '/photos/lifestyle/10.jpg'
-    }
-  },
-];
 
-export const studio: AnimatedCarouselItem[] = [
-  {
-    image: {
-      id: 1,
-      src: '/photos/studio/kvvadwo-d-smoke-2.png'
-    }
-  },
-  {
-    image: {
-      id: 2,
-      src: '/photos/studio/kvvadwo-d-smoke-3.png'
-    }
-  },
-  {
-    image: {
-      id: 3,
-      src: '/photos/studio/kvvadwo-kirk-franklin-1.png'
-    }
-  },
-  {
-    image: {
-      id: 4,
-      src: '/photos/studio/kvvadwo-madison-calley-1.png'
-    }
-  },
-  {
-    image: {
-      id: 5,
-      src: '/photos/studio/kvvadwo-saba-1.png'
-    }
-  },
-  {
-    image: {
-      id: 6,
-      src: '/photos/studio/kvvadwo-toby-nwigwe-2.png'
-    }
-  }
-];
-
-export const product: AnimatedCarouselItem[] = [
-  {
-    image: {
-      id: 1,
-      src: '/photos/product/timber-frame-ge-1.png'
-    }
-  },
-  {
-    image: {
-      id: 2,
-      src: '/photos/product/timber-frame-ge-2.png'
-    }
-  },
-  {
-    image: {
-      id: 3,
-      src: '/photos/product/timber-frame-ge-3.png'
-    }
-  },
-  {
-    image: {
-      id: 4,
-      src: '/photos/product/timber-frame-ge-4.png'
-    }
-  },
-  {
-    image: {
-      id: 5,
-      src: '/photos/product/kate-adams-neutrogena-4.jpeg'
-    }
-  },
-  {
-    image: {
-      id: 6,
-      src: '/photos/product/kate-adams-neutrogena-5.jpeg'
-    }
-  },
-  {
-    image: {
-      id: 7,
-      src: '/photos/product/kate-adams-neutrogena-7.jpeg'
-    }
-  },
-  {
-    image: {
-      id: 8,
-      src: '/photos/product/kate-adams-neutrogena-8.jpeg'
-    }
-  },
-  
-];
 export const lineProd: AnimatedCarouselItem[] = [
   {
     image: {
@@ -379,65 +186,65 @@ export const rotatingContent: ReactNode[] = [
   <BrandVoice key={ 3 } stringList={ adjectives } />
 ];
 
-export const cardMedia: ReactNode[] = [
-  <AnimatedCarousel
-    key={ 0 }
-    items={ skills } 
-  />,
-  <RotatingCarousel 
-    animationOptions={{
-      name: 'rotate',
-      duration: 10,
-      timingFunction: 'linear',
-      iterationCount: 'infinite'
-    }}
-    key={ 1 }
-    items={ rotatingContent }
-    panelOffset={ 15 }
-  />,
-  <FlipCarousel 
-    duration={ 10 }
-    items={[ 
-      { 
-        content: <AnimatedCarousel 
-                    control="auto"
-                    items={ photos }
-                  />,
-        text: 'Lifestyle/Street Photography'
-      },
-      {
-        content: <Video src='/vid/raptor_1.mp4' />,
-        text: 'Commercial Video'
-      },
-      {
-        content: <List 
-                    intersectionOptions={{ 
-                      intersectionObserverInit: { threshold: 0.5 },
-                      transitionClass: 'fade-in-alternate'
-                    }}
-                    listItems={ lineProd } 
-                    type="nav"
-                  />,
-        text: 'Line Producing & Editing'
-      },
-      { 
-        content: <AnimatedCarousel 
-                    control="auto"
-                    items={ studio }
-                  />,
-        text: 'Studio Production'
-      },
-      { 
-        content: <AnimatedCarousel 
-                    control="auto"
-                    items={ product }
-                  />,
-        text: 'Product Photography'
-      },
-    ]}
-    key={ 2 }
-  />
-];
+// export const cardMedia: ReactNode[] = [
+//   <AnimatedCarousel
+//     key={ 0 }
+//     items={ skills } 
+//   />,
+//   <RotatingCarousel 
+//     animationOptions={{
+//       name: 'rotate',
+//       duration: 10,
+//       timingFunction: 'linear',
+//       iterationCount: 'infinite'
+//     }}
+//     key={ 1 }
+//     items={ rotatingContent }
+//     panelOffset={ 15 }
+//   />,
+//   <FlipCarousel 
+//     duration={ 10 }
+//     items={[ 
+//       { 
+//         content: <AnimatedCarousel 
+//                     control="auto"
+//                     items={ photos }
+//                   />,
+//         text: 'Lifestyle/Street Photography'
+//       },
+//       {
+//         content: <Video src='/vid/raptor_1.mp4' />,
+//         text: 'Commercial Video'
+//       },
+//       {
+//         content: <List 
+//                     intersectionOptions={{ 
+//                       intersectionObserverInit: { threshold: 0.5 },
+//                       transitionClass: 'fade-in-alternate'
+//                     }}
+//                     listItems={ lineProd } 
+//                     type="nav"
+//                   />,
+//         text: 'Line Producing & Editing'
+//       },
+//       { 
+//         content: <AnimatedCarousel 
+//                     control="auto"
+//                     items={ studio }
+//                   />,
+//         text: 'Studio Production'
+//       },
+//       { 
+//         content: <AnimatedCarousel 
+//                     control="auto"
+//                     items={ product }
+//                   />,
+//         text: 'Product Photography'
+//       },
+//     ]}
+//     key={ 2 }
+//   />
+// ];
 
 export const caseStudyMedia = [
   <WebsitePreview key={ 0 } src={ 'https://www.brothers-sonsamerica.com'  } />,

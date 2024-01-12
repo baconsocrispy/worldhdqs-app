@@ -1,9 +1,9 @@
 'use client'
 // library
-import { FC, MouseEventHandler, ReactNode, useEffect, useState } from "react";
+import { FC, MouseEventHandler, ReactNode, useState } from "react";
 
 // components
-import AnimatedCarousel from "../carousel-animated/carousel-animated.component";
+import AnimatedCarousel, { AnimatedCarouselItem } from "../carousel-animated/carousel-animated.component";
 import FlipCarousel from "../carousel-flip/carousel-flip.component";
 import List from "../list/list.component";
 import RotatingCarousel from "../carousel-rotating/carousel-rotating.component";
@@ -11,7 +11,11 @@ import Video from "../video/video.component";
 import Tabs from "../tabs/tabs.component";
 
 // data
-import {lineProd, photos, product, rotatingContent, skills, studio } from "@/app/data";
+import {lineProd, rotatingContent } from "@/app/data";
+import { productPhotos } from "@/app/data/product-photos.data";
+import { skills } from "@/app/data/skills.data";
+import { studioPhotos } from "@/app/data/studio-photos.data";
+import { lifestylePhotos } from "@/app/data/lifestyle-photos.data";
 
 // types
 type ContentDisplayProps = {
@@ -50,16 +54,32 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
       />
 
       <div className="content-display__content">
+        <div 
+            className="winter-scene__sky"
+            style={{
+              backgroundImage: `url(${ '/sky/night-sky.jpg'})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'bottom'
+          }}
+          />
         <AnimatedCarousel
           key={ `carousel-${ contentIndex }-0` }
           animationOptions={{
             duration: 3,
             entryAnimation: 'enter',
             exitAnimation: 'exit',
+            imageAnimation: 'rotate'
           }}
           className={ contentIndex === 0 ? undefined : 'hidden' }
           control="remote"
-          items={ skills } 
+          items={ skills.map((skill) => {
+            return {
+              id: skill.id,
+              images: skill.images,
+              text: skill.text,
+              title: skill.title,
+            } as AnimatedCarouselItem;
+          })} 
           remoteIndex={ currentSlideIndex }
         />
         <RotatingCarousel 
@@ -83,9 +103,19 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
           items={[ 
             { 
               content: <AnimatedCarousel 
+                          animationOptions={{
+                            entryAnimation: 'fade-in',
+                            exitAnimation: 'fade-out'
+                          }}
                           control="auto"
                           imageOptions={{ imageFit: 'cover' }}
-                          items={ photos }
+                          items={ lifestylePhotos.map((photo) => {
+                            return {
+                              id: photo.id,
+                              image: photo,
+                              images: [ photo ]
+                            } as AnimatedCarouselItem;
+                          }) }
                         />,
               text: 'Lifestyle/Street Photography'
             },
@@ -108,7 +138,13 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
               content: <AnimatedCarousel 
                           control="auto"
                           imageOptions={{ imageFit: 'cover' }}
-                          items={ studio }
+                          items={ studioPhotos.map((photo) => {
+                            return {
+                              id: photo.id,
+                              image: photo,
+                              images: [ photo ]
+                            }
+                          }) }
                         />,
               text: 'Studio Production'
             },
@@ -116,7 +152,13 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
               content: <AnimatedCarousel 
                           control="auto"
                           imageOptions={{ imageFit: 'cover' }}
-                          items={ product }
+                          items={ productPhotos.map((photo) => {
+                            return {
+                              id: photo.id,
+                              image: photo,
+                              images: [ photo ]
+                            }
+                          })}
                         />,
               text: 'Product Photography'
             },

@@ -12,9 +12,10 @@ import { cleanClassName } from "@/app/helpers";
 import { SerializedImage } from "@/app/types";
 
 export type AnimatedCarouselItem = {
-  image: SerializedImage;
-  images?: SerializedImage[];
+  id: number;
+  images: SerializedImage[];
   text?: string;
+  title?: string;
 };
 
 type AnimatedCarouselProps = {
@@ -22,6 +23,7 @@ type AnimatedCarouselProps = {
     duration?: number;
     entryAnimation?: string;
     exitAnimation?: string;
+    imageAnimation?: string;
   }
   className?: string;
   control?: 'auto' | 'manual' | 'remote';
@@ -35,8 +37,8 @@ type AnimatedCarouselProps = {
 const AnimatedCarousel: FC<AnimatedCarouselProps> = ({ 
   animationOptions = {
     duration: 2,
-    entryAnimation: 'noneEnter',
-    exitAnimation: 'noneExit'
+    // entryAnimation: 'noneEnter',
+    // exitAnimation: 'noneExit'
   },
   className,
   control = 'auto',
@@ -46,20 +48,21 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
   items, 
   remoteIndex
 }) => {
-  // state
-  const [ currentItemIndex, setCurrentItemIndex ] = useState(0);
-  const [ nextItemIndex, setNextItemIndex ] = useState((currentItemIndex + 1) % items.length );
+  // initialize current and next items
   const [ currentActive, setCurrentActive ] = useState(true);
 
-  // set initial animation states to none
-  const [ currentAnimation, setCurrentAnimation ] = useState('noneEnter');
-  const [ nextAnimation, setNextAnimation ] = useState('noneExit');
-  
-  // flag to prevent animation running on mount when remote controlled
-  const [ firstIteration, setFirstIteration ] = useState(true);
+  const [ currentItemIndex, setCurrentItemIndex ] = useState(0);
+  const [ nextItemIndex, setNextItemIndex ] = useState((currentItemIndex + 1) % items.length );
 
   const currentItem = items[currentItemIndex];
   const nextItem = items[nextItemIndex];
+
+  // set initial animation states to none
+  const [ currentAnimation, setCurrentAnimation ] = useState('show');
+  const [ nextAnimation, setNextAnimation ] = useState('hide');
+  
+  // flag to prevent animation running on mount when remote controlled
+  const [ firstIteration, setFirstIteration ] = useState(true);
 
   // automatatic slide rotation when control set to auto
   useEffect(() => {
@@ -107,7 +110,8 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
        setCurrentActive(!currentActive);
       }
     };
-  
+    
+    // don't rotate carousel when useEffect runs first time
     !firstIteration && rotateCarousel();
     firstIteration && setFirstIteration(false);
       
@@ -120,60 +124,84 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
       className
     )}>
       <div className="animated-carousel__content">
-        <div className="animated-carousel__heading-container">
-          <h4
-            className={ cleanClassName(
-              `animated-carousel__heading`,
-              currentAnimation
-            )}
-          >
-            { currentItem.text ?? '' }
-          </h4>
-          <h4
-            className={ cleanClassName(
-              `animated-carousel__heading`,
-              nextAnimation
-            )}
-          >
-            { nextItem.text ?? '' }
-          </h4>
-        </div>
+
+          <div className="animated-carousel__heading-container">
+              <h4
+                className={ cleanClassName(
+                  `animated-carousel__heading`,
+                  currentAnimation
+                )}
+              >
+                { currentItem.title }
+              </h4>
+              <h4
+                className={ cleanClassName(
+                  `animated-carousel__heading`,
+                  nextAnimation
+                )}
+              >
+                { nextItem.title }
+              </h4>
+            </div> 
+        
         
         <div className="animated-carousel__images-container">
-          <div
+          <div 
             className={ cleanClassName(
-              "animated-carousel__image-container",
+              "animated-carousel__images",
               currentAnimation
-            )}
-          >
-            <Image
-              alt='img'
-              className={ cleanClassName(
-                'animated-carousel__image',
-                imageOptions.imageFit, 
-                currentItem.image.invert ? 'inverted' : undefined
-              )}
-              src={ currentItem.image.src }
-              fill
-            />
+            )
+          }>
+            { currentItem.images?.map((image) => (
+              <div
+                key={ image.id }
+                className={ cleanClassName(
+                  "animated-carousel__image-container",
+                  animationOptions.imageAnimation
+                )}
+              >
+                <Image
+                  alt='img'
+                  className={ cleanClassName(
+                    'animated-carousel__image',
+                    imageOptions.imageFit, 
+                    image.invert ? 'inverted' : undefined
+                  )}
+                  src={ image.src }
+                  fill
+                />
+              </div>
+            ))}
           </div>
 
-          <div
+          <div 
             className={ cleanClassName(
-              "animated-carousel__image-container",
+              "animated-carousel__images",
               nextAnimation
             )}
           >
-            <Image
-              alt='img'
-              className={ cleanClassName(
-                'animated-carousel__image',
-                imageOptions.imageFit, 
-                currentItem.image.invert ? 'inverted' : undefined
-              )}
-              src={ nextItem.image.src }
-              fill
-            />
+            {
+              nextItem.images?.map((image) => (
+                <div
+                  key={ image.id }
+                  className={ cleanClassName(
+                    "animated-carousel__image-container",
+                    animationOptions.imageAnimation
+                  )}
+                >
+                  <Image
+                    alt='img'
+                    className={ cleanClassName(
+                      'animated-carousel__image',
+                      imageOptions.imageFit, 
+                      image.invert ? 'inverted' : undefined
+                    )}
+                    src={ image.src }
+                    fill
+                  />
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>

@@ -1,80 +1,111 @@
+$grid-max-columns: 3;
+
 .animated-carousel {
   position: relative;
+  width: 100%;
   padding: $padding-default;
   overflow: hidden;
 
   &__content {
     position: absolute;
     display: grid;
-    grid-template-rows: 10% 1fr;
+    grid-template-rows: max-content 1fr;
     width: 100%;
     height: 100%;
+    transform-style: preserve-3d;
+    perspective: 1000px;
   }
 
   &__heading-container,
   &__images-container {
-    position: relative;
-    display: flex;
     width: 100%;
     height: 100%;
+    display: grid;
+    position: relative;
   }
 
   &__heading {
+    color: white;
     text-align: center;
-    position: absolute;
+    grid-area: 1 / 1 / 2 / 2;
     width: 100%;
     height: 100%;
-    // transform: translateX(-100%);
 
     &--enter {
       animation: whizInRight 1s ease-in-out;
-      // transform: translateX(0%);
+      transform: translateX(0%);
     }
 
     &--exit {
       animation: whizOutRight 1s ease-in-out;
       transform: translateX(-100%);
+      order: 0;
     }
 
-    &--noneEnter {
+    &--show {
       display: block;
-      transform: translateX(0%);
     }
 
-    &--noneExit {
+    &--hide {
       display: none;
-      transform: translateX(0%);
     }
   }
 
-  &__image-container {
+  &__images {
+    grid-area: 1 / 1 / 2 / 2;
     position: absolute;
+    display: grid;
+    grid-auto-flow: column;
+    gap: $padding-default;
     width: 100%;
     height: 100%;
-    transform: translateX(100%);
-    
+    transform-style: preserve-3d;
+    perspective: 500px;
+    transition: opacity 1s ease-in-out;
+
+    // no slide change animation
+    &--show {
+      display: grid;
+      transform: translateX(0%);
+    }
+
+    &--hide {
+      display: none;
+      transform: translateX(0%);
+    }
+
+    // slide change animations
     &--enter {
       animation: whizInLeft 1s ease-in-out;
-      transform: translateX(0%);
     }
 
     &--exit {
       animation: whizOutLeft 1s ease-in-out;
       transform: translateX(100%);
     }
+  }
 
-    &--noneEnter {
-      display: block;
-      transform: translateX(0%);
+  &__image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @for $i from 1 through $grid-max-columns {
+      &:nth-child(#{ $grid-max-columns }n + #{ $i }) {
+        grid-column: $i;
+      }
     }
 
-    &--noneExit {
-      display: none;
-      transform: translateX(0%);
+    // image animations
+    &--rotate {
+      animation: rotate 10s linear infinite;
+      filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .5));
     }
   }
 
   &__image {
+    background-color: transparent;
+
     &--contain {
       object-fit: contain;
     }

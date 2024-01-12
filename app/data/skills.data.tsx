@@ -1,11 +1,13 @@
-export const skills = [
+import { Skill } from "../types"
+
+export const skills: Skill[] = [
   {
     id: 0,
     images: [
       {
         id: 0,
         alt: 'Ruby programming language logo',
-        src: '/logos/programming/rails.svg',
+        src: '/logos/programming/ruby.svg',
         title: 'Ruby'
       },
       {
@@ -22,42 +24,36 @@ export const skills = [
       },
       {
         id: 3,
-        alt: 'JavaScript programming language logo',
-        src: '/logos/programming/js.png',
-        title: 'JavaScript'
-      },
-      {
-        id: 4,
         alt: 'Sass styling language logo',
         src: '/logos/programming/scss.png',
         title: 'SCSS'
       },
       {
-        id: 5,
+        id: 4,
         alt: 'CSS styling language logo',
         src: '/logos/programming/css.png',
         title: 'CSS'
       },
       {
-        id: 6,
+        id: 5,
         alt: 'HTML markup language logo',
         src: '/logos/programming/html.png',
         title: 'HTML'
       },
       {
-        id: 7,
+        id: 6,
         alt: 'Python programming language logo',
         src: '/logos/programming/python.png',
         title: 'Python'
       },
       {
-        id: 8,
+        id: 7,
         alt: 'C# programming language logo',
         src: '/logos/programming/csharp.png',
         title: 'C#'
       },
     ],
-    name: 'Programming Languages',
+    title: 'Programming Languages',
     text: 'With a range of programming languages under our belts, we can ensure we use the right tool for the job'
   },
   {
@@ -119,7 +115,7 @@ export const skills = [
         title: 'Jest'
       },
     ],
-    name: 'Libraries, Frameworks & Testing',
+    title: 'Libraries, Frameworks & Testing',
     text: 'We make use of powerful frameworks and libraries to bring you state-of-the-art capabilities in a timely fashion'
   },
   {
@@ -192,7 +188,7 @@ export const skills = [
         title: 'Vercel'
       }
     ],
-    name: 'Cloud & Database',
+    title: 'Cloud & Database',
     text: 'Tools for deploying your application, storing your information and keeping it safe'
   },
   {
@@ -217,7 +213,7 @@ export const skills = [
         title: 'Squarespace'
       },
     ],
-    name: 'Content Management Systems',
+    title: 'Content Management Systems',
     text: 'We can build, update or maintain a site for you using popular CMS platforms'
   },
   {
@@ -266,7 +262,7 @@ export const skills = [
         title: 'Yarn'
       }
     ],
-    name: 'Developer Tools & Productivity',
+    title: 'Developer Tools & Productivity',
     text: 'We use many tools to help ensure we deliver the highest quality code'
   }
 ]

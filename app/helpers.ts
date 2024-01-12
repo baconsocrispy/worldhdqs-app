@@ -8,6 +8,7 @@ export const randomFromArray = (array: any[]) => {
 export const randomDegree = () => {
   return Math.floor(Math.random() * 361);
 }
+
 export const randomPercent = () => {
   return Math.random() * 100;
 };

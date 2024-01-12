@@ -68,8 +68,9 @@ export type Service = {
 
 export type Skill = {
   id: number; 
-  logo: SerializedImage;
-  name?: string;
+  images: SerializedImage[];
+  text: string;
+  title: string;
 };
 
 export type Theme = {
