@@ -106,26 +106,26 @@ export const services: Service[] = [
 ];
 
 
-export const graphics: AnimatedCarouselItem[] = [
-  {
-    image: {
-      id: 1,
-      src: '/graphics/SVG/icon.ico'
-    }
-  },
-  {
-    image: {
-      id: 2,
-      src: '/graphics/animals/TRex.png'
-    }
-  },
-  {
-    image: {
-      id: 3,
-      src: '/graphics/SVG/Sticker_v8.png'
-    }
-  }
-];
+// export const graphics: AnimatedCarouselItem[] = [
+//   {
+//     image: {
+//       id: 1,
+//       src: '/graphics/SVG/icon.ico'
+//     }
+//   },
+//   {
+//     image: {
+//       id: 2,
+//       src: '/graphics/animals/TRex.png'
+//     }
+//   },
+//   {
+//     image: {
+//       id: 3,
+//       src: '/graphics/SVG/Sticker_v8.png'
+//     }
+//   }
+// ];
 
 export const adjectives = [
   "Authentic", "Innovative", "Creative", "Trustworthy", "Friendly", 
