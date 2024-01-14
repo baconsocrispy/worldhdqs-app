@@ -11,11 +11,10 @@ import Link from "../link/link.component";
 import { cleanClassName } from "@/app/helpers";
 
 // types
-import { AnimationOptions, Case, IntersectionObserverOptions, Service } from "@/app/types";
+import { Case, IntersectionObserverOptions, Service } from "@/app/types";
 
 type CardProps = {
   elementType?: ElementType;
-  animationOptions?: AnimationOptions;
   href?: string;
   intersectionObserverOptions?: IntersectionObserverOptions;
   item: Case | Service;
@@ -26,7 +25,6 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({ 
   elementType = 'li',
-  animationOptions,
   href,
   intersectionObserverOptions,
   item, 
@@ -52,6 +50,7 @@ const Card: FC<CardProps> = ({
               src={ item.image ? item.image.src : '#' }
               fill
               alt={ item.name }
+              style={{ borderRadius: '1rem'}}
             />
         }
       </div>

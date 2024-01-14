@@ -14,3 +14,8 @@
 .intersected {
   @include transition-all;
 }
+
+.bg-space {
+  background-image: url('/sky/night-sky.jpg');
+  background-size: contain;
+}

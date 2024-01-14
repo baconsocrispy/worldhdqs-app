@@ -36,11 +36,13 @@ export type IntersectionObserverOptions = {
 export type Link = {
   href: string;
   text: string;
+  newTab?: boolean;
 };
 
 export type ListItem = {
   href?: string;
   image?: SerializedImage;
+  newTab?: boolean;
   text?: string;
   textHighlight?: string;
 };

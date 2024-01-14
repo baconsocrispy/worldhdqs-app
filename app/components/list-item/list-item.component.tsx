@@ -69,6 +69,7 @@ const ListItem: FC<ListItemProps> = ({
           <Link 
             href={ item.href ?? '#' }
             type={ type === 'nav-link' ? 'nav' : 'default' }
+            newTab={ item.newTab }
           >
             { item.text }
           </Link> :

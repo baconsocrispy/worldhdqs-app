@@ -50,22 +50,6 @@ const Home = () => {
         <ContentDisplay />
       </Section>
 
-      {/* <Section id="services">
-        <Heading size={ 2 } position={ 'center' } underlineType="converge">
-          Services
-        </Heading>
-        <Cards 
-          cardHref="#contact"
-          cardIntersectionOptions={{ 
-            intersectionObserverInit: { threshold: 0.5 },
-            transitionClass: 'fade-in-up' 
-          }}
-          cardLinkText="Inquire"
-          cardMedia={ cardMedia }
-          items={ services }
-        />
-      </Section> */}
-
       <Section id="process">
         <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Process
@@ -105,9 +89,6 @@ const Home = () => {
           items={ cases } 
           layout='alternating'  
         />
-        <Link type='cta'>
-          View Portfolio
-        </Link>
       </Section>
       
       <Section id="contact">
