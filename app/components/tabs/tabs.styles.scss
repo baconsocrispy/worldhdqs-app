@@ -1,8 +1,11 @@
 .tabs {
+  position: relative;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   gap: $padding-default;
+  width: 100%;
+  border: 1px solid green;
 
   &__tab {
     padding: 1rem $padding-default;

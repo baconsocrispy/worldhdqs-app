@@ -4,7 +4,7 @@
   display: grid;
   grid-template-rows: min-content max-content;
   gap: $padding-default;
-  width: 100%;
+  max-width: 100%;
   justify-content: center;
   animation: grow 1s linear forwards;
   animation-timeline: view(0px);
@@ -12,16 +12,24 @@
   &__background {
     z-index: -1;
     position: absolute;
-    transform: rotate(0deg) translateX(-25%);
+    transform: rotate(90deg) translateX(0%);
     scale: 1.05;
     height: 100%;
+
+    @media (min-width: $breakpoint-md) {
+      transform: rotate(0deg) translateX(-25%);
+    }
   }
 
   &__content {
     z-index: 1;
     position: relative;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 16;
     overflow: hidden;
+
+    @media (min-width: $breakpoint-md) {
+      aspect-ratio: 16 / 9;
+    }
   }
 
   &__controls {
