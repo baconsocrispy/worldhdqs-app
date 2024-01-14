@@ -123,66 +123,60 @@ export const skills: Skill[] = [
     images: [
       {
         id: 0,
-        alt: 'AWS Logo',
-        src: '/logos/cloud/aws.jpeg',
-        title: 'AWS'
-      },
-      {
-        id: 1,
         alt: 'Cloudflare Logo',
         src: '/logos/cloud/cloudflare.png',
         title: 'Cloudflare'
       },
       {
-        id: 2,
+        id: 1,
         alt: 'Firebase Logo',
         src: '/logos/cloud/firebase.png',
         title: 'Firebase'
       },
       {
-        id: 3,
+        id: 2,
         alt: 'Heroku Logo',
         src: '/logos/cloud/heroku.svg',
         title: 'Heroku'
       },
       {
-        id: 4,
+        id: 3,
         alt: 'Netlify Logo',
         src: '/logos/cloud/netlify.png',
         title: 'Netlify'
       },
       {
-        id: 5,
+        id: 4,
         alt: 'OAuth 2.0 Logo',
         src: '/logos/cloud/oauth2.svg',
         title: 'OAuth 2.0'
       },
       {
-        id: 6,
+        id: 5,
         alt: 'Postgresql Logo',
         src: '/logos/cloud/postgresql.png',
         title: 'Postgresql'
       },
       {
-        id: 7,
+        id: 6,
         alt: 's3 Logo',
         src: '/logos/cloud/s3.png',
         title: 'S3'
       },
       {
-        id: 8,
+        id: 7,
         alt: 'SQL Logo',
         src: '/logos/cloud/sql.png',
         title: 'SQL'
       },
       {
-        id: 9,
+        id: 8,
         alt: 'SQLite Logo',
         src: '/logos/cloud/sqlite.png',
         title: 'SQLite'
       },
       {
-        id: 10,
+        id: 9,
         alt: 'Vercel Logo',
         src: '/logos/cloud/vercel.svg',
         title: 'Vercel'

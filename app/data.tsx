@@ -146,38 +146,38 @@ export const adjectives = [
 ];
 
 
-export const lineProd: AnimatedCarouselItem[] = [
-  {
-    image: {
-      id: 1,
-      src: '/logos/line/hot-budget.png'
-    }
-  },
-  {
-    image: {
-      id: 2,
-      src: '/logos/line/movie-magic.png'
-    }
-  },
-  {
-    image: {
-      id: 3,
-      src: '/logos/line/premiere.png'
-    }
-  },
-  {
-    image: {
-      id: 4,
-      src: '/logos/line/showbiz.png'
-    }
-  },
-  {
-    image: {
-      id: 5,
-      src: '/logos/line/wrapbook.png'
-    }
-  }
-];
+// export const lineProd: AnimatedCarouselItem[] = [
+//   {
+//     image: {
+//       id: 1,
+//       src: '/logos/line/hot-budget.png'
+//     }
+//   },
+//   {
+//     image: {
+//       id: 2,
+//       src: '/logos/line/movie-magic.png'
+//     }
+//   },
+//   {
+//     image: {
+//       id: 3,
+//       src: '/logos/line/premiere.png'
+//     }
+//   },
+//   {
+//     image: {
+//       id: 4,
+//       src: '/logos/line/showbiz.png'
+//     }
+//   },
+//   {
+//     image: {
+//       id: 5,
+//       src: '/logos/line/wrapbook.png'
+//     }
+//   }
+// ];
 
 export const rotatingContent: ReactNode[] = [
   <LogoDesign key={ 0 } />,

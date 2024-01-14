@@ -6,19 +6,24 @@
   gap: $padding-default;
   width: 100%;
   justify-content: center;
-  background-color: rgb(255, 127, 127);
 
+  &__background {
+    z-index: -1;
+    position: absolute;
+    transform: rotate(0deg) translateX(-25%);
+    height: 100%;
+  }
 
   &__content {
+    z-index: 1;
     position: relative;
     aspect-ratio: 16 / 9;
-    max-height: 30rem;
     overflow: hidden;
   }
 
   &__controls {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 2rem;
     font-size: 2rem;
 

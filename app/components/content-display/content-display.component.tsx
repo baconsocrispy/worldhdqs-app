@@ -5,13 +5,13 @@ import { FC, MouseEventHandler, ReactNode, useState } from "react";
 // components
 import AnimatedCarousel, { AnimatedCarouselItem } from "../carousel-animated/carousel-animated.component";
 import FlipCarousel from "../carousel-flip/carousel-flip.component";
-import List from "../list/list.component";
 import RotatingCarousel from "../carousel-rotating/carousel-rotating.component";
 import Video from "../video/video.component";
 import Tabs from "../tabs/tabs.component";
 
 // data
-import {lineProd, rotatingContent } from "@/app/data";
+import { rotatingContent } from "@/app/data";
+import { lineProd } from "@/app/data/line-producing-photos.data";
 import { productPhotos } from "@/app/data/product-photos.data";
 import { skills } from "@/app/data/skills.data";
 import { studioPhotos } from "@/app/data/studio-photos.data";
@@ -19,8 +19,8 @@ import { lifestylePhotos } from "@/app/data/lifestyle-photos.data";
 
 // types
 type ContentDisplayProps = {
-  content: ReactNode[];
-}
+  content?: ReactNode[];
+};
 
 const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
   // state
@@ -124,24 +124,26 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
               text: 'Commercial Video'
             },
             {
-              content: <List 
-                          intersectionOptions={{ 
-                            intersectionObserverInit: { threshold: 0.5 },
-                            transitionClass: 'fade-in-alternate'
+              content: <AnimatedCarousel 
+                          animationOptions={{
+                            imageAnimation: 'rotate'
                           }}
-                          listItems={ lineProd } 
-                          type="nav"
+                          items={ lineProd.map((skill) => {
+                            return {
+                              id: skill.id,
+                              images: skill.images,
+                            }
+                          }) } 
                         />,
               text: 'Line Producing & Editing'
             },
             { 
               content: <AnimatedCarousel 
-                          control="auto"
+                          control="manual"
                           imageOptions={{ imageFit: 'cover' }}
                           items={ studioPhotos.map((photo) => {
                             return {
                               id: photo.id,
-                              image: photo,
                               images: [ photo ]
                             }
                           }) }

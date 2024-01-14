@@ -37,8 +37,8 @@ type AnimatedCarouselProps = {
 const AnimatedCarousel: FC<AnimatedCarouselProps> = ({ 
   animationOptions = {
     duration: 2,
-    // entryAnimation: 'noneEnter',
-    // exitAnimation: 'noneExit'
+    entryAnimation: 'show',
+    exitAnimation: 'hide'
   },
   className,
   control = 'auto',
@@ -53,9 +53,8 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
 
   const [ currentItemIndex, setCurrentItemIndex ] = useState(0);
   const [ nextItemIndex, setNextItemIndex ] = useState((currentItemIndex + 1) % items.length );
-
-  const currentItem = items[currentItemIndex];
-  const nextItem = items[nextItemIndex];
+  const [ currentItem, setCurrentItem ] = useState(items[currentItemIndex]);
+  const [ nextItem, setNextItem ] = useState(items[nextItemIndex]);
 
   // set initial animation states to none
   const [ currentAnimation, setCurrentAnimation ] = useState('show');
@@ -63,6 +62,11 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
   
   // flag to prevent animation running on mount when remote controlled
   const [ firstIteration, setFirstIteration ] = useState(true);
+
+  useEffect(() => {
+    setCurrentItem(items[currentItemIndex]);
+    setNextItem(items[nextItemIndex]);
+  },[ currentItemIndex, nextItemIndex, items ])
 
   // automatatic slide rotation when control set to auto
   useEffect(() => {
@@ -119,31 +123,32 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
 
   return (
     <div className={ cleanClassName(
-      'animiated-carousel',
+      'animated-carousel',
       undefined,
       className
     )}>
       <div className="animated-carousel__content">
-
-          <div className="animated-carousel__heading-container">
-              <h4
-                className={ cleanClassName(
-                  `animated-carousel__heading`,
-                  currentAnimation
-                )}
-              >
-                { currentItem.title }
-              </h4>
-              <h4
-                className={ cleanClassName(
-                  `animated-carousel__heading`,
-                  nextAnimation
-                )}
-              >
-                { nextItem.title }
-              </h4>
-            </div> 
-        
+        <div 
+          className="animated-carousel__heading-container"
+          style={ items[currentItemIndex]?.title ? { padding: '1rem' } : { padding: '0' }}
+        >
+          <h4
+            className={ cleanClassName(
+              `animated-carousel__heading`,
+              currentAnimation
+            )}
+          >
+            { items[currentItemIndex]?.title }
+          </h4>
+          <h4
+            className={ cleanClassName(
+              `animated-carousel__heading`,
+              nextAnimation
+            )}
+          >
+            { items[nextItemIndex]?.title }
+          </h4>
+        </div> 
         
         <div className="animated-carousel__images-container">
           <div 
@@ -152,7 +157,7 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
               currentAnimation
             )
           }>
-            { currentItem.images?.map((image) => (
+            { items[currentItemIndex]?.images?.map((image) => (
               <div
                 key={ image.id }
                 className={ cleanClassName(
@@ -181,7 +186,7 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
             )}
           >
             {
-              nextItem.images?.map((image) => (
+              items[nextItemIndex]?.images?.map((image) => (
                 <div
                   key={ image.id }
                   className={ cleanClassName(

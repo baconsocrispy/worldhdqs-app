@@ -3,6 +3,7 @@ import Cards from "@/app/components/cards/cards.component";
 import Footer from "@/app/components/footer/footer.component";
 import Heading from "@/app/components/heading/heading.component";
 import Hero from "@/app/components/hero/hero.component";
+import Image from "next/image";
 import Link from "@/app/components/link/link.component";
 import List from "@/app/components/list/list.component";
 import Page from "@/app/components/page/page.component";
@@ -14,8 +15,11 @@ import Video from "@/app/components/video/video.component";
 import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
-import { cardMedia, caseStudyMedia, cases, heroContent, processItems, services } from "@/app/data";
+import { caseStudyMedia, cases, heroContent, processItems } from "@/app/data";
 import ContentDisplay from "@/app/components/content-display/content-display.component";
+
+// images
+import BrushStroke from '@/public/paint/SVG/brushstroke_4.svg';
 
 const Home = () => {
   return (
@@ -35,10 +39,15 @@ const Home = () => {
       </Section>
 
       <Section id="services">
+        <Image 
+          className="content-display__background"
+          src={ BrushStroke }
+          alt='paint brush'
+        /> 
         <Heading size={ 2 } position={ 'center' } underlineType="converge">
           Services
         </Heading>
-        <ContentDisplay content={ cardMedia } />
+        <ContentDisplay />
       </Section>
 
       {/* <Section id="services">
