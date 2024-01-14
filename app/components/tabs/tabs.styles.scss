@@ -1,11 +1,13 @@
 .tabs {
   position: relative;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
+  display: flex;
   gap: $padding-default;
   width: 100%;
-  border: 1px solid green;
+  @media (min-width: $breakpoint-md) {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+  }
 
   &__tab {
     padding: 1rem $padding-default;
