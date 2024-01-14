@@ -1,5 +1,5 @@
 // types
-import { SerializedImage, Skill } from "../types";
+import { Skill } from "../types";
 
 export const lineProd: Skill[] = [
   { id: 0,

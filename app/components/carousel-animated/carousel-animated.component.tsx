@@ -127,6 +127,15 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
       undefined,
       className
     )}>
+      <div className="animated-carousel__text-container">
+        <p>
+          { 
+            currentActive ? 
+              items[currentItemIndex]?.text : 
+              items[nextItemIndex]?.text 
+          }
+        </p>
+      </div>
       <div className="animated-carousel__content">
         <div 
           className="animated-carousel__heading-container"

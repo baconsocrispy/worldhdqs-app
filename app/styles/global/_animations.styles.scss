@@ -253,3 +253,12 @@
     transform: rotateY(360deg);
   }
 }
+
+@keyframes grow {
+  0% {
+    scale: 0;
+  }
+  40% {
+    scale: 1;
+  }
+}

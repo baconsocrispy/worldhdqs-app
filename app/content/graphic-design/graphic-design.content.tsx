@@ -9,9 +9,7 @@ const GraphicDesign = () => {
     <div className="graphic-design">
       <Heading size={ 4 }>Graphic Design</Heading>
       <AnimatedCarousel 
-        imageAnimation="fadeInOut"
         items={ graphics }
-        time={ 2 }
       />
     </div>
   )
