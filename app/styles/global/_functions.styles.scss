@@ -3,3 +3,9 @@
   $randomMinMax: $min + floor($randomNumber * ($max - $min) + 1);
   @return $randomMinMax;
 }
+
+@function randomHSL () {
+  $randomNumber: randomNumber(0, 360);
+  $randomHSL: hsl($randomNumber, 50%, 50%);
+  @return $randomHSL;
+}

@@ -105,7 +105,6 @@ export const adjectives = [
 ];
 
 export const rotatingContent: ReactNode[] = [
-  // <LogoDesign key={ 0 } />,
   <AnimatedCarousel 
     key={ 0 } 
     animationOptions={{ imageAnimation: 'rotate' }} 
@@ -116,7 +115,6 @@ export const rotatingContent: ReactNode[] = [
       title: 'Logo Design & Analysis'
      }]} 
   />,
-  <GraphicDesign key={ 1 } />,
   <ColorAnalysis key={ 2 } />,
   <BrandVoice key={ 3 } stringList={ adjectives } />
 ];

@@ -5,7 +5,8 @@
   padding: $padding-default;
   width: 100%;
   height: 100%;
-  background-color: teal;
+  background-image: url('/sky/winter.jpg');
+  background-size: cover;
 }
 
 .randomizer {
@@ -13,12 +14,13 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 
   &__content {
     position: absolute;
-  }
-
-  &__string {
-    color: white;
+    transform: translateZ(#{ randomNumber(-50, -500) }px);
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, .5));
+    @include random-colors;
   }
 }

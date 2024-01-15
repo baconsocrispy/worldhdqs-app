@@ -84,12 +84,6 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
         />
         <RotatingCarousel 
           key={ `carousel-${ contentIndex }-1` }
-          animationOptions={{
-            name: 'rotate',
-            duration: 10,
-            timingFunction: 'linear',
-            iterationCount: 'infinite'
-          }}
           className={ contentIndex === 1 ? undefined : 'hidden' }
           items={ rotatingContent }
           panelOffset={ 15 }
@@ -103,6 +97,7 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
           items={[ 
             { 
               content: <AnimatedCarousel 
+                          key={ `${ 0 }-ac` }
                           animationOptions={{
                             entryAnimation: 'fade-in',
                             exitAnimation: 'fade-out'
@@ -125,6 +120,7 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
             },
             {
               content: <AnimatedCarousel 
+                          key={ `${ 1 }-ac`}
                           animationOptions={{
                             imageAnimation: 'rotate'
                           }}
@@ -139,7 +135,7 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
             },
             { 
               content: <AnimatedCarousel 
-                          control="manual"
+                          key={ `${ 2 }-ac`}
                           imageOptions={{ imageFit: 'cover' }}
                           items={ studioPhotos.map((photo) => {
                             return {
@@ -152,7 +148,7 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
             },
             { 
               content: <AnimatedCarousel 
-                          control="auto"
+                          key={ `${ 3 }-ac`}
                           imageOptions={{ imageFit: 'cover' }}
                           items={ productPhotos.map((photo) => {
                             return {

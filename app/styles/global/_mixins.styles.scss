@@ -16,3 +16,11 @@
     transform: translate(0%);
   }
 }
+
+@mixin random-colors {
+  @for $i from 1 through 100 {
+    &:nth-child(1n + #{ $i }) {
+      color: randomHSL();
+    }
+  }
+}

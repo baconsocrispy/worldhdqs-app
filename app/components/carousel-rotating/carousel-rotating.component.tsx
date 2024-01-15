@@ -5,12 +5,6 @@ import { FC, ReactNode, useEffect, useRef, useState } from "react";
 
 // types
 type RotatingCarouselProps = {
-  animationOptions?: {
-    name: string;
-    duration: number;
-    timingFunction: string;
-    iterationCount: string;
-  };
   className?: string;
   control?: 'auto' | 'manual' | 'remote';
   debounce?: number; // number representing milliseconds
@@ -20,10 +14,6 @@ type RotatingCarouselProps = {
 };
 
 const RotatingCarousel: FC<RotatingCarouselProps> = ({ 
-  animationOptions = { 
-    timingFunction: 'linear', 
-    iterationCount: 'infinite' 
-  }, 
   className,
   control = 'remote',
   debounce = 0, 

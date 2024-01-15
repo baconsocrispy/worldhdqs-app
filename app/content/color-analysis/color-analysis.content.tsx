@@ -24,7 +24,7 @@ const ColorAnalysis = () => {
   return (
     <div 
       className="color-analysis"
-      style={{ backgroundColor: createHSLString((baseHSLColor + 180) % 360, 50, 50)}}
+      // style={{ backgroundColor: createHSLString((baseHSLColor + 180) % 360, 50, 50)}}
     >
       <Heading 
         size={ 4 }

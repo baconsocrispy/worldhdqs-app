@@ -24,7 +24,7 @@ type AnimatedCarouselProps = {
     entryAnimation?: string;
     exitAnimation?: string;
     imageAnimation?: string;
-  }
+  };
   className?: string;
   control?: 'auto' | 'manual' | 'remote';
   imageOptions?: {
@@ -36,9 +36,7 @@ type AnimatedCarouselProps = {
 
 const AnimatedCarousel: FC<AnimatedCarouselProps> = ({ 
   animationOptions = {
-    duration: 2,
-    entryAnimation: 'show',
-    exitAnimation: 'hide'
+    duration: 2
   },
   className,
   control = 'auto',
@@ -48,29 +46,28 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
   items, 
   remoteIndex
 }) => {
-  // initialize current and next items
+  // flag which item is currently displayed
   const [ currentActive, setCurrentActive ] = useState(true);
 
+  // initialize current and next items
   const [ currentItemIndex, setCurrentItemIndex ] = useState(0);
   const [ nextItemIndex, setNextItemIndex ] = useState((currentItemIndex + 1) % items.length );
-  const [ currentItem, setCurrentItem ] = useState(items[currentItemIndex]);
-  const [ nextItem, setNextItem ] = useState(items[nextItemIndex]);
 
-  // set initial animation states to none
+  // set initial animation states to show / hide
   const [ currentAnimation, setCurrentAnimation ] = useState('show');
   const [ nextAnimation, setNextAnimation ] = useState('hide');
   
   // flag to prevent animation running on mount when remote controlled
   const [ firstIteration, setFirstIteration ] = useState(true);
 
-  useEffect(() => {
-    setCurrentItem(items[currentItemIndex]);
-    setNextItem(items[nextItemIndex]);
-  },[ currentItemIndex, nextItemIndex, items ])
-
   // automatatic slide rotation when control set to auto
   useEffect(() => {
     if (control !== 'auto') return;
+    console.log(currentActive);
+    console.log(currentItemIndex);
+    console.log(currentAnimation);
+    console.log(nextAnimation);
+
 
     const rotateNext = () => {
       currentActive ? 
@@ -128,7 +125,7 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
       className
     )}>
       <div className="animated-carousel__text-container">
-        <p>
+        <p className="animated-carousel__text">
           { 
             currentActive ? 
               items[currentItemIndex]?.text : 

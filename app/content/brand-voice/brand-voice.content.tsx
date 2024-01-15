@@ -21,12 +21,6 @@ const BrandVoice: FC<BrandVoiceProps> = ({ stringList = [] }) => {
         {
           stringList?.map((string, index) => 
             <IntersectionObserverWrapper 
-              // animationOptions={{
-              //   opacity: '0',
-              //   transitionDelay: 0.2,
-              //   transitionDuration: '1s',
-              //   transitionFunction: 'ease-in'
-              // }}
               key={ index }
               className="randomizer__content fade-in"
               intersectionOptions={{ 
@@ -41,7 +35,9 @@ const BrandVoice: FC<BrandVoiceProps> = ({ stringList = [] }) => {
             >
               <p
                 className="randomizer__string" 
-                style={{  transform: `rotate(${ `${ Math.floor(Math.random() * 361)}deg`})`}}
+                style={{  
+                  transform: `rotate(${ `${ Math.floor(Math.random() * 361)}deg`}) rotateZ(90deg)`
+                }}
               >
                 { string }
               </p>
