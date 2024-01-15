@@ -91,7 +91,7 @@ const RotatingCarousel: FC<RotatingCarouselProps> = ({
       <div 
         className="rotating-carousel__content-container"
         style={{ 
-          transform: `rotateY(${ currentRotation }deg)`,
+          transform: `rotateY(${ currentRotation }deg) translateZ(0px)`,
           transition: 'transform 1s ease-in-out' 
         }}
       >
