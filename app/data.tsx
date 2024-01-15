@@ -115,7 +115,7 @@ export const rotatingContent: ReactNode[] = [
       title: 'Logo Design & Analysis'
      }]} 
   />,
-  <GraphicDesign key={ 1 } />,
+  // <GraphicDesign key={ 1 } />,
   <ColorAnalysis key={ 2 } />,
   <BrandVoice key={ 3 } stringList={ adjectives } />
 ];
