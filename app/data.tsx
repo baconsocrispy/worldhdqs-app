@@ -112,7 +112,7 @@ export const rotatingContent: ReactNode[] = [
     items={ [{ 
       id: 0, 
       images: kingLogos,
-      title: 'Logo Design & Analysis'
+      title: 'Logo Design'
      }]} 
   />,
   // <GraphicDesign key={ 1 } />,
