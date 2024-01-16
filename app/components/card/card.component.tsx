@@ -25,7 +25,6 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({ 
   elementType = 'li',
-  href,
   intersectionObserverOptions,
   item, 
   layout = 'vertical' ,
@@ -49,31 +48,33 @@ const Card: FC<CardProps> = ({
               className="card__image"
               src={ item.image ? item.image.src : '#' }
               fill
-              alt={ item.name }
+              alt={ item.title }
               style={{ borderRadius: '1rem'}}
             />
         }
       </div>
-      
+      <div className="card__text">
       <Heading size={ 3 } className="card__heading">
-        { item.name }
+        { item.title }
       </Heading>
 
       <Heading size={ 4 } className="card__sub-heading">
-        { item.description }
+        { item.highlight }
       </Heading>
 
       <p className="card__copy">{ item.description }</p>
 
-      { (linkText || href)  &&
+      { (linkText || item.href)  &&
           <div>
             <Link 
-              href={ href ?? '#' }
+              href={ item.href ?? '#' }
+              newTab={ true }
             >
-              { linkText }
+              { item.href && 'Visit Site' }
             </Link>
           </div>
       }
+      </div>
     </IntersectionObserverWrapper>
   )
 };

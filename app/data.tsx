@@ -2,38 +2,36 @@
 import { ReactNode } from "react";
 
 // types
-import { Case, HeroContent, Link, ListItem, SerializedImage, Service } from "./types";
+import { HeroContent, Link, ListItem, SerializedImage } from "./types";
 
 // components
 import WebsitePreview from "./components/website-preview/website-preview.component";
 import City from "./content/city/city.content";
-import Image from "next/image";
 import WinterScene from "./content/winter-scene/winter-scene.content";
-import GraphicDesign from "./content/graphic-design/graphic-design.content";
 import ColorAnalysis from "./content/color-analysis/color-analysis.content";
 import BrandVoice from "./content/brand-voice/brand-voice.content";
 import AnimatedCarousel from "./components/carousel-animated/carousel-animated.component";
 
-export const cases: Case[] = [
-  { 
-    id: 0,
-    name: 'Custom Software | BB&S Lighting',
-    image: { id: 0, src: '/works/bbs-home-1.png' },
-    description: 'Tailor-made, full stack  web app for US industrial lighting distributor'
-  },
-  {
-    id: 1, 
-    image: { id: 1, src: '/works/king-home-1.png' },
-    name: 'Branding & Web Development | King Micromobility',
-    description: 'Web Development, Branding, and Content Creation for electric scooter startup'
-  },
-  {
-    id: 2,
-    name: 'Production Management | GE',
-    image: { id: 2, src: '/1x/bg3.png' },
-    description: 'Production management and budgeting for commercial video shoot'
-  }
-];
+// export const cases: Case[] = [
+//   { 
+//     id: 0,
+//     name: 'Custom Software | BB&S Lighting',
+//     image: { id: 0, src: '/works/bbs-home-1.png' },
+//     description: 'Tailor-made, full stack  web app for US industrial lighting distributor'
+//   },
+//   {
+//     id: 1, 
+//     image: { id: 1, src: '/works/king-home-1.png' },
+//     name: 'Branding & Web Development | King Micromobility',
+//     description: 'Web Development, Branding, and Content Creation for electric scooter startup'
+//   },
+//   {
+//     id: 2,
+//     name: 'Production Management | GE',
+//     image: { id: 2, src: '/1x/bg3.png' },
+//     description: 'Production management and budgeting for commercial video shoot'
+//   }
+// ];
 
 export const images: SerializedImage[] = [
   { id: 1, src: '/1x/bg1.png' }, { id: 2, src: '/winter/SVG/winter-scene_4.svg' }, { id: 3, src: '/1x/bg3.png' }, { id: 4, src: '/1x/bg4.png' }, { id: 5, src: '/1x/bg5.png' }, { id: 6, src: '/1x/bg6.png' }

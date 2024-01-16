@@ -16,8 +16,10 @@ export type AnimationOptions = {
 export type Case = {
   description: string;
   id: number;
+  href?: string;
   image?: SerializedImage;
-  name: string;
+  title: string;
+  highlight?: string;
 };
 
 export type HeroContent = {
@@ -63,9 +65,11 @@ export type SerializedImage = {
 
 export type Service = {
   description: string;
+  highlight?: string;
+  href?: string;
   id: number;
   image?: SerializedImage;
-  name: string;
+  title: string;
 };
 
 export type Skill = {

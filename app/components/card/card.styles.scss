@@ -18,6 +18,11 @@
   &__text {
     display: grid;
     gap: $padding-default;
+    padding: 0 4rem;
+
+    @media (min-width: $breakpoint-lg) {
+      padding: 0;
+    }
   }
 
   &__heading {
@@ -40,7 +45,7 @@
     position: relative;
     grid-template-columns: 1fr;
 
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $breakpoint-lg) {
       grid-template-rows: repeat(2, max-content) 1fr max-content;
       grid-template-columns: 70% 25%;
     }

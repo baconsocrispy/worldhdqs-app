@@ -40,5 +40,10 @@ export const productPhotos: SerializedImage[] = [
     id: 7,
     alt: 'GE Product Shoot 8',
     src: '/photos/product/kate-adams-neutrogena-8.jpeg'
-  }
+  },
+  {
+    id: 8,
+    alt: 'King Scooters Photo Shoot 5',
+    src: '/photos/lifestyle/5.jpg'
+  },
 ];

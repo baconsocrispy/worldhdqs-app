@@ -17,14 +17,14 @@
 
     // flip image to right on even numbered cards
     > .card--horizontal:nth-child(even) {
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $breakpoint-lg) {
         grid-template-columns: 25% 75%;
       }
       
       > .card__media {
         grid-column: 1 / -1;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $breakpoint-lg) {
           grid-column: 2 / -1;
         }
       }

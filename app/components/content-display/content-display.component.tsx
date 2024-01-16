@@ -128,6 +128,7 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
                             return {
                               id: skill.id,
                               images: skill.images,
+                              title: 'Budgeting & Editing Tools'
                             }
                           }) } 
                         />,

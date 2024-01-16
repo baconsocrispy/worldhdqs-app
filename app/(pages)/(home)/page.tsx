@@ -15,7 +15,8 @@ import Video from "@/app/components/video/video.component";
 import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
-import { caseStudyMedia, cases, heroContent, processItems } from "@/app/data";
+import { cases } from "@/app/data/works.data";
+import { caseStudyMedia, heroContent, processItems } from "@/app/data";
 import ContentDisplay from "@/app/components/content-display/content-display.component";
 
 // images
