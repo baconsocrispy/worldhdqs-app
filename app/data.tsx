@@ -12,27 +12,6 @@ import ColorAnalysis from "./content/color-analysis/color-analysis.content";
 import BrandVoice from "./content/brand-voice/brand-voice.content";
 import AnimatedCarousel from "./components/carousel-animated/carousel-animated.component";
 
-// export const cases: Case[] = [
-//   { 
-//     id: 0,
-//     name: 'Custom Software | BB&S Lighting',
-//     image: { id: 0, src: '/works/bbs-home-1.png' },
-//     description: 'Tailor-made, full stack  web app for US industrial lighting distributor'
-//   },
-//   {
-//     id: 1, 
-//     image: { id: 1, src: '/works/king-home-1.png' },
-//     name: 'Branding & Web Development | King Micromobility',
-//     description: 'Web Development, Branding, and Content Creation for electric scooter startup'
-//   },
-//   {
-//     id: 2,
-//     name: 'Production Management | GE',
-//     image: { id: 2, src: '/1x/bg3.png' },
-//     description: 'Production management and budgeting for commercial video shoot'
-//   }
-// ];
-
 export const images: SerializedImage[] = [
   { id: 1, src: '/1x/bg1.png' }, { id: 2, src: '/winter/SVG/winter-scene_4.svg' }, { id: 3, src: '/1x/bg3.png' }, { id: 4, src: '/1x/bg4.png' }, { id: 5, src: '/1x/bg5.png' }, { id: 6, src: '/1x/bg6.png' }
 ];
@@ -56,33 +35,7 @@ export const navLinks: Link[] = [
   { text: 'contact', href: '#contact' }
 ]
 
-export const processItems: ListItem[] = [
-  {
-    image: { id: 1, src: './graphics/SVG/mittens_1.svg' },
-    textHighlight: 'Meet & Greet',
-    text: 'In our initial meeting we will brainstorm and define the needs and scope of your project'
-  },
-  {
-    image: { id: 1, src: './graphics/SVG/blueprint_2.svg' },
-    textHighlight: 'Proposal & Pricing',
-    text: 'We will compile a detailed proposal outlining the project steps and provide a transparent pricing structure'
-  },
-  {
-    image: { id: 1, src: './graphics/SVG/blueprint_4.svg' },
-    textHighlight: 'Architecture & Construction',
-    text: 'At this stage we will create the blueprints for your project and then begin building it out'
-  },
-  {
-    image: { id: 1, src: './graphics/SVG/testing_1.svg' },
-    textHighlight: 'Testing & Revision',
-    text: 'Our goal is to get you exactly what you want, so at this stage we QC and make adjustments as needed to ensure integrity to your vision'
-  },
-  {
-    image: { id: 1, src: './graphics/SVG/production.svg' },
-    textHighlight: 'Final Delivery & Production',
-    text: 'Once the project is finalized and sealed with your approval, we will deploy it to a production environment that is sensitive to ongoing costs and future maintenance'
-  },
-];
+
 
 export const adjectives = [
   "Authentic", "Innovative", "Creative", "Trustworthy", "Friendly", 

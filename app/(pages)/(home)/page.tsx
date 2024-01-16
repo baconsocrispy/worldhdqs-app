@@ -16,7 +16,8 @@ import ContactForm from "@/app/forms/contact-form/contact-form.component";
 
 // data
 import { cases } from "@/app/data/works.data";
-import { caseStudyMedia, heroContent, processItems } from "@/app/data";
+import { processItems } from "@/app/data/process.data";
+import { caseStudyMedia, heroContent } from "@/app/data";
 import ContentDisplay from "@/app/components/content-display/content-display.component";
 
 // images

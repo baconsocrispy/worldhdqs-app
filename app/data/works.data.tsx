@@ -19,9 +19,9 @@ export const cases: Case[] = [
   },
   {
     id: 2,
-    title: 'Production Management | GE',
+    title: 'Production Management | GE/Timber + Frame',
     image: { id: 2, src: '/1x/bg3.png' },
-    highlight: 'Production management',
-    description: 'We Oversaw pre-production'
+    highlight: 'Commercial video and photo shoot production management',
+    description: 'For GE\'s "Sealed For Good" campaign, we oversaw pre-production and physical production. This included hiring and overseeing department heads and crew, budget oversight and management, overseeing 4-set construction on a single stage, talent wrangling, and on-the-fly solutions to ever-changing creative requirements.'
   }
 ];

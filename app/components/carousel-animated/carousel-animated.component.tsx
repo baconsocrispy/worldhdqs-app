@@ -63,6 +63,11 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
   // automatatic slide rotation when control set to auto
   useEffect(() => {
     if (control !== 'auto') return;
+    console.log(currentActive);
+    console.log(currentItemIndex);
+    console.log(currentAnimation);
+    console.log(nextAnimation);
+
 
     const rotateNext = () => {
       currentActive ? 
