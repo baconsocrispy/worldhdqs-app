@@ -6,7 +6,6 @@ export const submitContactForm = async (
   data: FormData
 ) => {
   const contactURL = `${ baseCMSUrl() }/v1/contact`;
-  console.log(contactURL);
 
   const response = await fetch(contactURL, {
     method: 'POST',
