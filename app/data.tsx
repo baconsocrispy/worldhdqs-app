@@ -2,7 +2,7 @@
 import { ReactNode } from "react";
 
 // types
-import { HeroContent, Link, ListItem, SerializedImage } from "./types";
+import { HeroContent, Link, SerializedImage } from "./types";
 
 // components
 import WebsitePreview from "./components/website-preview/website-preview.component";
@@ -28,14 +28,12 @@ export const kingLogos: SerializedImage[] = [
 ];
 
 export const navLinks: Link[] = [
-  { text: 'home', href: '#welcome' },
-  { text: 'services', href: '#services' },
-  { text: 'process', href: '#process' },
-  { text: 'portfolio', href: '#selected-works' },
-  { text: 'contact', href: '#contact' }
+  { text: 'Home', href: '#welcome' },
+  { text: 'Services', href: '#services' },
+  { text: 'Process', href: '#process' },
+  { text: 'Portfolio', href: '#selected-works' },
+  { text: 'Contact', href: '#contact' }
 ]
-
-
 
 export const adjectives = [
   "Authentic", "Innovative", "Creative", "Trustworthy", "Friendly", 
@@ -66,7 +64,6 @@ export const rotatingContent: ReactNode[] = [
       title: 'Logo Design'
      }]} 
   />,
-  // <GraphicDesign key={ 1 } />,
   <ColorAnalysis key={ 2 } />,
   <BrandVoice key={ 3 } stringList={ adjectives } />
 ];
@@ -83,7 +80,7 @@ export const contactLinks: Link[] = [
 ]
 
 export const socialLinks: Link[] = [
-  { text: 'instagram', href: 'https://www.instagram.com/wrldhdqtrs', newTab: true },
-  { text: 'linkedIn', href: 'https://www.linkedin.com/in/carterbacon', newTab: true },
-  { text: 'github', href: 'https://www.github.com/baconsocrispy', newTab: true }
+  { text: 'Instagram', href: 'https://www.instagram.com/wrldhdqtrs', newTab: true },
+  { text: 'LinkedIn', href: 'https://www.linkedin.com/in/carterbacon', newTab: true },
+  { text: 'Github', href: 'https://www.github.com/baconsocrispy', newTab: true }
 ]
