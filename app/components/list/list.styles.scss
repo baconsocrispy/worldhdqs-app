@@ -8,10 +8,6 @@
     grid-auto-rows: 1fr;
     width: 100%;
     gap: $padding-default;
-    
-    @media (min-width: $breakpoint-md) {
-      max-width: 50%;
-    }
   }
 
   &--horizontal {

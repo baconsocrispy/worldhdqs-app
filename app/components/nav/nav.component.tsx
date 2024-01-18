@@ -42,8 +42,10 @@ const Nav: FC<NavProps>  = ({ navLinks }) => {
         text='World Headquarters' 
       >
         <div 
-          className="orbiting-text__child"
-          style={ menuOpen ? { backgroundColor: 'black' } : undefined }
+          className={ cleanClassName(
+            "orbiting-text__child",
+            menuOpen ? 'open' : undefined
+          )}
         />
       </OrbitingText>
 

@@ -1,12 +1,16 @@
 .nav {
-  position: absolute;
-  z-index: 100;
+  z-index: 1000;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   padding: $padding-default;
   background-color: transparent;
+
+  @media (min-width: $breakpoint-md) {
+    mix-blend-mode: difference;
+  }
 
   &--blend {
     mix-blend-mode: difference;

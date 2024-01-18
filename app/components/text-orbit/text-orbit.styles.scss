@@ -36,5 +36,13 @@
     height: 50px;
     border-radius: 50%;
     background-color: white;
+
+    &--open {
+      background-color: black;
+      
+      @media (min-width: $breakpoint-md) {
+        background-color: white;
+      }
+    }
   }
 }

@@ -24,12 +24,10 @@ export default function RootLayout(
   return (
     <html lang="en">
       <body>
-        <Grid>
-          <ThemeProvider>
-            <Nav navLinks={ navLinks } />
-            { children }
-          </ThemeProvider>
-        </Grid>
+        <ThemeProvider>
+          <Nav navLinks={ navLinks } />
+          { children }
+        </ThemeProvider>
       </body>
     </html>
   )
