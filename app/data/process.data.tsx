@@ -24,6 +24,6 @@ export const processItems: ListItem[] = [
   {
     image: { id: 4, src: './graphics/SVG/production.svg' },
     textHighlight: 'Final Delivery & Production',
-    text: 'After polishing the project based on the revision round  and sealing it with your approval, we will deploy it to a production environment that is sensitive to ongoing costs and future maintenance'
+    text: 'After polishing the project based on the revision round  and sealing it with your approval, we will deploy it to a production environment that is sensitive to ongoing costs and future maintenance.'
   },
 ];
