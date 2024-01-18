@@ -41,7 +41,6 @@ const Hero: FC<HeroProps> = ({
   const handleSectionClick = (index: number, theme: Theme | undefined) => {
     setSelectedContent(content[index].component);
     setTheme(theme);
-    console.log(theme);
     setSelectedTheme(theme);
   };
 

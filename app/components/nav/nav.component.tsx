@@ -27,7 +27,6 @@ const Nav: FC<NavProps>  = ({ navLinks }) => {
 
   // handlers
   const handleClick: MouseEventHandler<HTMLDivElement> = () => {
-    console.log('TEST');
     setMenuOpen(!menuOpen);
   };
 
