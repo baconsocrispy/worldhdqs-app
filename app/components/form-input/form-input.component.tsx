@@ -10,6 +10,7 @@ type FormInputProps = {
   inputClass?: string;
   label?: string;
   labelClass?: string;
+  name?: string;
   type?: string; 
 };
 
@@ -18,6 +19,7 @@ const FormInput: FC<FormInputProps> = ({
   inputClass,
   label, 
   labelClass,
+  name,
   type = 'text' 
 }) => {
   return (
@@ -34,6 +36,7 @@ const FormInput: FC<FormInputProps> = ({
       <input 
         className={ cleanClassName('form-input__input', undefined, inputClass) }
         id={ id } 
+        name={ name }
         type={ type } 
       />
     </>

@@ -9,6 +9,7 @@ type FormTextAreaProps = {
   id: string;
   label?: string;
   labelClass?: string;
+  name?: string;
   textAreaClass?: string;
 };
 
@@ -16,6 +17,7 @@ const FormTextArea: FC<FormTextAreaProps> = ({
   id,
   label,
   labelClass,
+  name,
   textAreaClass
 }) => {
   return (
@@ -31,6 +33,7 @@ const FormTextArea: FC<FormTextAreaProps> = ({
       <textarea
         className={ cleanClassName('form-text-area__text-area', undefined, textAreaClass) }
         id={ id }
+        name={ name }
       />
     </>
   )

@@ -3,7 +3,6 @@ import { submitContactForm } from './rails-api';
 
 // POST /v1/contact#create
 export const POST = async (request: Request) => {
-  console.log(request);
   // get form data from request
   const formData = await request.formData();
 

@@ -39,31 +39,37 @@ const ContactForm = () => {
       <FormInput 
         id='contact-form__first-name'
         label='First Name'
+        name='first_name'
       />
 
       <FormInput 
         id='contact-form__last-name'
         label='Last Name'
+        name='last_name'
       />
 
       <FormInput 
         id='contact-form__company'
         label='Company'
+        name='company'
       />
 
       <FormInput 
         id='contact-form__phone'
         label='Phone'
+        name='phone'
       />
 
       <FormInput 
         id='contact-form__email'
         label='Email'
+        name='email'
       />
       
       <FormTextArea 
         id="contact-form__message"
         label="Message"
+        name='message'
       />
 
       <Button text='send' type='submit' />
