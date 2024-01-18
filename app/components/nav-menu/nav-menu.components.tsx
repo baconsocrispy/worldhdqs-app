@@ -26,7 +26,7 @@ const NavMenu: FC<NavMenuProps> = ({ navLinks, onClick,  open = true }) => {
         )}
         listItems={ navLinks } 
         listItemType="nav-link"
-        type={open ? 'vertical' : 'nav' }
+        type={ open ? 'vertical' : 'nav' }
       />
     </nav>
   )

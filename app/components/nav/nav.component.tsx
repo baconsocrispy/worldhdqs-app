@@ -30,6 +30,8 @@ const Nav: FC<NavProps>  = ({ navLinks }) => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleCloseMenu = () => setMenuOpen(false);
+
   return (
     <header className={ cleanClassName(
       'nav', 
@@ -52,7 +54,7 @@ const Nav: FC<NavProps>  = ({ navLinks }) => {
       />
       <NavMenu 
         navLinks={ navLinks } 
-        onClick={ handleClick } 
+        onClick={ handleCloseMenu } 
         open={ menuOpen } 
       />
     </header>
