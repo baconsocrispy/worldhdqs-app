@@ -10,9 +10,11 @@
     text-decoration: none;
     transition: all 0.5s ease-in-out;
 
-    &:hover {
-      background-color: white;
-      color: black;
+    @media (min-width: $breakpoint-md) {
+      &:hover {
+        background-color: white;
+        color: black;
+      }
     }
   }
 
@@ -32,8 +34,10 @@
       transition: width 0.5s ease-in;
     }
 
-    &:hover::after {
-      width: 100%;
-    } 
+    @media (min-width: $breakpoint-md) {
+      &:hover::after {
+        width: 100%;
+      } 
+    }
   }
 }

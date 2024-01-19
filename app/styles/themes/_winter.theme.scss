@@ -62,16 +62,20 @@ $winter--border-radius: 1rem;
   .link--cta {
     border-radius: $winter--border-radius;
 
-    &:hover {
-      background-color: $winter--pink;
+    @media (min-width: $breakpoint-md) {
+      &:hover {
+        background-color: $winter--pink;
+      }
     }
   }
 
   .button {
     border-radius: $winter--border-radius;
 
-    &:hover {
-      background-color: $winter--pink;
+    @media (min-width: $breakpoint-md) {
+      &:hover {
+        background-color: $winter--pink;
+      }
     }
   }
 

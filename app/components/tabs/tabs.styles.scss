@@ -10,17 +10,18 @@
   }
 
   &__tab {
-
     padding: 1rem $padding-default;
     scale: 1;
     transition: all 0.5s ease-in-out;
 
-    &:hover {
-      cursor: pointer;
-      scale: 1.1;
-      z-index: 50;
-      background-color: rgba(0, 128, 128);
-      color: white;
+    @media (min-width: $breakpoint-md) {
+      &:hover {
+        cursor: pointer;
+        scale: 1.1;
+        z-index: 50;
+        background-color: rgba(0, 128, 128);
+        color: white;
+      }
     }
 
     &--selected {

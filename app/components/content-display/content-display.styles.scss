@@ -47,9 +47,11 @@
       cursor: pointer;
       scale: 1;
       transition: all 0.5s ease-in-out;
-
-      &:hover {
-        scale: 1.2;
+      
+      @media (min-width: $breakpoint-md) {
+        &:hover {
+          scale: 1.2;
+        }
       }
     }
   }
