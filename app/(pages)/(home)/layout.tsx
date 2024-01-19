@@ -12,6 +12,7 @@ import { navLinks } from '@/app/data';
 // styles
 import '@/app/styles/main.styles.scss';
 import { ThemeProvider } from '@/app/contexts/theme.context';
+import GoogleAnalytics from '@/app/components/google-analytics/google-analytics.component';
 
 export const metadata: Metadata = {
   title: 'WorldHQ',
@@ -29,6 +30,7 @@ export default function RootLayout(
           { children }
         </ThemeProvider>
       </body>
+      { process.env.NODE_ENV === 'production' && <GoogleAnalytics /> }
     </html>
   )
 };
