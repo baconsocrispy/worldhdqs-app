@@ -93,15 +93,10 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
           key={ `carousel-${ contentIndex }-2}` }
           className={ contentIndex === 2 ? undefined : 'hidden' }
           control="remote"
-          duration={ 10 }
           items={[ 
             { 
               content: <AnimatedCarousel 
                           key={ `${ 0 }-ac` }
-                          animationOptions={{
-                            entryAnimation: 'fade-in',
-                            exitAnimation: 'fade-out'
-                          }}
                           control="auto"
                           imageOptions={{ imageFit: 'cover' }}
                           items={ lifestylePhotos.map((photo) => {

@@ -72,6 +72,11 @@ const AnimatedCarousel: FC<AnimatedCarouselProps> = ({
         setCurrentItemIndex(
           (nextItemIndex + 1) % items.length
         )
+        if (animationOptions.entryAnimation && animationOptions.exitAnimation) {
+          currentActive ? setCurrentAnimation(animationOptions.exitAnimation) : setCurrentAnimation(animationOptions.entryAnimation);
+          currentActive ? setNextAnimation(animationOptions.entryAnimation) : setNextAnimation(animationOptions.exitAnimation);
+         }
+         
       setCurrentItemIndex((currentItemIndex + 1) % items.length);
       setCurrentActive(!currentActive);
     };
