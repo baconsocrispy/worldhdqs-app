@@ -58,6 +58,7 @@ const Home = () => {
         </Heading>
         <div className="center-wrapper">
           <List 
+            className="mw-50"
             listItems={ processItems } 
             intersectionOptions={{
               intersectionObserverInit: { threshold: .25 },

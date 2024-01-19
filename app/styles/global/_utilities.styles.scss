@@ -24,3 +24,9 @@
 .lowercase {
   text-transform: lowercase;
 }
+
+.mw-50 {
+  @media (min-width: $breakpoint-md) {
+    max-width: 50%;
+  }
+}
