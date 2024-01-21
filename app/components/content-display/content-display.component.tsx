@@ -16,6 +16,7 @@ import { productPhotos } from "@/app/data/product-photos.data";
 import { skills } from "@/app/data/skills.data";
 import { studioPhotos } from "@/app/data/studio-photos.data";
 import { lifestylePhotos } from "@/app/data/lifestyle-photos.data";
+import TransitionCarousel from "../carousel-transition/carousel-transition.component";
 
 // types
 type ContentDisplayProps = {
@@ -94,19 +95,8 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
           className={ contentIndex === 2 ? undefined : 'hidden' }
           control="remote"
           items={[ 
-            { 
-              content: <AnimatedCarousel 
-                          key={ `${ 0 }-ac` }
-                          control="auto"
-                          imageOptions={{ imageFit: 'cover' }}
-                          items={ lifestylePhotos.map((photo) => {
-                            return {
-                              id: photo.id,
-                              image: photo,
-                              images: [ photo ]
-                            } as AnimatedCarouselItem;
-                          }) }
-                        />,
+            {
+              content: <TransitionCarousel images={lifestylePhotos} transitionDuration={ 3 }/>,
               text: 'Lifestyle/Street Photography'
             },
             {
@@ -130,30 +120,11 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
               text: 'Line Producing & Editing'
             },
             { 
-              content: <AnimatedCarousel 
-                          key={ `${ 2 }-ac`}
-                          imageOptions={{ imageFit: 'cover' }}
-                          items={ studioPhotos.map((photo) => {
-                            return {
-                              id: photo.id,
-                              images: [ photo ]
-                            }
-                          }) }
-                        />,
+              content: <TransitionCarousel images={ studioPhotos } transitionDuration={ 3 } />,
               text: 'Studio Production'
             },
             { 
-              content: <AnimatedCarousel 
-                          key={ `${ 3 }-ac`}
-                          imageOptions={{ imageFit: 'cover' }}
-                          items={ productPhotos.map((photo) => {
-                            return {
-                              id: photo.id,
-                              image: photo,
-                              images: [ photo ]
-                            }
-                          })}
-                        />,
+              content: <TransitionCarousel images={ productPhotos } transitionDuration={ 3 } />,
               text: 'Product Photography'
             },
           ]}

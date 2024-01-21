@@ -142,8 +142,8 @@ export const skills: Skill[] = [
       {
         id: 3,
         alt: 'Netlify Logo',
-        src: '/logos/cloud/netlify.png',
-        title: 'Netlify'
+        src: '/logos/cloud/netlify.png  ',
+        title: 'Netlify',
       },
       {
         id: 4,
@@ -196,16 +196,17 @@ export const skills: Skill[] = [
       },
       {
         id: 1,
-        alt: 'Wordpress Logo',
-        src: '/logos/cms/wordpress.png',
-        title: 'Wordpress'
-      },
-      {
-        id: 2,
         alt: 'Squarespace Logo',
         src: '/logos/cms/squarespace.png',
         title: 'Squarespace'
       },
+      {
+        id: 2,
+        alt: 'Wordpress Logo',
+        src: '/logos/cms/wordpress.png',
+        title: 'Wordpress'
+      },
+
     ],
     title: 'Content Management Systems',
     text: 'We can build, update or maintain a site for you using popular CMS platforms'
