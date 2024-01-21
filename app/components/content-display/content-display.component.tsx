@@ -100,7 +100,7 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
               text: 'Lifestyle/Street Photography'
             },
             {
-              content: <Video src='/vid/raptor_1.mp4' />,
+              content: <Video src='/vid/win-this-raptor.mp4' />,
               text: 'Commercial Video'
             },
             {
