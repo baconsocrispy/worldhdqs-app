@@ -76,7 +76,7 @@ export const caseStudyMedia = [
 
 export const contactLinks: Link[] = [
   { text: 'info@worldheadquarters.co', href: 'mailto: info@worldheadquarters.co' },
-  { text: '+1 (617) 299-1345', href: 'tel: +16175716120' },
+  { text: '+1 (617) 299-1345', href: 'tel: +16172991345' },
 ]
 
 export const socialLinks: Link[] = [
