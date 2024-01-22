@@ -52,23 +52,6 @@ const Home = () => {
         <ContentDisplay />
       </Section>
 
-      <Section id="process">
-        <Heading size={ 2 } position={ 'center' } underlineType="converge">
-          Process
-        </Heading>
-        <div className="center-wrapper">
-          <List 
-            className="mw-50"
-            listItems={ processItems } 
-            intersectionOptions={{
-              intersectionObserverInit: { threshold: .25 },
-              transitionClass: 'fade-blur-in-drop-100',
-              transitionDelay: 0.2
-            }}
-          />
-        </div>
-      </Section>
-
       <Section
         id="selected-works" 
         intersectionObserverOptions={{ 
@@ -93,6 +76,25 @@ const Home = () => {
           layout='alternating'  
         />
       </Section>
+
+      <Section id="process">
+        <Heading size={ 2 } position={ 'center' } underlineType="converge">
+          Process
+        </Heading>
+        <div className="center-wrapper">
+          <List 
+            className="mw-50"
+            listItems={ processItems } 
+            intersectionOptions={{
+              intersectionObserverInit: { threshold: .25 },
+              transitionClass: 'fade-blur-in-drop-100',
+              transitionDelay: 0.2
+            }}
+          />
+        </div>
+      </Section>
+
+     
       
       <Section id="contact">
         <Heading size={ 2 } position={ 'center' } underlineType="converge">
