@@ -15,7 +15,7 @@ export const cases: Case[] = [
     href: 'https://www.kingmicromobility.com',
     title: 'Brand Identity | King Micromobility',
     highlight: 'Web Development, Branding, and Content Creation for startup',
-    description: 'As a new startup, King needed a full suite of services to get their brand up and running. We built and maintained a Shopify eCommerce site, designed logos and graphic elements, and crafted a unique brand voice adapted to their target audience. We also oversaw the production of photo and video content and provided digital analytics.'
+    description: 'As a new startup, King needed a full suite of services to get their brand up and running. We built and maintained a Shopify eCommerce site, designed logos and graphic elements, integrated 3rd party applications, and crafted a unique brand voice adapted to their target audience. We also oversaw the production of photo and video content and provided digital analytics.'
   },
   {
     id: 2,

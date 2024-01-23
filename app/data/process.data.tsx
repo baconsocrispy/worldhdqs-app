@@ -4,7 +4,7 @@ export const processItems: ListItem[] = [
   {
     image: { id: 0, src: './graphics/SVG/mittens_1.svg' },
     textHighlight: 'Meet & Greet',
-    text: 'Whatever your problem is, we want to hear about it and see if we can help you find a creative solution.'
+    text: 'Whatever your goal is, we want to hear about it and see if we can help you find a creative solution to achieve .'
   },
   {
     image: { id: 1, src: './graphics/SVG/blueprint_2.svg' },

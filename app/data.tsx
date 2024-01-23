@@ -30,8 +30,8 @@ export const kingLogos: SerializedImage[] = [
 export const navLinks: Link[] = [
   { text: 'Home', href: '#welcome' },
   { text: 'Services', href: '#services' },
-  { text: 'Process', href: '#process' },
   { text: 'Portfolio', href: '#selected-works' },
+  { text: 'Process', href: '#process' },
   { text: 'Contact', href: '#contact' }
 ]
 

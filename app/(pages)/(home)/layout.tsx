@@ -17,6 +17,21 @@ import GoogleAnalytics from '@/app/components/google-analytics/google-analytics.
 export const metadata: Metadata = {
   title: 'WorldHQ',
   description: 'Creative Workshop',
+  openGraph: {
+    title: 'World Headquarters',
+    description: 'Custom software solutions, branding & graphic design, and content creation',
+    url: 'https://www.worldheadquarters.co',
+    siteName: 'World Headquarters',
+    images: [
+      {
+        url: 'https://www.worldheadquarters/og/opengraph-1400x749-min.png', // Must be an absolute URL
+        width: 1400,
+        height: 749,
+      }
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout(
