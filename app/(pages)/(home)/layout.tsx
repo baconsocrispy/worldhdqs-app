@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: 'World Headquarters',
     images: [
       {
-        url: 'https://www.worldheadquarters/og/opengraph-1400x749-min.png', // Must be an absolute URL
+        url: 'https://www.worldheadquarters.co/og/opengraph-1400x749-min.png', // Must be an absolute URL
         width: 1400,
         height: 749,
       }
