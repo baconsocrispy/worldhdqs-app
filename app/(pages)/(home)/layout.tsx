@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'World Headquarters',
     description: 'Custom software solutions, branding & graphic design, and content creation',
-    url: 'https://www.worldheadquarters.co',
+    url: 'https://worldheadquarters.co',
     siteName: 'World Headquarters',
     images: [
       {
