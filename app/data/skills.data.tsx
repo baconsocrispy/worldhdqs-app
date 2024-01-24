@@ -74,7 +74,6 @@ export const skills: Skill[] = [
       {
         id: 2,
         alt: 'Next.js logo',
-        invert: true,
         src: '/logos/frameworks/next-js.svg',
         title: 'Next.js'
       },
@@ -147,36 +146,30 @@ export const skills: Skill[] = [
       },
       {
         id: 4,
-        alt: 'OAuth 2.0 Logo',
-        src: '/logos/cloud/oauth2.svg',
-        title: 'OAuth 2.0'
-      },
-      {
-        id: 5,
         alt: 'Postgresql Logo',
         src: '/logos/cloud/postgresql.png',
         title: 'Postgresql'
       },
       {
-        id: 6,
+        id: 5,
         alt: 's3 Logo',
         src: '/logos/cloud/s3.png',
         title: 'S3'
       },
       {
-        id: 7,
+        id: 6,
         alt: 'SQL Logo',
         src: '/logos/cloud/sql.png',
         title: 'SQL'
       },
       {
-        id: 8,
+        id: 7,
         alt: 'SQLite Logo',
         src: '/logos/cloud/sqlite.png',
         title: 'SQLite'
       },
       {
-        id: 9,
+        id: 8,
         alt: 'Vercel Logo',
         src: '/logos/cloud/vercel.svg',
         title: 'Vercel'

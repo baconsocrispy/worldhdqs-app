@@ -81,6 +81,6 @@ export const contactLinks: Link[] = [
 
 export const socialLinks: Link[] = [
   { text: 'Instagram', href: 'https://www.instagram.com/wrldhdqtrs', newTab: true },
-  { text: 'LinkedIn', href: 'https://www.linkedin.com/in/carterbacon', newTab: true },
+  { text: 'LinkedIn', href: 'https://www.linkedin.com/company/world-headquarters-llc', newTab: true },
   { text: 'Github', href: 'https://www.github.com/baconsocrispy', newTab: true }
 ]

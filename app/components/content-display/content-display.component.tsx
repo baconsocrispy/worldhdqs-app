@@ -58,7 +58,7 @@ const ContentDisplay: FC<ContentDisplayProps> = ({ content }) => {
         <div 
             className="winter-scene__sky"
             style={{
-              backgroundImage: `url(${ '/sky/night-sky.jpg'})`,
+              backgroundImage: `url(${ '/sky/snow.jpg'})`,
               backgroundSize: 'cover',
               backgroundPosition: 'bottom'
           }}

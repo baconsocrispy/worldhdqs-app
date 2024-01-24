@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
 // components
-import Grid from '@/app/components/grid/grid.component';
 import Nav from '@/app/components/nav/nav.component';
 
 // data
@@ -15,7 +14,7 @@ import { ThemeProvider } from '@/app/contexts/theme.context';
 import GoogleAnalytics from '@/app/components/google-analytics/google-analytics.component';
 
 export const metadata: Metadata = {
-  title: 'WorldHQ',
+  title: 'WHQ',
   description: 'Creative Workshop',
   openGraph: {
     title: 'World Headquarters',
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
       {
         url: 'https://www.worldheadquarters.co/og/opengraph-1400x749-min.png', // Must be an absolute URL
         width: 1400,
-        height: 749,
+        height: 749
       }
     ],
     locale: 'en_US',
