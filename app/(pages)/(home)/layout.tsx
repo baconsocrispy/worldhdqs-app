@@ -14,7 +14,7 @@ import { ThemeProvider } from '@/app/contexts/theme.context';
 import GoogleAnalytics from '@/app/components/google-analytics/google-analytics.component';
 
 export const metadata: Metadata = {
-  title: 'WHQ',
+  title: 'World Headquarters',
   description: 'Creative Workshop',
   openGraph: {
     title: 'World Headquarters',
