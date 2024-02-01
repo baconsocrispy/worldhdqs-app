@@ -33,11 +33,11 @@ const Home = () => {
           leadIn='You Have Reached'
           subHeading="Creative Workshop"
         />
-        <TextBlock 
+        {/* <TextBlock 
           text={
             "Ideas. \nStorytelling. \nCraftsmanship."
           }
-        />
+        /> */}
       </Section>
 
       <Section id="services">
