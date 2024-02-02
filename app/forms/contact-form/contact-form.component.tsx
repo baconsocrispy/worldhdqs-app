@@ -45,7 +45,7 @@ const ContactForm = () => {
       }
     };
   
-    if (loading) return <p>Sending message...</p>;
+    if (loading) return <p className="center-wrapper">Sending message...</p>;
 
   return (
     <form 
