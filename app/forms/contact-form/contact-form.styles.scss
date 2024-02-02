@@ -1,7 +1,17 @@
 .contact-form {
   display: grid;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: max-content 1fr;
   gap: $padding-default;
   width: 100%;
   place-content: center;
+
+  &__submit-response {
+    text-align: center;
+  }
+
+  &__input-group {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: $padding-default;
+  }
 }

@@ -101,11 +101,8 @@ const Home = () => {
           Contact
         </Heading>
 
-        <div className="center-wrapper">
-          <p>Please leave a message</p>
-        </div>
-
         <ContactForm />
+        
         <Video 
           src="/vid/winter/noble-winter-1.mp4" 
           type="background"

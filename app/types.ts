@@ -79,6 +79,11 @@ export type Skill = {
   title: string;
 };
 
+export type SubmitResponse = {
+  message: string;
+  success?: boolean;
+};
+
 export type Theme = {
   backgroundColor?: string;
   className?: string;

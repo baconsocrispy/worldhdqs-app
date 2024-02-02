@@ -34,6 +34,7 @@ const FormTextArea: FC<FormTextAreaProps> = ({
         className={ cleanClassName('form-text-area__text-area', undefined, textAreaClass) }
         id={ id }
         name={ name }
+        rows={ 6 }
       />
     </>
   )
