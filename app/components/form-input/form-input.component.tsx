@@ -1,44 +1,34 @@
 // library
-import { FC } from "react";
+import { ComponentPropsWithoutRef, FC } from "react";
 
 // helpers
 import { cleanClassName } from "@/app/helpers";
 
 // types
-type FormInputProps = {
-  id: string;
-  inputClass?: string;
+interface FormInputProps extends ComponentPropsWithoutRef<'input'> {
   label?: string;
   labelClass?: string;
-  name?: string;
-  type?: string; 
+  labelId?: string;
 };
 
 const FormInput: FC<FormInputProps> = ({ 
-  id, 
-  inputClass,
   label, 
   labelClass,
-  name,
-  type = 'text' 
+  labelId,
+  ...inputProps
 }) => {
   return (
     <>
       { label && 
         <label 
           className={ cleanClassName('form-input__label', undefined, labelClass) }
-          htmlFor={ id }
+          htmlFor={ labelId }
         >
           { label }
         </label>
       }
 
-      <input 
-        className={ cleanClassName('form-input__input', undefined, inputClass) }
-        id={ id } 
-        name={ name }
-        type={ type } 
-      />
+      <input { ...inputProps } />
     </>
   )
 };

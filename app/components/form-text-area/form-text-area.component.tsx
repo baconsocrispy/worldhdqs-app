@@ -1,41 +1,34 @@
 // library
-import { FC } from "react";
+import { ComponentPropsWithoutRef, FC } from "react";
 
 // helpers
 import { cleanClassName } from "@/app/helpers";
 
 // types
-type FormTextAreaProps = {
-  id: string;
+interface FormTextAreaProps extends ComponentPropsWithoutRef<'textarea'> {
   label?: string;
   labelClass?: string;
-  name?: string;
-  textAreaClass?: string;
+  labelId?: string;
 };
 
 const FormTextArea: FC<FormTextAreaProps> = ({
-  id,
   label,
   labelClass,
-  name,
-  textAreaClass
+  labelId,
+  ...textAreaProps
 }) => {
   return (
     <>
       { label && 
         <label 
           className={ cleanClassName('form-text-area__label', undefined, labelClass) }
-          htmlFor={ id }>
+          htmlFor={ labelId }
+        >
           { label }
         </label>
       }
 
-      <textarea
-        className={ cleanClassName('form-text-area__text-area', undefined, textAreaClass) }
-        id={ id }
-        name={ name }
-        rows={ 6 }
-      />
+      <textarea { ...textAreaProps } />
     </>
   )
 };
